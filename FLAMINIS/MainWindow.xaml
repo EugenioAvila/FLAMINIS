@@ -13,11 +13,11 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="70"></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="10"></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <GroupBox Header="Filtros de busquieda">
+        <GroupBox Header="Filtros de busquieda" Grid.Column="0" Grid.Row="0">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
@@ -36,5 +36,6 @@
                 <Button Grid.Column="4" Grid.Row="0" Content="Buscar" Background="LightBlue" HorizontalAlignment="Center" Width="130"></Button>
             </Grid>
         </GroupBox>
+        <Separator Height="20" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="1"></Separator>
     </Grid>
 </Controls:MetroWindow>
