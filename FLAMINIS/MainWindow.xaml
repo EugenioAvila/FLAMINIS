@@ -5,8 +5,51 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        WindowState="Maximized"
         Title="Pagina Principal">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition Height="10"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <GroupBox Header="Filtros de busquieda" Grid.Column="0" Grid.Row="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center">Plataforma</Label>
+                <ComboBox x:Name="ComboPlataforma" Grid.Row="0" Controls:TextBoxHelper.Watermark="Seleccione" Grid.Column="1" />
+                <Label Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center">Seccion</Label>
+                <ComboBox x:Name="ComboSeccion" Grid.Row="0" Controls:TextBoxHelper.Watermark="Seleccione" Grid.Column="3" />
+                <Button Grid.Column="4" Grid.Row="0" Content="Buscar" Background="LightBlue" HorizontalAlignment="Center" Width="130"></Button>
+            </Grid>
+        </GroupBox>
+        <Separator Height="20" Grid.Column="0" Grid.Row="1"></Separator>
+        <ListBox Name="lstBoards" Grid.Column="0" Grid.Row="2">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel HorizontalAlignment="Left" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Controls:Tile Width="{Binding WidthTile}" Title="{Binding NombreTile}" Height="{Binding HeigTile}" Background="{Binding ColorTile}">
+                        <Controls:Tile Width="{Binding WidthTile}" Title="{Binding NombreTile}" Height="{Binding HeigTile}" Background="{Binding ColorTile}"></Controls:Tile>
+                    </Controls:Tile>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Controls:MetroWindow>
