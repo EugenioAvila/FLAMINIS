@@ -36,6 +36,20 @@
                 <Button Grid.Column="4" Grid.Row="0" Content="Buscar" Background="LightBlue" HorizontalAlignment="Center" Width="130"></Button>
             </Grid>
         </GroupBox>
-        <Separator Height="20" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="1"></Separator>
+        <Separator Height="20" Grid.Column="0" Grid.Row="1"></Separator>
+        <ListBox Name="lstBoards" Grid.Column="0" Grid.Row="2">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel HorizontalAlignment="Left" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Controls:Tile Width="{Binding WidthTile}" Title="{Binding NombreTile}" Height="{Binding HeigTile}" Background="{Binding ColorTile}">
+                        <Controls:Tile Width="{Binding WidthTile}" Title="{Binding NombreTile}" Height="{Binding HeigTile}" Background="{Binding ColorTile}"></Controls:Tile>
+                    </Controls:Tile>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Controls:MetroWindow>
