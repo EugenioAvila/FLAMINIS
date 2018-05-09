@@ -1,4 +1,5 @@
-﻿namespace FLAMINIS
+﻿using System.Linq;
+namespace FLAMINIS
 {
     public partial class MainWindow : MahApps.Metro.Controls.MetroWindow
     {
@@ -8,6 +9,7 @@
         {
             InitializeComponent();
             InicializaControles();
+            LimpiaCombos();
         }
 
         private void InicializaControles()
@@ -67,6 +69,30 @@
         private void ComboPlataforma_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             var _seleccion = ((sender as System.Windows.Controls.ComboBox).SelectedItem as Herramientas.Utilerias.cComboBox);
+            if (_seleccion != null)
+            {
+                var _lista = from x in _clasificaciones where x.ID_PLATAFORMA == _seleccion.ID select x;
+                LimpiaCombos();
+                ComboClasificacion.DisplayMemberPath = "DESCR";
+                ComboClasificacion.ItemsSource = _lista;
+                ComboClasificacion.SelectedIndex = 0;
+            }
+        }
+
+        private void LimpiaCombos()
+        {
+            try
+            {
+                ComboClasificacion.DisplayMemberPath = "DESCR";
+                System.Collections.Generic.List<Herramientas.Utilerias.cComboBoxClasificacion> _datosLimpios = new System.Collections.Generic.List<Herramientas.Utilerias.cComboBoxClasificacion>();
+                _datosLimpios.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { ID = 0, DESCR = "SELECCIONE" });
+                ComboClasificacion.ItemsSource = _datosLimpios;
+                ComboClasificacion.SelectedIndex = 0;
+            }
+            catch (System.Exception exc)
+            {
+                throw exc;
+            }
         }
     }
 }
