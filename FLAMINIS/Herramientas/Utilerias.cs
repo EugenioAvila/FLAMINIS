@@ -8,5 +8,19 @@ namespace FLAMINIS.Herramientas
             public string DESCR { get; set; }
             public short ID { get; set; }
         }
+
+        public class cComboBoxClasificacion
+        {
+            public string DESCR { get; set; }
+            public int ID { get; set; }
+            public int ID_PLATAFORMA { get; set; }
+        }
+
+        public class cComboBoxSubClasificacion
+        {
+            public string DESCR { get; set; }
+            public int ID { get; set; }
+            public int ID_CLASIFICACION { get; set; }
+        }
     }
 }
