@@ -166,6 +166,17 @@ namespace FLAMINIS
             }
         }
 
+        public async void Buscar()
+        {
+            try
+            {
+
+            }
+            catch (System.Exception exc)
+            {
+                throw;
+            }
+        }
 
         private void ComboPlataforma_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
@@ -208,7 +219,7 @@ namespace FLAMINIS
 
         private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            var _seleccion =  ComboSubClasificacion.SelectedItem as Herramientas.Utilerias.cComboBoxSubClasificacion;
+            var _seleccion = ComboSubClasificacion.SelectedItem as Herramientas.Utilerias.cComboBoxSubClasificacion;
             if (_seleccion == null)
             {
                 System.Windows.MessageBox.Show("Seleccione una sub clasificacion");
