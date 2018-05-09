@@ -85,26 +85,40 @@ namespace FLAMINIS
 
         private void ComboPlataforma_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            var _seleccion = ((sender as System.Windows.Controls.ComboBox).SelectedItem as Herramientas.Utilerias.cComboBox);
-            if (_seleccion != null)
+            try
             {
-                var _lista = from x in _clasificaciones where x.ID_PLATAFORMA == _seleccion.ID select x;
-                LimpiaCombos();
-                ComboClasificacion.DisplayMemberPath = "DESCR";
-                ComboClasificacion.ItemsSource = _lista;
-                ComboClasificacion.SelectedIndex = 0;
+                var _seleccion = ((sender as System.Windows.Controls.ComboBox).SelectedItem as Herramientas.Utilerias.cComboBox);
+                if (_seleccion != null)
+                {
+                    var _lista = from x in _clasificaciones where x.ID_PLATAFORMA == _seleccion.ID select x;
+                    LimpiaCombos();
+                    ComboClasificacion.DisplayMemberPath = "DESCR";
+                    ComboClasificacion.ItemsSource = _lista;
+                    ComboClasificacion.SelectedIndex = 0;
+                }
+            }
+            catch (System.Exception exc)
+            {
+                throw exc;
             }
         }
 
         private void ComboClasificacion_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            var _seleccion = ((sender as System.Windows.Controls.ComboBox).SelectedItem as Herramientas.Utilerias.cComboBoxClasificacion);
-            if (_seleccion != null)
+            try
             {
-                var _lista = from x in _subClasificaciones where x.ID_CLASIFICACION == _seleccion.ID select x;
-                ComboSubClasificacion.DisplayMemberPath = "DESCR";
-                ComboSubClasificacion.ItemsSource = _lista;
-                ComboSubClasificacion.SelectedIndex = 0;
+                var _seleccion = ((sender as System.Windows.Controls.ComboBox).SelectedItem as Herramientas.Utilerias.cComboBoxClasificacion);
+                if (_seleccion != null)
+                {
+                    var _lista = from x in _subClasificaciones where x.ID_CLASIFICACION == _seleccion.ID select x;
+                    ComboSubClasificacion.DisplayMemberPath = "DESCR";
+                    ComboSubClasificacion.ItemsSource = _lista;
+                    ComboSubClasificacion.SelectedIndex = 0;
+                }
+            }
+            catch (System.Exception exc)
+            {
+                throw exc;
             }
         }
     }
