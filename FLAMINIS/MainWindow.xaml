@@ -31,9 +31,11 @@
                 </Grid.RowDefinitions>
                 <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center">Plataforma</Label>
                 <ComboBox x:Name="ComboPlataforma" Grid.Row="0" Controls:TextBoxHelper.Watermark="Seleccione" Grid.Column="1" />
-                <Label Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center">Seccion</Label>
-                <ComboBox x:Name="ComboSeccion" Grid.Row="0" Controls:TextBoxHelper.Watermark="Seleccione" Grid.Column="3" />
-                <Button Grid.Column="4" Grid.Row="0" Content="Buscar" Background="LightBlue" HorizontalAlignment="Center" Width="130"></Button>
+                <Label Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center">Clasificacion</Label>
+                <ComboBox x:Name="ComboClasificacion" Grid.Row="0" Controls:TextBoxHelper.Watermark="Seleccione" Grid.Column="3" />
+                <Label Grid.Column="4" Grid.Row="0" HorizontalAlignment="Center">Sub Clasificacion</Label>
+                <ComboBox x:Name="ComboSubClasificacion" Grid.Row="0" Controls:TextBoxHelper.Watermark="Seleccione" Grid.Column="5" />
+                <Button Grid.Column="6" Grid.Row="0" Content="Buscar" Background="LightBlue" HorizontalAlignment="Center" Width="130"></Button>
             </Grid>
         </GroupBox>
         <Separator Height="20" Grid.Column="0" Grid.Row="1"></Separator>
