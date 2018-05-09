@@ -121,5 +121,15 @@ namespace FLAMINIS
                 throw exc;
             }
         }
+
+        private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            var _seleccion =  ComboSubClasificacion.SelectedItem as Herramientas.Utilerias.cComboBoxSubClasificacion;
+            if (_seleccion == null)
+            {
+                System.Windows.MessageBox.Show("Seleccione una sub clasificacion");
+                return;
+            }
+        }
     }
 }
