@@ -24,12 +24,16 @@
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
                 <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center">Plataforma</Label>
                 <ComboBox x:Name="ComboPlataforma" Grid.Row="0" Controls:TextBoxHelper.Watermark="Seleccione" Grid.Column="1" />
+                <Label Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center">Seccion</Label>
+                <ComboBox x:Name="ComboSeccion" Grid.Row="0" Controls:TextBoxHelper.Watermark="Seleccione" Grid.Column="3" />
+                <Button Grid.Column="4" Grid.Row="0" Content="Buscar" Background="LightBlue" HorizontalAlignment="Center" Width="130"></Button>
             </Grid>
         </GroupBox>
     </Grid>
