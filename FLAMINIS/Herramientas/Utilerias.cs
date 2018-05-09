@@ -6,7 +6,7 @@ namespace FLAMINIS.Herramientas
         public class cComboBox
         {
             public string DESCR { get; set; }
-            public short ID { get; set; }
+            public int ID { get; set; }
         }
 
         public class cComboBoxClasificacion
