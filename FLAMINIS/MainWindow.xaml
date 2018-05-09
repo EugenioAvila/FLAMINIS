@@ -37,7 +37,7 @@
                 <ComboBox x:Name="ComboClasificacion" Grid.Row="0" Controls:TextBoxHelper.Watermark="Seleccione" Grid.Column="3" SelectionChanged="ComboClasificacion_SelectionChanged" />
                 <Label Grid.Column="4" Grid.Row="0" HorizontalAlignment="Center">Sub Clasificacion</Label>
                 <ComboBox x:Name="ComboSubClasificacion" Grid.Row="0" Controls:TextBoxHelper.Watermark="Seleccione" Grid.Column="5" />
-                <Button Grid.Column="6" Grid.Row="0" Content="Buscar" Background="LightBlue" HorizontalAlignment="Center" Width="130"></Button>
+                <Button Grid.Column="6" Grid.Row="0" Content="Buscar" Background="LightBlue" HorizontalAlignment="Center" Width="130" Click="Button_Click"></Button>
             </Grid>
         </GroupBox>
         <Separator Height="20" Grid.Column="0" Grid.Row="1"></Separator>

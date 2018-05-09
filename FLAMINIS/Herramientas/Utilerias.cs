@@ -1,5 +1,4 @@
-﻿using System;
-namespace FLAMINIS.Herramientas
+﻿namespace FLAMINIS.Herramientas
 {
     public class Utilerias
     {
