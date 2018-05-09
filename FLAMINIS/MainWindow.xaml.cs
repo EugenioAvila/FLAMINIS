@@ -25,7 +25,7 @@ namespace FLAMINIS
                 ComboPlataforma.SelectedIndex = 0;
                 #endregion
                 #region clasificaciones
-                string[] _nombresClasificaciones = new string[] { "JAPANESE CULTURE", "VIDEO GAMES", "INTERESTS", "CREATIVE", "CREATIVE", "OTHER", "MISC.", "ADULT" };
+                string[] _nombresClasificaciones = new string[] { "JAPANESE CULTURE", "VIDEO GAMES", "INTERESTS", "CREATIVE", "OTHER", "MISC.", "ADULT" };
                 for (int i = 0; i < _nombresClasificaciones.Length; i++)
                     _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = _nombresClasificaciones[i], ID = i + 1, ID_PLATAFORMA = 1 });
                 #endregion
@@ -44,38 +44,25 @@ namespace FLAMINIS
 
                 string[] _nombresSubClasificaciones4 = new string[] { "OEKAKI", "PAPERCRAFT & ORIGAMI", "PHOTOGRAPHY", "FOOD & COOKING", "ARTWORK/CRITIQUE", "WALLPAPERS/GENERAL", "LITERATURE", "MUSIC", "FASHION", "3DCG", "GRAPHIC DESIGN", "DO-IT-YOURSELF", "WORKSAFE GIF", "QUESTS" };
                 for (int i = 0; i < _nombresSubClasificaciones4.Length; i++)
-                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion() { ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length + _nombresSubClasificaciones3.Length + 1 + i, DESCR = _nombresSubClasificaciones4[i], ID_CLASIFICACION = 3 });
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion() { ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length + _nombresSubClasificaciones3.Length + 1 + i, DESCR = _nombresSubClasificaciones4[i], ID_CLASIFICACION = 4 });
 
                 string[] _nombresSubClasificaciones5 = new string[] { "BUSINESS & FINANCE", "TRAVEL", "FITNESS", "PARANORMAL", "ADVICE", "LGBT", "PONY", "CURRENT NEWS", "WORKSAFE REQUESTS", "VERY IMPORTANT POSTS" };
                 for (int i = 0; i < _nombresSubClasificaciones5.Length; i++)
-                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion() { ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length + _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length + 1 + i, DESCR = _nombresSubClasificaciones5[i], ID_CLASIFICACION = 3 });
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion() { ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length + _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length + 1 + i, DESCR = _nombresSubClasificaciones5[i], ID_CLASIFICACION = 5 });
 
                 string[] _nombresSubClasificaciones6 = new string[] { "RANDOM", "ROBOT9001", "POLITICALLY INCORRECT", "INTERNATIONAL/RANDOM", "CAMS & MEETUPS", "SHIT 4CHAN SAYS" };
                 for (int i = 0; i < _nombresSubClasificaciones6.Length; i++)
-                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion() { ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length + _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length + _nombresSubClasificaciones5.Length + 1 + i, DESCR = _nombresSubClasificaciones6[i], ID_CLASIFICACION = 3 });
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion() { ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length + _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length + _nombresSubClasificaciones5.Length + 1 + i, DESCR = _nombresSubClasificaciones6[i], ID_CLASIFICACION = 6 });
 
                 string[] _nombresSubClasificaciones7 = new string[] { "SEXY BEAUTIFUL WOMEN", "HARDCORE", "HANDSOME MEN", "HENTAI", "ECCHI", "YURI", "HENTAI/ALTERNATIVE", "YAOI", "TORRENTS", "HIGH RESOLUTION", "ADULT GIF", "ADULT CARTOONS", "ADULT REQUESTS" };
                 for (int i = 0; i < _nombresSubClasificaciones7.Length; i++)
-                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion() { ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length + _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length + _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length + 1 + i, DESCR = _nombresSubClasificaciones7[i], ID_CLASIFICACION = 3 });
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion() { ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length + _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length + _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length + 1 + i, DESCR = _nombresSubClasificaciones7[i], ID_CLASIFICACION = 7 });
 
                 #endregion
             }
             catch (System.Exception exc)
             {
                 throw exc;
-            }
-        }
-
-        private void ComboPlataforma_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-        {
-            var _seleccion = ((sender as System.Windows.Controls.ComboBox).SelectedItem as Herramientas.Utilerias.cComboBox);
-            if (_seleccion != null)
-            {
-                var _lista = from x in _clasificaciones where x.ID_PLATAFORMA == _seleccion.ID select x;
-                LimpiaCombos();
-                ComboClasificacion.DisplayMemberPath = "DESCR";
-                ComboClasificacion.ItemsSource = _lista;
-                ComboClasificacion.SelectedIndex = 0;
             }
         }
 
@@ -92,6 +79,32 @@ namespace FLAMINIS
             catch (System.Exception exc)
             {
                 throw exc;
+            }
+        }
+
+
+        private void ComboPlataforma_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            var _seleccion = ((sender as System.Windows.Controls.ComboBox).SelectedItem as Herramientas.Utilerias.cComboBox);
+            if (_seleccion != null)
+            {
+                var _lista = from x in _clasificaciones where x.ID_PLATAFORMA == _seleccion.ID select x;
+                LimpiaCombos();
+                ComboClasificacion.DisplayMemberPath = "DESCR";
+                ComboClasificacion.ItemsSource = _lista;
+                ComboClasificacion.SelectedIndex = 0;
+            }
+        }
+
+        private void ComboClasificacion_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            var _seleccion = ((sender as System.Windows.Controls.ComboBox).SelectedItem as Herramientas.Utilerias.cComboBoxClasificacion);
+            if (_seleccion != null)
+            {
+                var _lista = from x in _subClasificaciones where x.ID_CLASIFICACION == _seleccion.ID select x;
+                ComboSubClasificacion.DisplayMemberPath = "DESCR";
+                ComboSubClasificacion.ItemsSource = _lista;
+                ComboSubClasificacion.SelectedIndex = 0;
             }
         }
     }
