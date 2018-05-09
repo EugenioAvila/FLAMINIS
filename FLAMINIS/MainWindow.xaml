@@ -32,7 +32,7 @@
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
                 <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center">Plataforma</Label>
-                <ComboBox x:Name="ComboPlataforma" Grid.Row="0" Controls:TextBoxHelper.Watermark="Seleccione" Grid.Column="1" />
+                <ComboBox x:Name="ComboPlataforma" Grid.Row="0" Controls:TextBoxHelper.Watermark="Seleccione" Grid.Column="1" SelectionChanged="ComboPlataforma_SelectionChanged" />
                 <Label Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center">Clasificacion</Label>
                 <ComboBox x:Name="ComboClasificacion" Grid.Row="0" Controls:TextBoxHelper.Watermark="Seleccione" Grid.Column="3" />
                 <Label Grid.Column="4" Grid.Row="0" HorizontalAlignment="Center">Sub Clasificacion</Label>
