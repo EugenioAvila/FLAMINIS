@@ -1,4 +1,8 @@
-﻿using System.Linq;
+﻿using System.IO;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+
 namespace FLAMINIS
 {
     public partial class MainWindow : MahApps.Metro.Controls.MetroWindow
@@ -166,11 +170,34 @@ namespace FLAMINIS
             }
         }
 
-        public async void Buscar()
+        public async void Buscar(string _url)
         {
             try
             {
-
+            /*    var _cliente = new HttpClient();
+                var _respuesta = await _cliente.GetByteArrayAsync("https://lainchan.org/");
+                System.String source = System.Text.Encoding.GetEncoding("utf-8").GetString(_respuesta, 0, _respuesta.Length - 1);
+                source = WebUtility.HtmlDecode(source);
+                var _doc = new HtmlAgilityPack.HtmlDocument();
+                _doc.LoadHtml(source);
+              */  //foreach (HtmlAgilityPack.HtmlNode link in _doc.DocumentNode.SelectNodes("//a[@href]"))
+                //{
+                //    HtmlAgilityPack.HtmlAttribute att = link.Attributes["href"];
+                //    if (!string.IsNullOrEmpty(att.Value))
+                //        if (att.Value.StartsWith("magnet:?"))
+                //        {
+                //            var _elementos = att.Value.Split('&');
+                //            string encodedString = System.Web.HttpUtility.HtmlEncode(_elementos.FirstOrDefault(x => x.StartsWith("dn="))).Replace('+', ' ').Remove(0, 3);
+                //            _lista.Add(new Herramientas.ListaTorrents()
+                //            {
+                //                Categoria = System.Convert.ToInt32(Herramientas.Enumeradores.eDatosPorDefault.CATEGORIA_POR_DEFECTO),
+                //                Direccion = att.Value,
+                //                Fecha = _fecha,
+                //                NombreAmigable = encodedString,
+                //                Seleccionado = false
+                //            });
+                //        }
+                //}
             }
             catch (System.Exception exc)
             {
@@ -227,6 +254,7 @@ namespace FLAMINIS
             }
 
             var _elegido = _diccionario.FirstOrDefault(x => x.Key == _seleccion.DESCR);
+            Buscar(_elegido.Value);
         }
     }
 }
