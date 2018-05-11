@@ -164,6 +164,7 @@ namespace FLAMINIS
             try
             {
                 _diccionario.Clear();
+                #region 4chan
                 _diccionario.Add("ANIME & MANGA", "http://boards.4chan.org/a/");
                 _diccionario.Add("ANIME/CUTE", "http://boards.4chan.org/c/");
                 _diccionario.Add("ANIME/WALLPAPERS", "http://boards.4chan.org/w/");
@@ -234,6 +235,19 @@ namespace FLAMINIS
                 _diccionario.Add("ADULT GIF", "http://boards.4chan.org/gif/");
                 _diccionario.Add("ADULT CARTOONS", "http://boards.4chan.org/aco/");
                 _diccionario.Add("ADULT REQUESTS", "http://boards.4chan.org/r/");
+                #endregion
+                #region lainchan
+                _diccionario.Add("PROGRAMMING", "https://lainchan.org/\u03BB/index.html");
+                _diccionario.Add("ANIME/CUTE", "http://boards.4chan.org/c/");
+                _diccionario.Add("ANIME/WALLPAPERS", "http://boards.4chan.org/w/");
+                _diccionario.Add("MECHA", "http://boards.4chan.org/m/");
+                _diccionario.Add("COSPLAY & EGL", "http://boards.4chan.org/cgl/");
+                _diccionario.Add("CUTE/MALE", "http://boards.4chan.org/cm/");
+                _diccionario.Add("FLASH", "http://boards.4chan.org/f/");
+                _diccionario.Add("TRANSPORTATION", "http://boards.4chan.org/n/");
+                _diccionario.Add("OTAKU CULTURE", "http://boards.4chan.org/jp/");
+
+                #endregion
             }
             catch (System.Exception exc)
             {
