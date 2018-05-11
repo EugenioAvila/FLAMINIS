@@ -238,15 +238,23 @@ namespace FLAMINIS
                 #endregion
                 #region lainchan
                 _diccionario.Add("PROGRAMMING", "https://lainchan.org/\u03BB/index.html");
-                _diccionario.Add("ANIME/CUTE", "http://boards.4chan.org/c/");
-                _diccionario.Add("ANIME/WALLPAPERS", "http://boards.4chan.org/w/");
-                _diccionario.Add("MECHA", "http://boards.4chan.org/m/");
-                _diccionario.Add("COSPLAY & EGL", "http://boards.4chan.org/cgl/");
-                _diccionario.Add("CUTE/MALE", "http://boards.4chan.org/cm/");
-                _diccionario.Add("FLASH", "http://boards.4chan.org/f/");
-                _diccionario.Add("TRANSPORTATION", "http://boards.4chan.org/n/");
-                _diccionario.Add("OTAKU CULTURE", "http://boards.4chan.org/jp/");
-
+                _diccionario.Add("DIY", "https://lainchan.org/Δ/index.html");
+                _diccionario.Add("SEC", "https://lainchan.org/sec/index.html");
+                _diccionario.Add("TECH", "https://lainchan.org/Ω/index.html");
+                _diccionario.Add("INTER", "https://lainchan.org/inter/index.html");
+                _diccionario.Add("LIT", "https://lainchan.org/lit/index.html");
+                _diccionario.Add("MUSIC LAINCHAN", "https://lainchan.org/music/index.html");
+                _diccionario.Add("VIS", "https://lainchan.org/vis/index.html");
+                _diccionario.Add("HUM", "https://lainchan.org/hum/index.html");
+                _diccionario.Add("DRG", "https://lainchan.org/drug/index.html");
+                _diccionario.Add("ZZZ", "https://lainchan.org/zzz/index.html");
+                _diccionario.Add("LAYER", "https://lainchan.org/layer/index.html");
+                _diccionario.Add("Q", "https://lainchan.org/q/index.html");
+                _diccionario.Add("R", "https://lainchan.org/r/index.html");
+                _diccionario.Add("CULT", "https://lainchan.org/culture/index.html");
+                _diccionario.Add("PSY", "https://lainchan.org/psy/index.html");
+                _diccionario.Add("MEGA", "https://lainchan.org/mega/index.html");
+                _diccionario.Add("RND", "https://lainchan.org/random/index.html");
                 #endregion
             }
             catch (System.Exception exc)
