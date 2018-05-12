@@ -25,7 +25,7 @@ namespace FLAMINIS
                 #region plataformas
                 System.Collections.Generic.List<Herramientas.Utilerias.cComboBox> _elementos = new System.Collections.Generic.List<Herramientas.Utilerias.cComboBox>();
                 _elementos.Add(new Herramientas.Utilerias.cComboBox() { ID = 0, DESCR = "SELECCIONE" });
-                _elementos.Add(new Herramientas.Utilerias.cComboBox() { ID = 1, DESCR = "4 CHAN" });
+                //_elementos.Add(new Herramientas.Utilerias.cComboBox() { ID = 1, DESCR = "4 CHAN" });
                 _elementos.Add(new Herramientas.Utilerias.cComboBox() { ID = 2, DESCR = "LAINCHAN" });
                 ComboPlataforma.DisplayMemberPath = "DESCR";
                 ComboPlataforma.ItemsSource = _elementos;
@@ -38,119 +38,148 @@ namespace FLAMINIS
 
                 string[] _nombresClasificaciones2 = new string[] { "STEM", "PEOPLE", "MISC", "OVERBOARDS 1", "OVERBOARDS 2" };
                 for (int i = 0; i < _nombresClasificaciones2.Length; i++)
-                    _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = _nombresClasificaciones2[i], ID = _nombresClasificaciones2.Length + i + 1, ID_PLATAFORMA = 2 });
+                    _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = _nombresClasificaciones2[i], ID = _nombresClasificaciones.Length + i + 1, ID_PLATAFORMA = 2 });
 
                 #endregion
                 #region sub clasificaciones
+                #region 4chan
                 string[] _nombresSubClasificaciones = new string[] { "ANIME & MANGA", "ANIME/CUTE", "ANIME/WALLPAPERS", "MECHA", "COSPLAY & EGL", "CUTE/MALE", "FLASH", "TRANSPORTATION", "OTAKU CULTURE" };
                 for (int i = 0; i < _nombresSubClasificaciones.Length; i++)
-                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion() {
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
                         ID = i + 1,
                         DESCR = _nombresSubClasificaciones[i],
-                        ID_CLASIFICACION = 1 });
+                        ID_CLASIFICACION = 1
+                    });
 
                 string[] _nombresSubClasificaciones2 = new string[] { "VIDEO GAMES", "VIDEO GAME GENERALS", "POKÉMON", "RETRO GAMES" };
                 for (int i = 0; i < _nombresSubClasificaciones2.Length; i++)
-                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion() {
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
                         ID = _nombresSubClasificaciones.Length + 1 + i,
                         DESCR = _nombresSubClasificaciones2[i],
-                        ID_CLASIFICACION = 2 });
+                        ID_CLASIFICACION = 2
+                    });
 
                 string[] _nombresSubClasificaciones3 = new string[] { "COMICS & CARTOONS", "TECHNOLOGY", "TELEVISION & FILM", "WEAPONS", "AUTO", "ANIMALS & NATURE", "TRADITIONAL GAMES", "SPORTS", "ALTERNATIVE SPORTS", "SCIENCE & MATH", "HISTORY & HUMANITIES", "INTERNATIONAL", "OUTDOORS", "TOYS" };
                 for (int i = 0; i < _nombresSubClasificaciones3.Length; i++)
-                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion() {
-                        ID = _nombresSubClasificaciones.Length  + _nombresSubClasificaciones2.Length + 1 + i,
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length + 1 + i,
                         DESCR = _nombresSubClasificaciones3[i],
-                        ID_CLASIFICACION = 3 });
+                        ID_CLASIFICACION = 3
+                    });
 
                 string[] _nombresSubClasificaciones4 = new string[] { "OEKAKI", "PAPERCRAFT & ORIGAMI", "PHOTOGRAPHY", "FOOD & COOKING", "ARTWORK/CRITIQUE", "WALLPAPERS/GENERAL", "LITERATURE", "MUSIC", "FASHION", "3DCG", "GRAPHIC DESIGN", "DO-IT-YOURSELF", "WORKSAFE GIF", "QUESTS" };
                 for (int i = 0; i < _nombresSubClasificaciones4.Length; i++)
-                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion() {
-                        ID = _nombresSubClasificaciones.Length  + _nombresSubClasificaciones2.Length +
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
                              _nombresSubClasificaciones3.Length + 1 + i,
                         DESCR = _nombresSubClasificaciones4[i],
-                        ID_CLASIFICACION = 4 });
+                        ID_CLASIFICACION = 4
+                    });
 
                 string[] _nombresSubClasificaciones5 = new string[] { "BUSINESS & FINANCE", "TRAVEL", "FITNESS", "PARANORMAL", "ADVICE", "LGBT", "PONY", "CURRENT NEWS", "WORKSAFE REQUESTS", "VERY IMPORTANT POSTS" };
                 for (int i = 0; i < _nombresSubClasificaciones5.Length; i++)
-                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion() {
-                        ID = _nombresSubClasificaciones.Length  + _nombresSubClasificaciones2.Length +
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
                              _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length + 1 + i,
                         DESCR = _nombresSubClasificaciones5[i],
-                        ID_CLASIFICACION = 5 });
+                        ID_CLASIFICACION = 5
+                    });
 
                 string[] _nombresSubClasificaciones6 = new string[] { "RANDOM", "ROBOT9001", "POLITICALLY INCORRECT", "INTERNATIONAL/RANDOM", "CAMS & MEETUPS", "SHIT 4CHAN SAYS" };
                 for (int i = 0; i < _nombresSubClasificaciones6.Length; i++)
-                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion() {
-                        ID = _nombresSubClasificaciones.Length  +  _nombresSubClasificaciones2.Length +
-                             _nombresSubClasificaciones3.Length +  _nombresSubClasificaciones4.Length +
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
+                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
                              _nombresSubClasificaciones5.Length + 1 + i,
                         DESCR = _nombresSubClasificaciones6[i],
-                        ID_CLASIFICACION = 6 });
+                        ID_CLASIFICACION = 6
+                    });
 
                 string[] _nombresSubClasificaciones7 = new string[] { "SEXY BEAUTIFUL WOMEN", "HARDCORE", "HANDSOME MEN", "HENTAI", "ECCHI", "YURI", "HENTAI/ALTERNATIVE", "YAOI", "TORRENTS", "HIGH RESOLUTION", "ADULT GIF", "ADULT CARTOONS", "ADULT REQUESTS" };
                 for (int i = 0; i < _nombresSubClasificaciones7.Length; i++)
-                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion() {
-                        ID = _nombresSubClasificaciones.Length  + _nombresSubClasificaciones2.Length +
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
                              _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
                              _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length + 1 + i,
                         DESCR = _nombresSubClasificaciones7[i],
-                        ID_CLASIFICACION = 7 });
+                        ID_CLASIFICACION = 7
+                    });
 
-
-                string[] _nombresSubClasificaciones8 = new string[] { "PROGRAMMING", "DO IT YOURSELF", "SECURITY", "TECHNOLOGY" };
+                #endregion
+                #region lain chan
+                string[] _nombresSubClasificaciones8 = new string[] { "PROGRAMMING LAINCHAN", "DO IT YOURSELF LAINCHAN", "SECURITY LAINCHAN", "TECHNOLOGY LAINCHAN" };
                 for (int i = 0; i < _nombresSubClasificaciones8.Length; i++)
-                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion() {
-                        ID = _nombresSubClasificaciones.Length  + _nombresSubClasificaciones2.Length + 
-                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length + 
-                             _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length + 
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
+                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
+                             _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
                              _nombresSubClasificaciones7.Length + 1 + i,
                         DESCR = _nombresSubClasificaciones8[i],
-                        ID_CLASIFICACION = 8 });
+                        ID_CLASIFICACION = 8
+                    });
 
-                string[] _nombresSubClasificaciones9 = new string[] { "GAMES AND INTERACTIVE MEDIA", "LITERATURE", "MUSICAL AND AUDIBLE MEDIA", "VISUAL MEDIA", "HUMANITY", "DRUGS 3.0", "CONSCIOUSNESS AND DREAMS" };
+                string[] _nombresSubClasificaciones9 = new string[] { "INTER LAINCHAN", "LIT LAINCHAN", "MUSIC LAINCHAN", "VIS LAINCHAN", "HUM LAINCHAN", "DRG LAINCHAN", "ZZZ LAINCHAN" };
                 for (int i = 0; i < _nombresSubClasificaciones9.Length; i++)
-                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion() {
-                        ID = _nombresSubClasificaciones.Length  + _nombresSubClasificaciones2.Length + 
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
                              _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
                              _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
                              _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length + 1 + i,
                         DESCR = _nombresSubClasificaciones9[i],
-                        ID_CLASIFICACION = 9 });
+                        ID_CLASIFICACION = 9
+                    });
 
-                string[] _nombresSubClasificaciones10 = new string[] { "LAYER", "QUESTIONS AND COMPLAINTS", "RANDOM" };
+                string[] _nombresSubClasificaciones10 = new string[] { "LAYER LAINCHAN", "Q LAINCHAN", "R LAINCHAN" };
                 for (int i = 0; i < _nombresSubClasificaciones10.Length; i++)
-                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion() {
-                        ID = _nombresSubClasificaciones.Length  + _nombresSubClasificaciones2.Length +
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
                              _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
                              _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
                              _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
                              _nombresSubClasificaciones9.Length + 1 + i,
                         DESCR = _nombresSubClasificaciones10[i],
-                        ID_CLASIFICACION = 10 });
+                        ID_CLASIFICACION = 10
+                    });
 
-                string[] _nombresSubClasificaciones11 = new string[] { "CULT", "PSY" };
+                string[] _nombresSubClasificaciones11 = new string[] { "CULT LAINCHAN", "PSY LAINCHAN" };
                 for (int i = 0; i < _nombresSubClasificaciones11.Length; i++)
-                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion() {
-                        ID = _nombresSubClasificaciones.Length  + _nombresSubClasificaciones2.Length +
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
                              _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
                              _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
                              _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
                              _nombresSubClasificaciones9.Length + _nombresSubClasificaciones10.Length + 1 + i,
                         DESCR = _nombresSubClasificaciones11[i],
-                        ID_CLASIFICACION = 11 });
+                        ID_CLASIFICACION = 11
+                    });
 
-                string[] _nombresSubClasificaciones12 = new string[] { "mega", "random" };
+                string[] _nombresSubClasificaciones12 = new string[] { "MEGA LAINCHAN", "RND LAINCHAN" };
                 for (int i = 0; i < _nombresSubClasificaciones12.Length; i++)
-                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion() {
-                        ID = _nombresSubClasificaciones.Length  + _nombresSubClasificaciones2.Length +
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
                              _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
                              _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
                              _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
                              _nombresSubClasificaciones9.Length + _nombresSubClasificaciones10.Length +
                              _nombresSubClasificaciones11.Length + 1 + i,
                         DESCR = _nombresSubClasificaciones12[i],
-                        ID_CLASIFICACION = 12 });
+                        ID_CLASIFICACION = 12
+                    });
+
+                #endregion
+
                 #endregion
             }
             catch (System.Exception exc)
@@ -237,24 +266,24 @@ namespace FLAMINIS
                 _diccionario.Add("ADULT REQUESTS", "http://boards.4chan.org/r/");
                 #endregion
                 #region lainchan
-                _diccionario.Add("PROGRAMMING", "https://lainchan.org/\u03BB/index.html");
-                _diccionario.Add("DIY", "https://lainchan.org/Δ/index.html");
-                _diccionario.Add("SEC", "https://lainchan.org/sec/index.html");
-                _diccionario.Add("TECH", "https://lainchan.org/Ω/index.html");
-                _diccionario.Add("INTER", "https://lainchan.org/inter/index.html");
-                _diccionario.Add("LIT", "https://lainchan.org/lit/index.html");
+                _diccionario.Add("PROGRAMMING LAINCHAN", "https://lainchan.org/\u03BB/index.html");
+                _diccionario.Add("DO IT YOURSELF LAINCHAN", "https://lainchan.org/Δ/index.html");
+                _diccionario.Add("SEC LAINCHAN", "https://lainchan.org/sec/index.html");
+                _diccionario.Add("TECH LAINCHAN", "https://lainchan.org/Ω/index.html");
+                _diccionario.Add("INTER LAINCHAN", "https://lainchan.org/inter/index.html");
+                _diccionario.Add("LIT LAINCHAN", "https://lainchan.org/lit/index.html");
                 _diccionario.Add("MUSIC LAINCHAN", "https://lainchan.org/music/index.html");
-                _diccionario.Add("VIS", "https://lainchan.org/vis/index.html");
-                _diccionario.Add("HUM", "https://lainchan.org/hum/index.html");
-                _diccionario.Add("DRG", "https://lainchan.org/drug/index.html");
-                _diccionario.Add("ZZZ", "https://lainchan.org/zzz/index.html");
-                _diccionario.Add("LAYER", "https://lainchan.org/layer/index.html");
-                _diccionario.Add("Q", "https://lainchan.org/q/index.html");
-                _diccionario.Add("R", "https://lainchan.org/r/index.html");
-                _diccionario.Add("CULT", "https://lainchan.org/culture/index.html");
-                _diccionario.Add("PSY", "https://lainchan.org/psy/index.html");
-                _diccionario.Add("MEGA", "https://lainchan.org/mega/index.html");
-                _diccionario.Add("RND", "https://lainchan.org/random/index.html");
+                _diccionario.Add("VIS LAINCHAN", "https://lainchan.org/vis/index.html");
+                _diccionario.Add("HUM LAINCHAN", "https://lainchan.org/hum/index.html");
+                _diccionario.Add("DRG LAINCHAN", "https://lainchan.org/drug/index.html");
+                _diccionario.Add("ZZZ LAINCHAN", "https://lainchan.org/zzz/index.html");
+                _diccionario.Add("LAYER LAINCHAN", "https://lainchan.org/layer/index.html");
+                _diccionario.Add("Q LAINCHAN", "https://lainchan.org/q/index.html");
+                _diccionario.Add("R LAINCHAN", "https://lainchan.org/r/index.html");
+                _diccionario.Add("CULT LAINCHAN", "https://lainchan.org/culture/index.html");
+                _diccionario.Add("PSY LAINCHAN", "https://lainchan.org/psy/index.html");
+                _diccionario.Add("MEGA LAINCHAN", "https://lainchan.org/mega/index.html");
+                _diccionario.Add("RND LAINCHAN", "https://lainchan.org/random/index.html");
                 #endregion
             }
             catch (System.Exception exc)
@@ -283,30 +312,33 @@ namespace FLAMINIS
         {
             try
             {
-            /*    var _cliente = new HttpClient();
-                var _respuesta = await _cliente.GetByteArrayAsync("https://lainchan.org/");
+                var _cliente = new HttpClient();
+                var _respuesta = await _cliente.GetByteArrayAsync(_url);
                 System.String source = System.Text.Encoding.GetEncoding("utf-8").GetString(_respuesta, 0, _respuesta.Length - 1);
                 source = WebUtility.HtmlDecode(source);
                 var _doc = new HtmlAgilityPack.HtmlDocument();
                 _doc.LoadHtml(source);
-              */  //foreach (HtmlAgilityPack.HtmlNode link in _doc.DocumentNode.SelectNodes("//a[@href]"))
-                //{
-                //    HtmlAgilityPack.HtmlAttribute att = link.Attributes["href"];
-                //    if (!string.IsNullOrEmpty(att.Value))
-                //        if (att.Value.StartsWith("magnet:?"))
-                //        {
-                //            var _elementos = att.Value.Split('&');
-                //            string encodedString = System.Web.HttpUtility.HtmlEncode(_elementos.FirstOrDefault(x => x.StartsWith("dn="))).Replace('+', ' ').Remove(0, 3);
-                //            _lista.Add(new Herramientas.ListaTorrents()
-                //            {
-                //                Categoria = System.Convert.ToInt32(Herramientas.Enumeradores.eDatosPorDefault.CATEGORIA_POR_DEFECTO),
-                //                Direccion = att.Value,
-                //                Fecha = _fecha,
-                //                NombreAmigable = encodedString,
-                //                Seleccionado = false
-                //            });
-                //        }
-                //}
+                foreach (HtmlAgilityPack.HtmlNode _data in _doc.DocumentNode.ChildNodes)
+                {
+                    var _nodos = _data.ChildNodes;
+                    if (_nodos != null)
+                        if (_nodos.Any())
+                        {
+                            var _subNodos = _nodos.ToList();
+                            var _cuerpo = _subNodos.FirstOrDefault(x => x.Name == "body");
+                            if (_cuerpo != null)
+                            {
+                                var _detalleCuerpo = _cuerpo.ChildNodes;
+                                if(_detalleCuerpo != null)
+                                    if(_detalleCuerpo.Any())
+                                        foreach (var item2 in _detalleCuerpo)
+                                        {
+                                            var aaaa = item2;
+                                            var xax = aaaa.Attributes.Where(x => x.Value == "bar top");
+                                        }
+                            }
+                        }
+                }
             }
             catch (System.Exception exc)
             {
@@ -363,6 +395,12 @@ namespace FLAMINIS
             }
 
             var _elegido = _diccionario.FirstOrDefault(x => x.Key == _seleccion.DESCR);
+            if (string.IsNullOrEmpty(_elegido.Value))
+            {
+                System.Windows.MessageBox.Show("La seleccion elegida no cuenta con una url asociada");
+                return;
+            }
+
             Buscar(_elegido.Value);
         }
     }
