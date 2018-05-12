@@ -318,25 +318,27 @@ namespace FLAMINIS
                 source = WebUtility.HtmlDecode(source);
                 var _doc = new HtmlAgilityPack.HtmlDocument();
                 _doc.LoadHtml(source);
-                var aa = _doc;
-                //foreach (HtmlAgilityPack.HtmlNode link in _doc.DocumentNode)
-                //  {
-                //    HtmlAgilityPack.HtmlAttribute att = link.Attributes["href"];
-                //    if (!string.IsNullOrEmpty(att.Value))
-                //        if (att.Value.StartsWith("magnet:?"))
-                //        {
-                //            var _elementos = att.Value.Split('&');
-                //            string encodedString = System.Web.HttpUtility.HtmlEncode(_elementos.FirstOrDefault(x => x.StartsWith("dn="))).Replace('+', ' ').Remove(0, 3);
-                //            _lista.Add(new Herramientas.ListaTorrents()
-                //            {
-                //                Categoria = System.Convert.ToInt32(Herramientas.Enumeradores.eDatosPorDefault.CATEGORIA_POR_DEFECTO),
-                //                Direccion = att.Value,
-                //                Fecha = _fecha,
-                //                NombreAmigable = encodedString,
-                //                Seleccionado = false
-                //            });
-                //        }
-                // }
+                foreach (HtmlAgilityPack.HtmlNode _data in _doc.DocumentNode.ChildNodes)
+                {
+                    var _nodos = _data.ChildNodes;
+                    if (_nodos != null)
+                        if (_nodos.Any())
+                        {
+                            var _subNodos = _nodos.ToList();
+                            var _cuerpo = _subNodos.FirstOrDefault(x => x.Name == "body");
+                            if (_cuerpo != null)
+                            {
+                                var _detalleCuerpo = _cuerpo.ChildNodes;
+                                if(_detalleCuerpo != null)
+                                    if(_detalleCuerpo.Any())
+                                        foreach (var item2 in _detalleCuerpo)
+                                        {
+                                            var aaaa = item2;
+                                            var xax = aaaa.Attributes.Where(x => x.Value == "bar top");
+                                        }
+                            }
+                        }
+                }
             }
             catch (System.Exception exc)
             {
