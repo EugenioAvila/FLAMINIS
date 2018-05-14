@@ -312,12 +312,14 @@ namespace FLAMINIS
         {
             try
             {
+                var _plataformaSeleccionada = ComboPlataforma.SelectedItem as Herramientas.Utilerias.cComboBox;
                 var _cliente = new HttpClient();
                 var _respuesta = await _cliente.GetByteArrayAsync(_url);
                 System.String source = System.Text.Encoding.GetEncoding("utf-8").GetString(_respuesta, 0, _respuesta.Length - 1);
                 source = WebUtility.HtmlDecode(source);
                 var _doc = new HtmlAgilityPack.HtmlDocument();
                 _doc.LoadHtml(source);
+                string classToFind = "post-image";
                 foreach (HtmlAgilityPack.HtmlNode _data in _doc.DocumentNode.ChildNodes)
                 {
                     var _nodos = _data.ChildNodes;
@@ -329,12 +331,20 @@ namespace FLAMINIS
                             if (_cuerpo != null)
                             {
                                 var _detalleCuerpo = _cuerpo.ChildNodes;
-                                if(_detalleCuerpo != null)
-                                    if(_detalleCuerpo.Any())
+                                if (_detalleCuerpo != null)
+                                    if (_detalleCuerpo.Any())
                                         foreach (var item2 in _detalleCuerpo)
                                         {
-                                            var aaaa = item2;
-                                            var xax = aaaa.Attributes.Where(x => x.Value == "bar top");
+                                            switch (_plataformaSeleccionada.ID)
+                                            {
+                                                case 2://lainchan
+                                                    var _elementos2 = _doc.DocumentNode.SelectNodes(string.Format("//*[contains(@class,'{0}')]", classToFind));
+                                                    break;
+
+                                                default:
+                                                    break;
+                                            }
+
                                         }
                             }
                         }
