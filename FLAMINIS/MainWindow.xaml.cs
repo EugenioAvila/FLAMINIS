@@ -350,14 +350,13 @@ namespace FLAMINIS
                                                                 bitmap.UriSource = new System.Uri(_urlImagen, System.UriKind.Absolute);
                                                                 bitmap.EndInit();
                                                                 image.Source = bitmap;
-                                                                image.Source = bitmap;
+                                                                lstDatos.Items.Add(new { Path = _urlImagen });
                                                             }
                                                     break;
 
                                                 default:
                                                     break;
                                             }
-
                                         }
                             }
                         }

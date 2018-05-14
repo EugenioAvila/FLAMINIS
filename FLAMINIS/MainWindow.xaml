@@ -41,7 +41,7 @@
             </Grid>
         </GroupBox>
         <Separator Height="20" Grid.Column="0" Grid.Row="1"></Separator>
-        <ListBox Name="lstDatos">
+        <ListBox Name="lstDatos" Grid.Column="0" Grid.Row="2">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel/>
@@ -49,7 +49,7 @@
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Image Source="{Binding Path, Mode=TwoWay}"/>
+                    <Image Source="{Binding Path }"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
