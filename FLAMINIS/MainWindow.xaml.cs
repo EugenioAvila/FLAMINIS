@@ -339,6 +339,19 @@ namespace FLAMINIS
                                             {
                                                 case 2://lainchan
                                                     var _elementos2 = _doc.DocumentNode.SelectNodes(string.Format("//*[contains(@class,'{0}')]", classToFind));
+                                                    if (_elementos2 != null)
+                                                        if (_elementos2.Any())
+                                                            foreach (var _im in _elementos2)
+                                                            {
+                                                                var image = new System.Windows.Controls.Image();
+                                                                var _urlImagen = "https://lainchan.org" + "";
+                                                                System.Windows.Media.Imaging.BitmapImage bitmap = new System.Windows.Media.Imaging.BitmapImage();
+                                                                bitmap.BeginInit();
+                                                                bitmap.UriSource = new System.Uri(_urlImagen, System.UriKind.Absolute);
+                                                                bitmap.EndInit();
+                                                                image.Source = bitmap;
+                                                                image.Source = bitmap;
+                                                            }
                                                     break;
 
                                                 default:

@@ -41,17 +41,15 @@
             </Grid>
         </GroupBox>
         <Separator Height="20" Grid.Column="0" Grid.Row="1"></Separator>
-        <ListBox Name="lstBoards" Grid.Column="0" Grid.Row="2">
+        <ListBox Name="lstDatos">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel HorizontalAlignment="Left" />
+                    <WrapPanel/>
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Controls:Tile Width="{Binding WidthTile}" Title="{Binding NombreTile}" Height="{Binding HeigTile}" Background="{Binding ColorTile}">
-                        <Controls:Tile Width="{Binding WidthTile}" Title="{Binding NombreTile}" Height="{Binding HeigTile}" Background="{Binding ColorTile}"></Controls:Tile>
-                    </Controls:Tile>
+                    <Image Source="{Binding Path, Mode=TwoWay}"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
