@@ -40,16 +40,15 @@
                 <Button Grid.Column="6" Grid.Row="0" Content="Buscar" Background="LightBlue" HorizontalAlignment="Center" Width="130" Click="Button_Click"></Button>
             </Grid>
         </GroupBox>
-        <Separator Height="20" Grid.Column="0" Grid.Row="1"></Separator>
-        <ListBox Name="lstDatos">
+        <ListBox Name="lstMenuPrincipal" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel/>
+                    <WrapPanel HorizontalAlignment="Left" />
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Image Source="{Binding Path, Mode=TwoWay}"/>
+                    <Image Source="{Binding _url}"></Image>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

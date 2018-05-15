@@ -312,6 +312,7 @@ namespace FLAMINIS
         {
             try
             {
+                System.Collections.Generic.List<Herramientas.ClasesCustomizadas.cPrincipal> _menu = new System.Collections.Generic.List<Herramientas.ClasesCustomizadas.cPrincipal>();
                 var _plataformaSeleccionada = ComboPlataforma.SelectedItem as Herramientas.Utilerias.cComboBox;
                 var _cliente = new HttpClient();
                 var _respuesta = await _cliente.GetByteArrayAsync(_url);
@@ -343,25 +344,32 @@ namespace FLAMINIS
                                                         if (_elementos2.Any())
                                                             foreach (var _im in _elementos2)
                                                             {
-                                                                var image = new System.Windows.Controls.Image();
-                                                                var _urlImagen = "https://lainchan.org" + "";
-                                                                System.Windows.Media.Imaging.BitmapImage bitmap = new System.Windows.Media.Imaging.BitmapImage();
-                                                                bitmap.BeginInit();
-                                                                bitmap.UriSource = new System.Uri(_urlImagen, System.UriKind.Absolute);
-                                                                bitmap.EndInit();
-                                                                image.Source = bitmap;
-                                                                image.Source = bitmap;
+                                                                var _src = _im.Attributes.FirstOrDefault(x => x.Name == "src");
+                                                                if (_src != null)
+                                                                    if (!string.IsNullOrEmpty(_src.Value))
+                                                                    {
+                                                                        var _urlImagen = "https://lainchan.org" + _src.Value;
+                                                                        if (!_menu.Any(x => x._url.Trim() == _urlImagen.Trim()))
+                                                                        {
+                                                                            _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal()
+                                                                            {
+                                                                                _url = _urlImagen
+                                                                            });
+                                                                        }
+                                                                    }
                                                             }
                                                     break;
 
                                                 default:
                                                     break;
                                             }
-
                                         }
                             }
                         }
                 }
+
+
+                lstMenuPrincipal.ItemsSource = _menu;
             }
             catch (System.Exception exc)
             {
