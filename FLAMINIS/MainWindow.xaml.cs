@@ -14,11 +14,11 @@ namespace FLAMINIS
         public System.Collections.Generic.Dictionary<string, string> _diccionario = new System.Collections.Generic.Dictionary<string, string>();
         public MainWindow()
         {
+            //BuscarPrueba();
             InitializeComponent();
             InicializaControles();
             LimpiaCombos();
             CargaDiccionario();
-            //BuscarPrueba();
         }
 
         private void InicializaControles()
@@ -32,6 +32,7 @@ namespace FLAMINIS
                 _elementos.Add(new Herramientas.Utilerias.cComboBox() { ID = 2, DESCR = "LAINCHAN" });
                 _elementos.Add(new Herramientas.Utilerias.cComboBox() { ID = 3, DESCR = "XCHAN" });
                 _elementos.Add(new Herramientas.Utilerias.cComboBox() { ID = 4, DESCR = "UBOACHAN" });
+                _elementos.Add(new Herramientas.Utilerias.cComboBox() { ID = 5, DESCR = "TOHNO-CHAN" });
                 ComboPlataforma.DisplayMemberPath = "DESCR";
                 ComboPlataforma.ItemsSource = _elementos;
                 ComboPlataforma.SelectedIndex = 0;
@@ -53,7 +54,12 @@ namespace FLAMINIS
                 for (int i = 0; i < _nombresClasificaciones4.Length; i++)
                     _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = _nombresClasificaciones4[i], ID = _nombresClasificaciones.Length + _nombresClasificaciones2.Length + _nombresClasificaciones3.Length + i + 1, ID_PLATAFORMA = 4 });
 
+                string[] _nombresClasificaciones5 = new string[] { "MEDIA/ENTERTAINMENT", "HOBBIES/INTERESTS", "GENERAL DISCUSSION", "OTHER TOHNO CHAN" };
+                for (int i = 0; i < _nombresClasificaciones5.Length; i++)
+                    _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = _nombresClasificaciones5[i], ID = _nombresClasificaciones.Length + _nombresClasificaciones2.Length + _nombresClasificaciones3.Length + _nombresClasificaciones4.Length + i + 1, ID_PLATAFORMA = 5 });
+
                 #endregion
+
                 #region sub clasificaciones
                 #region 4chan
                 string[] _nombresSubClasificaciones = new string[] { "ANIME & MANGA", "ANIME/CUTE", "ANIME/WALLPAPERS", "MECHA", "COSPLAY & EGL", "CUTE/MALE", "FLASH", "TRANSPORTATION", "OTAKU CULTURE" };
@@ -304,6 +310,82 @@ namespace FLAMINIS
                         ID_CLASIFICACION = 19
                     });
                 #endregion
+                #region tohno chan
+                string[] _nombresSubClasificaciones20 = new string[] { "-ANIME", "-MANGA", "-VIDEO GAMES", "-TOUHOU", "-MUSIC", "-VISUAL NOVEL" };
+                for (int i = 0; i < _nombresSubClasificaciones20.Length; i++)
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
+                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
+                             _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
+                             _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
+                             _nombresSubClasificaciones9.Length + _nombresSubClasificaciones10.Length +
+                             _nombresSubClasificaciones11.Length + _nombresSubClasificaciones12.Length +
+                             _nombresSubClasificaciones13.Length + _nombresSubClasificaciones14.Length +
+                             _nombresSubClasificaciones15.Length + _nombresSubClasificaciones16.Length +
+                             _nombresSubClasificaciones17.Length + _nombresSubClasificaciones18.Length +
+                             _nombresSubClasificaciones19.Length + 1 + i,
+                        DESCR = _nombresSubClasificaciones20[i],
+                        ID_CLASIFICACION = 20
+                    });
+
+                string[] _nombresSubClasificaciones21 = new string[] { "-COLLECTIBLES", "-SCIENCE", "-CREATIVITY" };
+                for (int i = 0; i < _nombresSubClasificaciones21.Length; i++)
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
+                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
+                             _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
+                             _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
+                             _nombresSubClasificaciones9.Length + _nombresSubClasificaciones10.Length +
+                             _nombresSubClasificaciones11.Length + _nombresSubClasificaciones12.Length +
+                             _nombresSubClasificaciones13.Length + _nombresSubClasificaciones14.Length +
+                             _nombresSubClasificaciones15.Length + _nombresSubClasificaciones16.Length +
+                             _nombresSubClasificaciones17.Length + _nombresSubClasificaciones18.Length +
+                             _nombresSubClasificaciones19.Length + _nombresSubClasificaciones20.Length + 1 + i,
+                        DESCR = _nombresSubClasificaciones21[i],
+                        ID_CLASIFICACION = 21
+                    });
+
+                string[] _nombresSubClasificaciones22 = new string[] { "-RONERY", "-WAIFU", "-OTAKU TANGENTS"};
+                for (int i = 0; i < _nombresSubClasificaciones22.Length; i++)
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
+                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
+                             _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
+                             _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
+                             _nombresSubClasificaciones9.Length + _nombresSubClasificaciones10.Length +
+                             _nombresSubClasificaciones11.Length + _nombresSubClasificaciones12.Length +
+                             _nombresSubClasificaciones13.Length + _nombresSubClasificaciones14.Length +
+                             _nombresSubClasificaciones15.Length + _nombresSubClasificaciones16.Length +
+                             _nombresSubClasificaciones17.Length + +_nombresSubClasificaciones18.Length +
+                             _nombresSubClasificaciones19.Length + _nombresSubClasificaciones20.Length +
+                             _nombresSubClasificaciones21.Length + 1 + i,
+                        DESCR = _nombresSubClasificaciones22[i],
+                        ID_CLASIFICACION = 22
+                    });
+
+                string[] _nombresSubClasificaciones23 = new string[] { "-IRC", "-DATA", "-ARCHIVE", "-HENTAI", "-KEMONO FRIENDS", "-DUMPS","-FUNPOSTING","-DEBATES" };
+                for (int i = 0; i < _nombresSubClasificaciones23.Length; i++)
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
+                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
+                             _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
+                             _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
+                             _nombresSubClasificaciones9.Length + _nombresSubClasificaciones10.Length +
+                             _nombresSubClasificaciones11.Length + _nombresSubClasificaciones12.Length +
+                             _nombresSubClasificaciones13.Length + _nombresSubClasificaciones14.Length +
+                             _nombresSubClasificaciones15.Length + _nombresSubClasificaciones16.Length +
+                             _nombresSubClasificaciones17.Length + +_nombresSubClasificaciones18.Length +
+                             _nombresSubClasificaciones19.Length + _nombresSubClasificaciones20.Length +
+                             _nombresSubClasificaciones21.Length + _nombresSubClasificaciones22.Length +
+                             1 + i,
+                        DESCR = _nombresSubClasificaciones23[i],
+                        ID_CLASIFICACION = 23
+                    });
+                #endregion
                 #endregion
             }
             catch (System.Exception exc)
@@ -470,7 +552,7 @@ namespace FLAMINIS
             try
             {
                 var _cliente = new HttpClient();
-                var _respuesta = await _cliente.GetByteArrayAsync("http://uboachan.net");
+                var _respuesta = await _cliente.GetByteArrayAsync("http://tohno-chan.com/pic/");
                 System.String source = System.Text.Encoding.GetEncoding("utf-8").GetString(_respuesta, 0, _respuesta.Length - 1);
                 source = WebUtility.HtmlDecode(source);
                 var _doc = new HtmlAgilityPack.HtmlDocument();
