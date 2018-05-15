@@ -424,14 +424,14 @@ namespace FLAMINIS
             var _seleccion = ComboSubClasificacion.SelectedItem as Herramientas.Utilerias.cComboBoxSubClasificacion;
             if (_seleccion == null)
             {
-                System.Windows.MessageBox.Show("Seleccione una sub clasificacion");
+                System.Windows.MessageBox.Show("Seleccione una sub clasificación");
                 return;
             }
 
             var _elegido = _diccionario.FirstOrDefault(x => x.Key == _seleccion.DESCR);
             if (string.IsNullOrEmpty(_elegido.Value))
             {
-                System.Windows.MessageBox.Show("La seleccion elegida no cuenta con una url asociada");
+                System.Windows.MessageBox.Show("La selección elegida no cuenta con una URL asociada");
                 return;
             }
 
@@ -458,7 +458,6 @@ namespace FLAMINIS
                             {
                                 System.Windows.MessageBox.Show(ex.Message);
                             }
-
                         }
                     }
                 }
