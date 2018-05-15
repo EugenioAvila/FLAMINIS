@@ -320,7 +320,7 @@ namespace FLAMINIS
                 source = WebUtility.HtmlDecode(source);
                 var _doc = new HtmlAgilityPack.HtmlDocument();
                 _doc.LoadHtml(source);
-                string classToFind = "post-image";
+                string classToFind = "";
                 foreach (HtmlAgilityPack.HtmlNode _data in _doc.DocumentNode.ChildNodes)
                 {
                     var _nodos = _data.ChildNodes;
@@ -339,6 +339,7 @@ namespace FLAMINIS
                                             switch (_plataformaSeleccionada.ID)
                                             {
                                                 case 2://lainchan
+                                                    classToFind = "post-image";
                                                     var _elementos2 = _doc.DocumentNode.SelectNodes(string.Format("//*[contains(@class,'{0}')]", classToFind));
                                                     if (_elementos2 != null)
                                                         if (_elementos2.Any())

@@ -13,9 +13,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="70"></RowDefinition>
-            <RowDefinition Height="10"></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <GroupBox Header="Filtros de busquieda" Grid.Column="0" Grid.Row="0">
             <Grid>
@@ -40,17 +38,23 @@
                 <Button Grid.Column="6" Grid.Row="0" Content="Buscar" Background="LightBlue" HorizontalAlignment="Center" Width="130" Click="Button_Click"></Button>
             </Grid>
         </GroupBox>
-        <ListBox Name="lstMenuPrincipal" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2">
-            <ListBox.ItemsPanel>
+        <ListView Name="lstMenuPrincipal" Grid.Column="0" Grid.Row="1">
+            <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel HorizontalAlignment="Left" />
+                    <WrapPanel Width="{Binding (FrameworkElement.ActualWidth), 
+            RelativeSource={RelativeSource AncestorType=ScrollContentPresenter}}"
+            ItemWidth="{Binding (ListView.View).ItemWidth, 
+            RelativeSource={RelativeSource AncestorType=ListView}}"
+            MinWidth="{Binding ItemWidth, RelativeSource={RelativeSource Self}}"
+            ItemHeight="{Binding (ListView.View).ItemHeight, 
+            RelativeSource={RelativeSource AncestorType=ListView}}" />
                 </ItemsPanelTemplate>
-            </ListBox.ItemsPanel>
-            <ListBox.ItemTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
                 <DataTemplate>
                     <Image Source="{Binding _url}"></Image>
                 </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Controls:MetroWindow>
