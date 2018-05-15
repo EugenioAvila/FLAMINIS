@@ -349,10 +349,13 @@ namespace FLAMINIS
                                                                     if (!string.IsNullOrEmpty(_src.Value))
                                                                     {
                                                                         var _urlImagen = "https://lainchan.org" + _src.Value;
-                                                                        _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal()
+                                                                        if (!_menu.Any(x => x._url.Trim() == _urlImagen.Trim()))
                                                                         {
-                                                                            _url = _urlImagen
-                                                                        });
+                                                                            _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal()
+                                                                            {
+                                                                                _url = _urlImagen
+                                                                            });
+                                                                        }
                                                                     }
                                                             }
                                                     break;
