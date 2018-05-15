@@ -525,29 +525,29 @@ namespace FLAMINIS
                 _diccionario.Add("SUGGESTIONS / META", "https://uboachan.net/sugg/");
                 #endregion
                 #region tohno chan
-                _diccionario.Add("-ANIME", "https://uboachan.net/yn/");
-                _diccionario.Add("-MANGA", "https://uboachan.net/yndd/");
-                _diccionario.Add("-VIDEO GAMES", "https://uboachan.net/fg/");
-                _diccionario.Add("-TOUHOU", "https://uboachan.net/yume/");
-                _diccionario.Add("-MUSIC", "https://uboachan.net/fg/");
-                _diccionario.Add("-VISUAL NOVEL", "https://uboachan.net/yume/");
+                _diccionario.Add("-ANIME", "http://tohno-chan.com/an/");
+                _diccionario.Add("-MANGA", "http://tohno-chan.com/ma/");
+                _diccionario.Add("-VIDEO GAMES", "http://tohno-chan.com/vg/");
+                _diccionario.Add("-TOUHOU", "http://tohno-chan.com/foe/");
+                _diccionario.Add("-MUSIC", "http://tohno-chan.com/mp3/");
+                _diccionario.Add("-VISUAL NOVEL", "http://tohno-chan.com/vn/");
 
-                _diccionario.Add("-COLLECTIBLES", "https://uboachan.net/o/");
-                _diccionario.Add("-SCIENCE", "https://uboachan.net/lit/");
-                _diccionario.Add("-CREATIVITY", "https://uboachan.net/media/");
+                _diccionario.Add("-COLLECTIBLES", "http://tohno-chan.com/fig/");
+                _diccionario.Add("-SCIENCE", "http://tohno-chan.com/navi/");
+                _diccionario.Add("-CREATIVITY", "http://tohno-chan.com/cr/");
 
-                _diccionario.Add("-RONERY", "https://uboachan.net/ot/");
-                _diccionario.Add("-WAIFU", "https://uboachan.net/hikki/");
-                _diccionario.Add("-OTAKU TANGENTS", "https://uboachan.net/cc/");
+                _diccionario.Add("-RONERY", "http://tohno-chan.com/so/");
+                _diccionario.Add("-WAIFU", "http://tohno-chan.com/mai/");
+                _diccionario.Add("-OTAKU TANGENTS", "http://tohno-chan.com/ot/");
 
-                _diccionario.Add("-IRC", "https://uboachan.net/yn/");
-                _diccionario.Add("-DATA", "https://uboachan.net/yndd/");
-                _diccionario.Add("-ARCHIVE", "https://uboachan.net/fg/");
-                _diccionario.Add("-HENTAI", "https://uboachan.net/yume/");
-                _diccionario.Add("-KEMONO FRIENDS", "https://uboachan.net/fg/");
-                _diccionario.Add("-DUMPS", "https://uboachan.net/yume/");
-                _diccionario.Add("-FUNPOSTING", "https://uboachan.net/fg/");
-                _diccionario.Add("-DEBATES", "https://uboachan.net/yume/");
+                _diccionario.Add("-IRC", "http://tohno-chan.com/irc/");
+                _diccionario.Add("-DATA", "http://tohno-chan.com/ddl/");
+                _diccionario.Add("-ARCHIVE", "http://tohno-chan.com/arc/");
+                _diccionario.Add("-HENTAI", "http://tohno-chan.com/ns/");
+                _diccionario.Add("-KEMONO FRIENDS", "http://tohno-chan.com/kf");
+                _diccionario.Add("-DUMPS", "http://tohno-chan.com/pic");
+                _diccionario.Add("-FUNPOSTING", "http://tohno-chan.com/lol/");
+                _diccionario.Add("-DEBATES", "http://tohno-chan.com/tat/");
                 #endregion
             }
             catch (System.Exception exc)
@@ -691,25 +691,29 @@ namespace FLAMINIS
                                                 #endregion
                                                 #region tohno chan
                                                 case 5:
-                                                    _doc.DocumentNode.Descendants("img").Select(e => e.GetAttributeValue("src", null)).Where(s => !System.String.IsNullOrEmpty(s)).ToList().ForEach(z =>
+                                                    _doc.DocumentNode.Descendants("a").Select(e => e.Attributes["href"]).ToList().ForEach(z =>
                                                     {
-                                                        //http://tohno-chan.com/vn/thumb/152389412183s.jpg
-                                                        var _validacion = z.Split('.');
-                                                        if (_validacion != null)
-                                                            if (_validacion.Any())
-                                                            {
-                                                                var _ex = _validacion.LastOrDefault();
-                                                                if (_ex != "php" && _ex != "js")
+                                                        if (z != null)
+                                                            if (z.Value != null)
+                                                                if (!string.IsNullOrEmpty(z.Value))
                                                                 {
-                                                                    if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
-                                                                    {
-                                                                        _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal()
+                                                                    var _validacion = z.Value.Split('.');
+                                                                    if (_validacion != null)
+                                                                        if (_validacion.Any())
                                                                         {
-                                                                            _url = "http://tohno-chan.com" + z
-                                                                        });
-                                                                    }
+                                                                            var _ex = _validacion.LastOrDefault();
+                                                                            if (_ex == "png" || _ex == "jpg")
+                                                                            {
+                                                                                if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z.Value)))
+                                                                                {
+                                                                                    _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal()
+                                                                                    {
+                                                                                        _url = z.Value
+                                                                                    });
+                                                                                }
+                                                                            }
+                                                                        }
                                                                 }
-                                                            }
                                                     });
                                                     break;
                                                 #endregion
