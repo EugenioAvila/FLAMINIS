@@ -7,6 +7,8 @@ namespace FLAMINIS
 {
     public partial class MainWindow : MahApps.Metro.Controls.MetroWindow
     {
+        WebClient webClient;
+        System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
         private System.Collections.Generic.List<Herramientas.Utilerias.cComboBoxClasificacion> _clasificaciones = new System.Collections.Generic.List<Herramientas.Utilerias.cComboBoxClasificacion>();
         private System.Collections.Generic.List<Herramientas.Utilerias.cComboBoxSubClasificacion> _subClasificaciones = new System.Collections.Generic.List<Herramientas.Utilerias.cComboBoxSubClasificacion>();
         public System.Collections.Generic.Dictionary<string, string> _diccionario = new System.Collections.Generic.Dictionary<string, string>();
@@ -434,6 +436,37 @@ namespace FLAMINIS
             }
 
             Buscar(_elegido.Value);
+        }
+
+        private void Button_Click_1(object sender, System.Windows.RoutedEventArgs e)
+        {
+            if (lstMenuPrincipal.Items != null)
+                if (lstMenuPrincipal.Items.Count > 0)
+                {
+                    var _elementos = lstMenuPrincipal.Items.Cast<Herramientas.ClasesCustomizadas.cPrincipal>().Select(item => item._url).ToList();
+                    foreach (var item in _elementos)
+                    {
+                        using (webClient = new WebClient())
+                        {
+                            System.Uri URL = new System.Uri(item);
+                            sw.Start();
+                            try
+                            {
+                                webClient.DownloadFile(URL, System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) +"/" + new System.Random().Next(1,5000) + "." + Path.GetExtension(item));
+                            }
+                            catch (System.Exception ex)
+                            {
+                                System.Windows.MessageBox.Show(ex.Message);
+                            }
+
+                        }
+                    }
+                }
+                else
+                {
+                    System.Windows.MessageBox.Show("No hay resultados para descargar");
+                    return;
+                }
         }
     }
 }
