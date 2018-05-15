@@ -13,9 +13,8 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="70"></RowDefinition>
-            <RowDefinition Height="10"></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <GroupBox Header="Filtros de busquieda" Grid.Column="0" Grid.Row="0">
             <Grid>
@@ -40,17 +39,37 @@
                 <Button Grid.Column="6" Grid.Row="0" Content="Buscar" Background="LightBlue" HorizontalAlignment="Center" Width="130" Click="Button_Click"></Button>
             </Grid>
         </GroupBox>
-        <ListBox Name="lstMenuPrincipal" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2">
-            <ListBox.ItemsPanel>
+        <GroupBox Header="Opciones" Grid.Column="0" Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Button Grid.Column="0" Grid.Row="0" Content="Descargar Imagenes" Background="LightBlue" HorizontalAlignment="Center" Width="130" Click="Button_Click_1"></Button>
+                <Controls:MetroProgressBar Name="progressBar" Grid.Column="2" Grid.Row="0"></Controls:MetroProgressBar>
+            </Grid>
+        </GroupBox>
+        <ListView Name="lstMenuPrincipal" Grid.Column="0" Grid.Row="2">
+            <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel HorizontalAlignment="Left" />
+                    <WrapPanel Width="{Binding (FrameworkElement.ActualWidth), 
+            RelativeSource={RelativeSource AncestorType=ScrollContentPresenter}}"
+            ItemWidth="{Binding (ListView.View).ItemWidth, 
+            RelativeSource={RelativeSource AncestorType=ListView}}"
+            MinWidth="{Binding ItemWidth, RelativeSource={RelativeSource Self}}"
+            ItemHeight="{Binding (ListView.View).ItemHeight, 
+            RelativeSource={RelativeSource AncestorType=ListView}}" />
                 </ItemsPanelTemplate>
-            </ListBox.ItemsPanel>
-            <ListBox.ItemTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Image Source="{Binding _url}"></Image>
+                    <Image Source="{Binding _url}" MaxWidth="250" MaxHeight="250"></Image>
                 </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Controls:MetroWindow>
