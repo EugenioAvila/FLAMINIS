@@ -18,6 +18,7 @@ namespace FLAMINIS
             InicializaControles();
             LimpiaCombos();
             CargaDiccionario();
+            //BuscarPrueba();
         }
 
         private void InicializaControles()
@@ -29,6 +30,7 @@ namespace FLAMINIS
                 _elementos.Add(new Herramientas.Utilerias.cComboBox() { ID = 0, DESCR = "SELECCIONE" });
                 //_elementos.Add(new Herramientas.Utilerias.cComboBox() { ID = 1, DESCR = "4 CHAN" });
                 _elementos.Add(new Herramientas.Utilerias.cComboBox() { ID = 2, DESCR = "LAINCHAN" });
+                _elementos.Add(new Herramientas.Utilerias.cComboBox() { ID = 2, DESCR = "XCHAN" });
                 ComboPlataforma.DisplayMemberPath = "DESCR";
                 ComboPlataforma.ItemsSource = _elementos;
                 ComboPlataforma.SelectedIndex = 0;
@@ -42,6 +44,7 @@ namespace FLAMINIS
                 for (int i = 0; i < _nombresClasificaciones2.Length; i++)
                     _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = _nombresClasificaciones2[i], ID = _nombresClasificaciones.Length + i + 1, ID_PLATAFORMA = 2 });
 
+                string[] _nombresClasificaciones3 = new string[] { }; 
                 #endregion
                 #region sub clasificaciones
                 #region 4chan
@@ -303,6 +306,24 @@ namespace FLAMINIS
                 _datosLimpios.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { ID = 0, DESCR = "SELECCIONE" });
                 ComboClasificacion.ItemsSource = _datosLimpios;
                 ComboClasificacion.SelectedIndex = 0;
+            }
+            catch (System.Exception exc)
+            {
+                throw exc;
+            }
+        }
+
+        public async void BuscarPrueba()
+        {
+            try
+            {
+                var _cliente = new HttpClient();
+                var _respuesta = await _cliente.GetByteArrayAsync("");
+                System.String source = System.Text.Encoding.GetEncoding("utf-8").GetString(_respuesta, 0, _respuesta.Length - 1);
+                source = WebUtility.HtmlDecode(source);
+                var _doc = new HtmlAgilityPack.HtmlDocument();
+                _doc.LoadHtml(source);
+                var aaa = _doc.DocumentNode.ChildNodes;
             }
             catch (System.Exception exc)
             {
