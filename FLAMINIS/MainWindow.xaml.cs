@@ -424,6 +424,24 @@ namespace FLAMINIS
                 _diccionario.Add("HENTAI XCHAN", "https://xchan.pw/board/h/");
                 _diccionario.Add("PORN XCHAN", "https://xchan.pw/board/porn/");
                 #endregion
+                #region uboachan
+                _diccionario.Add("YUME NIKKI GENERAL", "https://uboachan.net/yn/");
+                _diccionario.Add("YUME NIKKI - DREAM DIARY", "https://uboachan.net/yndd/");
+                _diccionario.Add("FANGAMES", "https://uboachan.net/fg/");
+                _diccionario.Add("DREAMS", "https://uboachan.net/yume/");
+
+                _diccionario.Add("ART / OEKAKI", "https://uboachan.net/o/");
+                _diccionario.Add("LITERATURE / FANFIC / POETRY", "https://uboachan.net/lit/");
+                _diccionario.Add("MUSIC / UPLOADS", "https://uboachan.net/media/");
+                _diccionario.Add("OTHER GAMES", "https://uboachan.net/og/");
+                _diccionario.Add("RPGMAKER / GAMEDEV", "https://uboachan.net/ig/");
+
+                _diccionario.Add("OFF-TOPIC", "https://uboachan.net/ot/");
+                _diccionario.Add("NEET / ADVICE", "https://uboachan.net/hikki/");
+                _diccionario.Add("CREEPY-CUTE", "https://uboachan.net/cc/");
+                _diccionario.Add("PARANORMAL / OCCULT", "https://uboachan.net/x/");
+                _diccionario.Add("SUGGESTIONS / META", "https://uboachan.net/sugg/");
+                #endregion
             }
             catch (System.Exception exc)
             {
@@ -548,7 +566,30 @@ namespace FLAMINIS
 
                                                     break;
                                                 #endregion
-
+                                                #region uboachan
+                                                case 4:
+                                                    classToFind = "post-image";
+                                                    var _elementos4 = _doc.DocumentNode.SelectNodes(string.Format("//*[contains(@class,'{0}')]", classToFind));
+                                                    if (_elementos4 != null)
+                                                        if (_elementos4.Any())
+                                                            foreach (var _im in _elementos4)
+                                                            {
+                                                                var _src = _im.Attributes.FirstOrDefault(x => x.Name == "src");
+                                                                if (_src != null)
+                                                                    if (!string.IsNullOrEmpty(_src.Value))
+                                                                    {
+                                                                        var _urlImagen = "https://uboachan.net" + _src.Value;
+                                                                        if (!_menu.Any(x => x._url.Trim() == _urlImagen.Trim()))
+                                                                        {
+                                                                            _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal()
+                                                                            {
+                                                                                _url = _urlImagen
+                                                                            });
+                                                                        }
+                                                                    }
+                                                            }
+                                                    break;
+                                                #endregion
                                                 default:
                                                     break;
                                             }
