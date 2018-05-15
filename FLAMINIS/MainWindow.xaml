@@ -43,14 +43,11 @@
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
                 <Button Grid.Column="0" Grid.Row="0" Content="Descargar Imagenes" Background="LightBlue" HorizontalAlignment="Center" Width="130" Click="Button_Click_1"></Button>
-                <Controls:MetroProgressBar Name="progressBar" Grid.Column="2" Grid.Row="0"></Controls:MetroProgressBar>
             </Grid>
         </GroupBox>
         <ListView Name="lstMenuPrincipal" Grid.Column="0" Grid.Row="2">
