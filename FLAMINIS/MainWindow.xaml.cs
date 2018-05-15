@@ -31,6 +31,7 @@ namespace FLAMINIS
                 //_elementos.Add(new Herramientas.Utilerias.cComboBox() { ID = 1, DESCR = "4 CHAN" });
                 _elementos.Add(new Herramientas.Utilerias.cComboBox() { ID = 2, DESCR = "LAINCHAN" });
                 _elementos.Add(new Herramientas.Utilerias.cComboBox() { ID = 3, DESCR = "XCHAN" });
+                _elementos.Add(new Herramientas.Utilerias.cComboBox() { ID = 4, DESCR = "UBOACHAN" });
                 ComboPlataforma.DisplayMemberPath = "DESCR";
                 ComboPlataforma.ItemsSource = _elementos;
                 ComboPlataforma.SelectedIndex = 0;
@@ -47,6 +48,10 @@ namespace FLAMINIS
                 string[] _nombresClasificaciones3 = new string[] { "GRAL", "SERIOUS BUSINESS", "CONOC & CULT", "18+" };
                 for (int i = 0; i < _nombresClasificaciones3.Length; i++)
                     _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = _nombresClasificaciones3[i], ID = _nombresClasificaciones.Length + _nombresClasificaciones2.Length + i + 1, ID_PLATAFORMA = 3 });
+
+                string[] _nombresClasificaciones4 = new string[] { "YUME NIKKI", "ARTS & ENT", "MISCELLANEOUS" };
+                for (int i = 0; i < _nombresClasificaciones4.Length; i++)
+                    _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = _nombresClasificaciones4[i], ID = _nombresClasificaciones.Length + _nombresClasificaciones2.Length + _nombresClasificaciones3.Length + i + 1, ID_PLATAFORMA = 4 });
 
                 #endregion
                 #region sub clasificaciones
@@ -248,6 +253,57 @@ namespace FLAMINIS
                         ID_CLASIFICACION = 16
                     });
                 #endregion
+                #region uboachan
+                string[] _nombresSubClasificaciones17 = new string[] { "YUME NIKKI GENERAL", "YUME NIKKI - DREAM DIARY", "FANGAMES", "DREAMS" };
+                for (int i = 0; i < _nombresSubClasificaciones17.Length; i++)
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
+                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
+                             _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
+                             _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
+                             _nombresSubClasificaciones9.Length + _nombresSubClasificaciones10.Length +
+                             _nombresSubClasificaciones11.Length + _nombresSubClasificaciones12.Length +
+                             _nombresSubClasificaciones13.Length + _nombresSubClasificaciones14.Length +
+                             _nombresSubClasificaciones15.Length + _nombresSubClasificaciones16.Length + 1 + i,
+                        DESCR = _nombresSubClasificaciones17[i],
+                        ID_CLASIFICACION = 17
+                    });
+
+                string[] _nombresSubClasificaciones18 = new string[] { "ART / OEKAKI", "LITERATURE / FANFIC / POETRY", "MUSIC / UPLOADS", "OTHER GAMES", "RPGMAKER / GAMEDEV" };
+                for (int i = 0; i < _nombresSubClasificaciones18.Length; i++)
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
+                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
+                             _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
+                             _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
+                             _nombresSubClasificaciones9.Length + _nombresSubClasificaciones10.Length +
+                             _nombresSubClasificaciones11.Length + _nombresSubClasificaciones12.Length +
+                             _nombresSubClasificaciones13.Length + _nombresSubClasificaciones14.Length +
+                             _nombresSubClasificaciones15.Length + _nombresSubClasificaciones16.Length
+                             + _nombresSubClasificaciones17.Length + 1 + i,
+                        DESCR = _nombresSubClasificaciones18[i],
+                        ID_CLASIFICACION = 18
+                    });
+
+                string[] _nombresSubClasificaciones19 = new string[] { "OFF-TOPIC", "NEET / ADVICE", "CREEPY-CUTE", "PARANORMAL / OCCULT", "SUGGESTIONS / META" };
+                for (int i = 0; i < _nombresSubClasificaciones19.Length; i++)
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
+                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
+                             _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
+                             _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
+                             _nombresSubClasificaciones9.Length + _nombresSubClasificaciones10.Length +
+                             _nombresSubClasificaciones11.Length + _nombresSubClasificaciones12.Length +
+                             _nombresSubClasificaciones13.Length + _nombresSubClasificaciones14.Length
+                             + _nombresSubClasificaciones15.Length + _nombresSubClasificaciones16.Length
+                             + _nombresSubClasificaciones17.Length + +_nombresSubClasificaciones18.Length + 1 + i,
+                        DESCR = _nombresSubClasificaciones19[i],
+                        ID_CLASIFICACION = 19
+                    });
+                #endregion
                 #endregion
             }
             catch (System.Exception exc)
@@ -368,6 +424,24 @@ namespace FLAMINIS
                 _diccionario.Add("HENTAI XCHAN", "https://xchan.pw/board/h/");
                 _diccionario.Add("PORN XCHAN", "https://xchan.pw/board/porn/");
                 #endregion
+                #region uboachan
+                _diccionario.Add("YUME NIKKI GENERAL", "https://uboachan.net/yn/");
+                _diccionario.Add("YUME NIKKI - DREAM DIARY", "https://uboachan.net/yndd/");
+                _diccionario.Add("FANGAMES", "https://uboachan.net/fg/");
+                _diccionario.Add("DREAMS", "https://uboachan.net/yume/");
+
+                _diccionario.Add("ART / OEKAKI", "https://uboachan.net/o/");
+                _diccionario.Add("LITERATURE / FANFIC / POETRY", "https://uboachan.net/lit/");
+                _diccionario.Add("MUSIC / UPLOADS", "https://uboachan.net/media/");
+                _diccionario.Add("OTHER GAMES", "https://uboachan.net/og/");
+                _diccionario.Add("RPGMAKER / GAMEDEV", "https://uboachan.net/ig/");
+
+                _diccionario.Add("OFF-TOPIC", "https://uboachan.net/ot/");
+                _diccionario.Add("NEET / ADVICE", "https://uboachan.net/hikki/");
+                _diccionario.Add("CREEPY-CUTE", "https://uboachan.net/cc/");
+                _diccionario.Add("PARANORMAL / OCCULT", "https://uboachan.net/x/");
+                _diccionario.Add("SUGGESTIONS / META", "https://uboachan.net/sugg/");
+                #endregion
             }
             catch (System.Exception exc)
             {
@@ -396,7 +470,7 @@ namespace FLAMINIS
             try
             {
                 var _cliente = new HttpClient();
-                var _respuesta = await _cliente.GetByteArrayAsync("");
+                var _respuesta = await _cliente.GetByteArrayAsync("http://uboachan.net");
                 System.String source = System.Text.Encoding.GetEncoding("utf-8").GetString(_respuesta, 0, _respuesta.Length - 1);
                 source = WebUtility.HtmlDecode(source);
                 var _doc = new HtmlAgilityPack.HtmlDocument();
@@ -492,7 +566,30 @@ namespace FLAMINIS
 
                                                     break;
                                                 #endregion
-
+                                                #region uboachan
+                                                case 4:
+                                                    classToFind = "post-image";
+                                                    var _elementos4 = _doc.DocumentNode.SelectNodes(string.Format("//*[contains(@class,'{0}')]", classToFind));
+                                                    if (_elementos4 != null)
+                                                        if (_elementos4.Any())
+                                                            foreach (var _im in _elementos4)
+                                                            {
+                                                                var _src = _im.Attributes.FirstOrDefault(x => x.Name == "src");
+                                                                if (_src != null)
+                                                                    if (!string.IsNullOrEmpty(_src.Value))
+                                                                    {
+                                                                        var _urlImagen = "https://uboachan.net" + _src.Value;
+                                                                        if (!_menu.Any(x => x._url.Trim() == _urlImagen.Trim()))
+                                                                        {
+                                                                            _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal()
+                                                                            {
+                                                                                _url = _urlImagen
+                                                                            });
+                                                                        }
+                                                                    }
+                                                            }
+                                                    break;
+                                                #endregion
                                                 default:
                                                     break;
                                             }
