@@ -353,6 +353,21 @@ namespace FLAMINIS
                 _diccionario.Add("MEGA LAINCHAN", "https://lainchan.org/mega/index.html");
                 _diccionario.Add("RND LAINCHAN", "https://lainchan.org/random/index.html");
                 #endregion
+                #region xchan
+                _diccionario.Add("ALEATORIO", "https://xchan.pw/board/b/");
+                _diccionario.Add("C-C-C-CANCER", "https://xchan.pw/board/c/");
+                _diccionario.Add("HUEHUE", "https://xchan.pw/board/int/");
+                _diccionario.Add("ENTRETENIMIENTO", "https://xchan.pw/board/e/");
+                _diccionario.Add("JOGOS CONSOLAS", "https://xchan.pw/board/jo/");
+                _diccionario.Add("MUSIC XCHAN", "https://xchan.pw/board/mu/");
+                _diccionario.Add("XCHAN", "https://xchan.pw/board/x/");
+                _diccionario.Add("DESENVOLVIMENTO", "https://xchan.pw/board/dev/");
+                _diccionario.Add("GNU/LINUX", "https://xchan.pw/board/gnu/");
+                _diccionario.Add("PROGRAMACAO", "https://xchan.pw/board/prog");
+                _diccionario.Add("TEC & GADG", "https://xchan.pw/board/tech/");
+                _diccionario.Add("HENTAI XCHAN", "https://xchan.pw/board/h/");
+                _diccionario.Add("PORN XCHAN", "https://xchan.pw/board/porn/");
+                #endregion
             }
             catch (System.Exception exc)
             {
@@ -424,7 +439,8 @@ namespace FLAMINIS
                                         {
                                             switch (_plataformaSeleccionada.ID)
                                             {
-                                                case 2://lainchan
+                                                #region lainchan
+                                                case 2:
                                                     classToFind = "post-image";
                                                     var _elementos2 = _doc.DocumentNode.SelectNodes(string.Format("//*[contains(@class,'{0}')]", classToFind));
                                                     if (_elementos2 != null)
@@ -446,6 +462,36 @@ namespace FLAMINIS
                                                                     }
                                                             }
                                                     break;
+                                                #endregion
+                                                #region xchan
+                                                case 3:
+                                                    classToFind = "image";
+                                                    var _elementos3 = _doc.DocumentNode.SelectNodes(string.Format("//*[contains(@class,'{0}')]", classToFind));
+                                                    if (_elementos3 != null)
+                                                        if (_elementos3.Any())
+                                                            foreach (var _im in _elementos3)
+                                                            {
+                                                                var _imagenesX = _im.ChildNodes.Where(x => x.Name == "img");
+                                                                foreach (var itemXX in _imagenesX)
+                                                                {
+                                                                    var _src = itemXX.Attributes.FirstOrDefault(x => x.Name == "src");
+                                                                    if (_src != null)
+                                                                        if (!string.IsNullOrEmpty(_src.Value))
+                                                                        {
+                                                                            var _urlImagen = "https://xchan.pw/" + _src.Value;
+                                                                            if (!_menu.Any(x => x._url.Trim() == _urlImagen.Trim()))
+                                                                            {
+                                                                                _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal()
+                                                                                {
+                                                                                    _url = _urlImagen
+                                                                                });
+                                                                            }
+                                                                        }
+                                                                }
+                                                            }
+
+                                                    break;
+                                                #endregion
 
                                                 default:
                                                     break;
