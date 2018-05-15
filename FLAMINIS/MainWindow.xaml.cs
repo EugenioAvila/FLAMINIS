@@ -347,7 +347,7 @@ namespace FLAMINIS
                         ID_CLASIFICACION = 21
                     });
 
-                string[] _nombresSubClasificaciones22 = new string[] { "-RONERY", "-WAIFU", "-OTAKU TANGENTS"};
+                string[] _nombresSubClasificaciones22 = new string[] { "-RONERY", "-WAIFU", "-OTAKU TANGENTS" };
                 for (int i = 0; i < _nombresSubClasificaciones22.Length; i++)
                     _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
                     {
@@ -366,7 +366,7 @@ namespace FLAMINIS
                         ID_CLASIFICACION = 22
                     });
 
-                string[] _nombresSubClasificaciones23 = new string[] { "-IRC", "-DATA", "-ARCHIVE", "-HENTAI", "-KEMONO FRIENDS", "-DUMPS","-FUNPOSTING","-DEBATES" };
+                string[] _nombresSubClasificaciones23 = new string[] { "-IRC", "-DATA", "-ARCHIVE", "-HENTAI", "-KEMONO FRIENDS", "-DUMPS", "-FUNPOSTING", "-DEBATES" };
                 for (int i = 0; i < _nombresSubClasificaciones23.Length; i++)
                     _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
                     {
@@ -524,6 +524,31 @@ namespace FLAMINIS
                 _diccionario.Add("PARANORMAL / OCCULT", "https://uboachan.net/x/");
                 _diccionario.Add("SUGGESTIONS / META", "https://uboachan.net/sugg/");
                 #endregion
+                #region tohno chan
+                _diccionario.Add("-ANIME", "https://uboachan.net/yn/");
+                _diccionario.Add("-MANGA", "https://uboachan.net/yndd/");
+                _diccionario.Add("-VIDEO GAMES", "https://uboachan.net/fg/");
+                _diccionario.Add("-TOUHOU", "https://uboachan.net/yume/");
+                _diccionario.Add("-MUSIC", "https://uboachan.net/fg/");
+                _diccionario.Add("-VISUAL NOVEL", "https://uboachan.net/yume/");
+
+                _diccionario.Add("-COLLECTIBLES", "https://uboachan.net/o/");
+                _diccionario.Add("-SCIENCE", "https://uboachan.net/lit/");
+                _diccionario.Add("-CREATIVITY", "https://uboachan.net/media/");
+
+                _diccionario.Add("-RONERY", "https://uboachan.net/ot/");
+                _diccionario.Add("-WAIFU", "https://uboachan.net/hikki/");
+                _diccionario.Add("-OTAKU TANGENTS", "https://uboachan.net/cc/");
+
+                _diccionario.Add("-IRC", "https://uboachan.net/yn/");
+                _diccionario.Add("-DATA", "https://uboachan.net/yndd/");
+                _diccionario.Add("-ARCHIVE", "https://uboachan.net/fg/");
+                _diccionario.Add("-HENTAI", "https://uboachan.net/yume/");
+                _diccionario.Add("-KEMONO FRIENDS", "https://uboachan.net/fg/");
+                _diccionario.Add("-DUMPS", "https://uboachan.net/yume/");
+                _diccionario.Add("-FUNPOSTING", "https://uboachan.net/fg/");
+                _diccionario.Add("-DEBATES", "https://uboachan.net/yume/");
+                #endregion
             }
             catch (System.Exception exc)
             {
@@ -577,7 +602,6 @@ namespace FLAMINIS
                 source = WebUtility.HtmlDecode(source);
                 var _doc = new HtmlAgilityPack.HtmlDocument();
                 _doc.LoadHtml(source);
-                string classToFind = "";
                 foreach (HtmlAgilityPack.HtmlNode _data in _doc.DocumentNode.ChildNodes)
                 {
                     var _nodos = _data.ChildNodes;
@@ -597,79 +621,96 @@ namespace FLAMINIS
                                             {
                                                 #region lainchan
                                                 case 2:
-                                                    classToFind = "post-image";
-                                                    var _elementos2 = _doc.DocumentNode.SelectNodes(string.Format("//*[contains(@class,'{0}')]", classToFind));
-                                                    if (_elementos2 != null)
-                                                        if (_elementos2.Any())
-                                                            foreach (var _im in _elementos2)
+                                                    _doc.DocumentNode.Descendants("img").Select(e => e.GetAttributeValue("src", null)).Where(s => !System.String.IsNullOrEmpty(s)).ToList().ForEach(z =>
+                                                    {
+                                                        var _validacion = z.Split('.');
+                                                        if (_validacion != null)
+                                                            if (_validacion.Any())
                                                             {
-                                                                var _src = _im.Attributes.FirstOrDefault(x => x.Name == "src");
-                                                                if (_src != null)
-                                                                    if (!string.IsNullOrEmpty(_src.Value))
+                                                                var _ex = _validacion.LastOrDefault();
+                                                                if (_ex != "php" && _ex != "js")
+                                                                {
+                                                                    if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
                                                                     {
-                                                                        var _urlImagen = "https://lainchan.org" + _src.Value;
-                                                                        if (!_menu.Any(x => x._url.Trim() == _urlImagen.Trim()))
+                                                                        _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal()
                                                                         {
-                                                                            _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal()
-                                                                            {
-                                                                                _url = _urlImagen
-                                                                            });
-                                                                        }
+                                                                            _url = "https://lainchan.org" + z
+                                                                        });
                                                                     }
+                                                                }
                                                             }
+                                                    });
                                                     break;
                                                 #endregion
                                                 #region xchan
                                                 case 3:
-                                                    classToFind = "image";
-                                                    var _elementos3 = _doc.DocumentNode.SelectNodes(string.Format("//*[contains(@class,'{0}')]", classToFind));
-                                                    if (_elementos3 != null)
-                                                        if (_elementos3.Any())
-                                                            foreach (var _im in _elementos3)
+                                                    _doc.DocumentNode.Descendants("img").Select(e => e.GetAttributeValue("src", null)).Where(s => !System.String.IsNullOrEmpty(s)).ToList().ForEach(z =>
+                                                    {
+                                                        var _validacion = z.Split('.');
+                                                        if (_validacion != null)
+                                                            if (_validacion.Any())
                                                             {
-                                                                var _imagenesX = _im.ChildNodes.Where(x => x.Name == "img");
-                                                                foreach (var itemXX in _imagenesX)
+                                                                var _ex = _validacion.LastOrDefault();
+                                                                if (_ex != "php" && _ex != "js")
                                                                 {
-                                                                    var _src = itemXX.Attributes.FirstOrDefault(x => x.Name == "src");
-                                                                    if (_src != null)
-                                                                        if (!string.IsNullOrEmpty(_src.Value))
+                                                                    if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
+                                                                    {
+                                                                        _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal()
                                                                         {
-                                                                            var _urlImagen = "https://xchan.pw/" + _src.Value;
-                                                                            if (!_menu.Any(x => x._url.Trim() == _urlImagen.Trim()))
-                                                                            {
-                                                                                _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal()
-                                                                                {
-                                                                                    _url = _urlImagen
-                                                                                });
-                                                                            }
-                                                                        }
+                                                                            _url = "https://xchan.pw" + z
+                                                                        });
+                                                                    }
                                                                 }
                                                             }
-
+                                                    });
                                                     break;
                                                 #endregion
                                                 #region uboachan
                                                 case 4:
-                                                    classToFind = "post-image";
-                                                    var _elementos4 = _doc.DocumentNode.SelectNodes(string.Format("//*[contains(@class,'{0}')]", classToFind));
-                                                    if (_elementos4 != null)
-                                                        if (_elementos4.Any())
-                                                            foreach (var _im in _elementos4)
+                                                    _doc.DocumentNode.Descendants("img").Select(e => e.GetAttributeValue("src", null)).Where(s => !System.String.IsNullOrEmpty(s)).ToList().ForEach(z =>
+                                                    {
+                                                        var _validacion = z.Split('.');
+                                                        if (_validacion != null)
+                                                            if (_validacion.Any())
                                                             {
-                                                                var _src = _im.Attributes.FirstOrDefault(x => x.Name == "src");
-                                                                if (_src != null)
-                                                                    if (!string.IsNullOrEmpty(_src.Value))
+                                                                var _ex = _validacion.LastOrDefault();
+                                                                if (_ex != "php" && _ex != "js")
+                                                                {
+                                                                    if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
                                                                     {
-                                                                        var _urlImagen = "https://uboachan.net" + _src.Value;
-                                                                        if (!_menu.Any(x => x._url.Trim() == _urlImagen.Trim()))
+                                                                        _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal()
                                                                         {
-                                                                            _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal()
-                                                                            {
-                                                                                _url = _urlImagen
-                                                                            });
-                                                                        }
+                                                                            _url = "https://uboachan.net" + z
+                                                                        });
                                                                     }
+                                                                }
                                                             }
+                                                    });
+
+                                                    break;
+                                                #endregion
+                                                #region tohno chan
+                                                case 5:
+                                                    _doc.DocumentNode.Descendants("img").Select(e => e.GetAttributeValue("src", null)).Where(s => !System.String.IsNullOrEmpty(s)).ToList().ForEach(z =>
+                                                    {
+                                                        //http://tohno-chan.com/vn/thumb/152389412183s.jpg
+                                                        var _validacion = z.Split('.');
+                                                        if (_validacion != null)
+                                                            if (_validacion.Any())
+                                                            {
+                                                                var _ex = _validacion.LastOrDefault();
+                                                                if (_ex != "php" && _ex != "js")
+                                                                {
+                                                                    if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
+                                                                    {
+                                                                        _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal()
+                                                                        {
+                                                                            _url = "http://tohno-chan.com" + z
+                                                                        });
+                                                                    }
+                                                                }
+                                                            }
+                                                    });
                                                     break;
                                                 #endregion
                                                 default:
