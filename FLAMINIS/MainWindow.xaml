@@ -52,7 +52,7 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Image Source="{Binding _url}"></Image>
+                    <Image Source="{Binding _url}" MaxWidth="250" MaxHeight="250"></Image>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
