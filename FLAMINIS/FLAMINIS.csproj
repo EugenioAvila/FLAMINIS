@@ -84,6 +84,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Herramientas\ClasesCustomizadas.cs" />
     <Compile Include="Herramientas\Utilerias.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
