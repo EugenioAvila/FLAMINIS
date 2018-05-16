@@ -394,7 +394,7 @@ namespace FLAMINIS
                     });
                 #endregion
                 #region final chan
-                string[] _nombresSubClasificaciones24 = new string[] { "ANIME & MANGA FINAL CHAN", "COMICS & CARTOONS", "VIDEO GAMES FINAL CHAN", "TECHNOLOGY FINAL CHAN" };
+                string[] _nombresSubClasificaciones24 = new string[] { "ANIME & MANGA FINAL CHAN", "COMICS & CARTOONS FINAL CHAN", "VIDEO GAMES FINAL CHAN", "TECHNOLOGY FINAL CHAN" };
                 for (int i = 0; i < _nombresSubClasificaciones24.Length; i++)
                     _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
                     {
@@ -414,6 +414,69 @@ namespace FLAMINIS
                         ID_CLASIFICACION = 24
                     });
 
+
+                string[] _nombresSubClasificaciones25 = new string[] { "EROTICA", "RANDOM FINAL CHAN", "SPORTS FINAL CHAN" };
+                for (int i = 0; i < _nombresSubClasificaciones25.Length; i++)
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
+                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
+                             _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
+                             _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
+                             _nombresSubClasificaciones9.Length + _nombresSubClasificaciones10.Length +
+                             _nombresSubClasificaciones11.Length + _nombresSubClasificaciones12.Length +
+                             _nombresSubClasificaciones13.Length + _nombresSubClasificaciones14.Length +
+                             _nombresSubClasificaciones15.Length + _nombresSubClasificaciones16.Length +
+                             _nombresSubClasificaciones17.Length + +_nombresSubClasificaciones18.Length +
+                             _nombresSubClasificaciones19.Length + _nombresSubClasificaciones20.Length +
+                             _nombresSubClasificaciones21.Length + _nombresSubClasificaciones22.Length +
+                             _nombresSubClasificaciones23.Length + _nombresSubClasificaciones24.Length +
+                             1 + i,
+                        DESCR = _nombresSubClasificaciones25[i],
+                        ID_CLASIFICACION = 25
+                    });
+
+                string[] _nombresSubClasificaciones26 = new string[] { "PROVING GROUND", "SUGGESTIONS" };
+                for (int i = 0; i < _nombresSubClasificaciones26.Length; i++)
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
+                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
+                             _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
+                             _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
+                             _nombresSubClasificaciones9.Length + _nombresSubClasificaciones10.Length +
+                             _nombresSubClasificaciones11.Length + _nombresSubClasificaciones12.Length +
+                             _nombresSubClasificaciones13.Length + _nombresSubClasificaciones14.Length +
+                             _nombresSubClasificaciones15.Length + _nombresSubClasificaciones16.Length +
+                             _nombresSubClasificaciones17.Length + +_nombresSubClasificaciones18.Length +
+                             _nombresSubClasificaciones19.Length + _nombresSubClasificaciones20.Length +
+                             _nombresSubClasificaciones21.Length + _nombresSubClasificaciones22.Length +
+                             _nombresSubClasificaciones23.Length + _nombresSubClasificaciones24.Length +
+                             _nombresSubClasificaciones25.Length +  1 + i,
+                        DESCR = _nombresSubClasificaciones26[i],
+                        ID_CLASIFICACION = 26
+                    });
+
+                string[] _nombresSubClasificaciones27 = new string[] { "ALL", "RECENT" };
+                for (int i = 0; i < _nombresSubClasificaciones27.Length; i++)
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
+                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
+                             _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
+                             _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
+                             _nombresSubClasificaciones9.Length + _nombresSubClasificaciones10.Length +
+                             _nombresSubClasificaciones11.Length + _nombresSubClasificaciones12.Length +
+                             _nombresSubClasificaciones13.Length + _nombresSubClasificaciones14.Length +
+                             _nombresSubClasificaciones15.Length + _nombresSubClasificaciones16.Length +
+                             _nombresSubClasificaciones17.Length + +_nombresSubClasificaciones18.Length +
+                             _nombresSubClasificaciones19.Length + _nombresSubClasificaciones20.Length +
+                             _nombresSubClasificaciones21.Length + _nombresSubClasificaciones22.Length +
+                             _nombresSubClasificaciones23.Length + _nombresSubClasificaciones24.Length +
+                             _nombresSubClasificaciones25.Length + _nombresSubClasificaciones26.Length + 1 + i,
+                        DESCR = _nombresSubClasificaciones27[i],
+                        ID_CLASIFICACION = 27
+                    });
 
                 #endregion
                 #endregion
@@ -578,6 +641,22 @@ namespace FLAMINIS
                 _diccionario.Add("-DUMPS", "http://tohno-chan.com/pic");
                 _diccionario.Add("-FUNPOSTING", "http://tohno-chan.com/lol/");
                 _diccionario.Add("-DEBATES", "http://tohno-chan.com/tat/");
+                #endregion
+                #region final chan
+                _diccionario.Add("ANIME & MANGA FINAL CHAN", "http://finalchan.net/an/index.html");
+                _diccionario.Add("COMICS & CARTOONS FINAL CHAN", "http://finalchan.net/co/index.html");
+                _diccionario.Add("VIDEO GAMES FINAL CHAN", "http://finalchan.net/v/index.html");
+                _diccionario.Add("TECHNOLOGY FINAL CHAN", "http://finalchan.net/t/index.html");
+
+                _diccionario.Add("EROTICA", "http://finalchan.net/e/index.html");
+                _diccionario.Add("RANDOM FINAL CHAN", "http://finalchan.net/r/index.html");
+                _diccionario.Add("SPORTS FINAL CHAN", "http://finalchan.net/sp/index.html");
+
+                _diccionario.Add("PROVING GROUND", "http://finalchan.net/p/index.html");
+                _diccionario.Add("SUGGESTIONS", "http://finalchan.net/s/index.html");
+
+                _diccionario.Add("ALL", "http://finalchan.net/1984/");
+                _diccionario.Add("RECENT", "http://finalchan.net/recent.html");
                 #endregion
             }
             catch (System.Exception exc)
@@ -747,6 +826,29 @@ namespace FLAMINIS
                                                                             }
                                                                         }
                                                                 }
+                                                    });
+                                                    break;
+                                                #endregion
+                                                #region final chan
+                                                case 6:
+                                                    _doc.DocumentNode.Descendants("img").Select(e => e.GetAttributeValue("src", null)).Where(s => !System.String.IsNullOrEmpty(s)).ToList().ForEach(z =>
+                                                    {
+                                                        var _validacion = z.Split('.');
+                                                        if (_validacion != null)
+                                                            if (_validacion.Any())
+                                                            {
+                                                                var _ex = _validacion.LastOrDefault();
+                                                                if (_ex != "php" && _ex != "js")
+                                                                {
+                                                                    if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
+                                                                    {
+                                                                        _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal()
+                                                                        {
+                                                                            _url = "http://finalchan.net/" + z
+                                                                        });
+                                                                    }
+                                                                }
+                                                            }
                                                     });
                                                     break;
                                                 #endregion
