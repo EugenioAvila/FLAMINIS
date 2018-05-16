@@ -26,13 +26,17 @@ namespace FLAMINIS
             try
             {
                 #region plataformas
-                System.Collections.Generic.List<Herramientas.Utilerias.cComboBox> _elementos = new System.Collections.Generic.List<Herramientas.Utilerias.cComboBox>();
-                _elementos.Add(new Herramientas.Utilerias.cComboBox() { ID = 0, DESCR = "SELECCIONE" });
-                //_elementos.Add(new Herramientas.Utilerias.cComboBox() { ID = 1, DESCR = "4 CHAN" });
-                _elementos.Add(new Herramientas.Utilerias.cComboBox() { ID = 2, DESCR = "LAINCHAN" });
-                _elementos.Add(new Herramientas.Utilerias.cComboBox() { ID = 3, DESCR = "XCHAN" });
-                _elementos.Add(new Herramientas.Utilerias.cComboBox() { ID = 4, DESCR = "UBOACHAN" });
-                _elementos.Add(new Herramientas.Utilerias.cComboBox() { ID = 5, DESCR = "TOHNO-CHAN" });
+                System.Collections.Generic.List<Herramientas.Utilerias.cComboBox> _elementos = new System.Collections.Generic.List<Herramientas.Utilerias.cComboBox>
+                {
+                    new Herramientas.Utilerias.cComboBox() { ID = 0, DESCR = "SELECCIONE" },
+                    //_elementos.Add(new Herramientas.Utilerias.cComboBox() { ID = 1, DESCR = "4 CHAN" });
+                    new Herramientas.Utilerias.cComboBox() { ID = 2, DESCR = "LAINCHAN" },
+                    new Herramientas.Utilerias.cComboBox() { ID = 3, DESCR = "XCHAN" },
+                    new Herramientas.Utilerias.cComboBox() { ID = 4, DESCR = "UBOACHAN" },
+                    new Herramientas.Utilerias.cComboBox() { ID = 5, DESCR = "TOHNO-CHAN" },
+                    new Herramientas.Utilerias.cComboBox() { ID = 6, DESCR = "FINAL CHAN" }
+                };
+
                 ComboPlataforma.DisplayMemberPath = "DESCR";
                 ComboPlataforma.ItemsSource = _elementos;
                 ComboPlataforma.SelectedIndex = 0;
@@ -58,6 +62,9 @@ namespace FLAMINIS
                 for (int i = 0; i < _nombresClasificaciones5.Length; i++)
                     _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = _nombresClasificaciones5[i], ID = _nombresClasificaciones.Length + _nombresClasificaciones2.Length + _nombresClasificaciones3.Length + _nombresClasificaciones4.Length + i + 1, ID_PLATAFORMA = 5 });
 
+                string[] _nombresClasificaciones6 = new string[] { "SECCION 1", "SECCION 2", "SECCION 3", "SECCION 4" };
+                for (int i = 0; i < _nombresClasificaciones6.Length; i++)
+                    _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = _nombresClasificaciones6[i], ID = _nombresClasificaciones.Length + _nombresClasificaciones2.Length + _nombresClasificaciones3.Length + _nombresClasificaciones4.Length + _nombresClasificaciones5.Length + i + 1, ID_PLATAFORMA = 6 });
                 #endregion
 
                 #region sub clasificaciones
@@ -386,6 +393,29 @@ namespace FLAMINIS
                         ID_CLASIFICACION = 23
                     });
                 #endregion
+                #region final chan
+                string[] _nombresSubClasificaciones24 = new string[] { "ANIME & MANGA FINAL CHAN", "COMICS & CARTOONS", "VIDEO GAMES FINAL CHAN", "TECHNOLOGY FINAL CHAN" };
+                for (int i = 0; i < _nombresSubClasificaciones24.Length; i++)
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
+                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
+                             _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
+                             _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
+                             _nombresSubClasificaciones9.Length + _nombresSubClasificaciones10.Length +
+                             _nombresSubClasificaciones11.Length + _nombresSubClasificaciones12.Length +
+                             _nombresSubClasificaciones13.Length + _nombresSubClasificaciones14.Length +
+                             _nombresSubClasificaciones15.Length + _nombresSubClasificaciones16.Length +
+                             _nombresSubClasificaciones17.Length + +_nombresSubClasificaciones18.Length +
+                             _nombresSubClasificaciones19.Length + _nombresSubClasificaciones20.Length +
+                             _nombresSubClasificaciones21.Length + _nombresSubClasificaciones22.Length +
+                             _nombresSubClasificaciones23.Length + 1 + i,
+                        DESCR = _nombresSubClasificaciones24[i],
+                        ID_CLASIFICACION = 24
+                    });
+
+
+                #endregion
                 #endregion
             }
             catch (System.Exception exc)
@@ -561,8 +591,11 @@ namespace FLAMINIS
             try
             {
                 ComboClasificacion.DisplayMemberPath = "DESCR";
-                System.Collections.Generic.List<Herramientas.Utilerias.cComboBoxClasificacion> _datosLimpios = new System.Collections.Generic.List<Herramientas.Utilerias.cComboBoxClasificacion>();
-                _datosLimpios.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { ID = 0, DESCR = "SELECCIONE" });
+                System.Collections.Generic.List<Herramientas.Utilerias.cComboBoxClasificacion> _datosLimpios = new System.Collections.Generic.List<Herramientas.Utilerias.cComboBoxClasificacion>
+                {
+                    new Herramientas.Utilerias.cComboBoxClasificacion() { ID = 0, DESCR = "SELECCIONE" }
+                };
+
                 ComboClasificacion.ItemsSource = _datosLimpios;
                 ComboClasificacion.SelectedIndex = 0;
             }
@@ -577,7 +610,7 @@ namespace FLAMINIS
             try
             {
                 var _cliente = new HttpClient();
-                var _respuesta = await _cliente.GetByteArrayAsync("http://tohno-chan.com/pic/");
+                var _respuesta = await _cliente.GetByteArrayAsync("http://finalchan.net/t/index.html");
                 System.String source = System.Text.Encoding.GetEncoding("utf-8").GetString(_respuesta, 0, _respuesta.Length - 1);
                 source = WebUtility.HtmlDecode(source);
                 var _doc = new HtmlAgilityPack.HtmlDocument();
@@ -775,8 +808,7 @@ namespace FLAMINIS
 
         private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            var _seleccion = ComboSubClasificacion.SelectedItem as Herramientas.Utilerias.cComboBoxSubClasificacion;
-            if (_seleccion == null)
+            if (!(ComboSubClasificacion.SelectedItem is Herramientas.Utilerias.cComboBoxSubClasificacion _seleccion))
             {
                 System.Windows.MessageBox.Show("Seleccione una sub clasificación");
                 return;
