@@ -463,7 +463,7 @@ namespace FLAMINIS
                         ID_CLASIFICACION = 26
                     });
 
-                string[] _nombresSubClasificaciones27 = new string[] { "ALL", "RECENT" };
+                string[] _nombresSubClasificaciones27 = new string[] { "ALL" };
                 for (int i = 0; i < _nombresSubClasificaciones27.Length; i++)
                     _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
                     {
@@ -791,20 +791,19 @@ namespace FLAMINIS
                 _diccionario.Add("-DEBATES", "http://tohno-chan.com/tat/catalog.html");
                 #endregion
                 #region final chan
-                _diccionario.Add("ANIME & MANGA FINAL CHAN", "http://finalchan.net/an/index.html");
-                _diccionario.Add("COMICS & CARTOONS FINAL CHAN", "http://finalchan.net/co/index.html");
-                _diccionario.Add("VIDEO GAMES FINAL CHAN", "http://finalchan.net/v/index.html");
-                _diccionario.Add("TECHNOLOGY FINAL CHAN", "http://finalchan.net/t/index.html");
+                _diccionario.Add("ANIME & MANGA FINAL CHAN", "http://finalchan.net/an/catalog.html");
+                _diccionario.Add("COMICS & CARTOONS FINAL CHAN", "http://finalchan.net/co/catalog.html");
+                _diccionario.Add("VIDEO GAMES FINAL CHAN", "http://finalchan.net/v/catalog.html");
+                _diccionario.Add("TECHNOLOGY FINAL CHAN", "http://finalchan.net/t/catalog.html");
 
-                _diccionario.Add("EROTICA", "http://finalchan.net/e/index.html");
-                _diccionario.Add("RANDOM FINAL CHAN", "http://finalchan.net/r/index.html");
-                _diccionario.Add("SPORTS FINAL CHAN", "http://finalchan.net/sp/index.html");
+                _diccionario.Add("EROTICA", "http://finalchan.net/e/catalog.html");
+                _diccionario.Add("RANDOM FINAL CHAN", "http://finalchan.net/r/catalog.html");
+                _diccionario.Add("SPORTS FINAL CHAN", "http://finalchan.net/sp/catalog.html");
 
-                _diccionario.Add("PROVING GROUND", "http://finalchan.net/p/index.html");
-                _diccionario.Add("SUGGESTIONS", "http://finalchan.net/s/index.html");
+                _diccionario.Add("PROVING GROUND", "http://finalchan.net/p/catalog.html");
+                _diccionario.Add("SUGGESTIONS", "http://finalchan.net/s/catalog.html");
 
                 _diccionario.Add("ALL", "http://finalchan.net/1984/");
-                _diccionario.Add("RECENT", "http://finalchan.net/recent.html");
                 #endregion
                 #region 420chan
                 _diccionario.Add("CANNABIS DISCUSSION 420CHAN", "http://boards.420chan.org/weed");
@@ -1018,24 +1017,16 @@ namespace FLAMINIS
                                                 #endregion
                                                 #region final chan
                                                 case 6:
-                                                    _doc.DocumentNode.Descendants("img").Select(e => e.GetAttributeValue("src", null)).Where(s => !System.String.IsNullOrEmpty(s)).ToList().ForEach(z =>
+                                                    _doc.DocumentNode.SelectNodes("//a[@href]").Where(x => x.OuterHtml.Contains("/res/")).ToList().ForEach(z =>
                                                     {
-                                                        var _validacion = z.Split('.');
-                                                        if (_validacion != null)
-                                                            if (_validacion.Any())
+                                                        var _att = z.Attributes;
+                                                        if (_att != null && _att.Any())
+                                                            _att.ToList().ForEach(a =>
                                                             {
-                                                                var _ex = _validacion.LastOrDefault();
-                                                                if (_ex != "php" && _ex != "js")
-                                                                {
-                                                                    if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
-                                                                    {
-                                                                        _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal()
-                                                                        {
-                                                                            _url = "http://finalchan.net/" + z
-                                                                        });
-                                                                    }
-                                                                }
-                                                            }
+                                                                if (a.Value.Contains("/res/"))
+                                                                    if (!_urls.Any(c => c.Contains(a.Value)))
+                                                                        _urls.Add("http://finalchan.net" + a.Value);
+                                                            });
                                                     });
                                                     break;
                                                 #endregion
@@ -1109,6 +1100,10 @@ namespace FLAMINIS
                                             case 5:
                                                 if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
                                                     _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal() { _url = z });
+                                                break;
+                                            case 6:
+                                                if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
+                                                    _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal() { _url = "http://finalchan.net" + z });
                                                 break;
 
                                             default:
