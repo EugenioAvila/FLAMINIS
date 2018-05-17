@@ -34,7 +34,8 @@ namespace FLAMINIS
                     new Herramientas.Utilerias.cComboBox() { ID = 3, DESCR = "XCHAN" },
                     new Herramientas.Utilerias.cComboBox() { ID = 4, DESCR = "UBOACHAN" },
                     new Herramientas.Utilerias.cComboBox() { ID = 5, DESCR = "TOHNO-CHAN" },
-                    new Herramientas.Utilerias.cComboBox() { ID = 6, DESCR = "FINAL CHAN" }
+                    new Herramientas.Utilerias.cComboBox() { ID = 6, DESCR = "FINAL CHAN" },
+                    new Herramientas.Utilerias.cComboBox() { ID = 7, DESCR = "420CHAN" }
                 };
 
                 ComboPlataforma.DisplayMemberPath = "DESCR";
@@ -65,6 +66,11 @@ namespace FLAMINIS
                 string[] _nombresClasificaciones6 = new string[] { "SECCION 1", "SECCION 2", "SECCION 3", "SECCION 4" };
                 for (int i = 0; i < _nombresClasificaciones6.Length; i++)
                     _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = _nombresClasificaciones6[i], ID = _nombresClasificaciones.Length + _nombresClasificaciones2.Length + _nombresClasificaciones3.Length + _nombresClasificaciones4.Length + _nombresClasificaciones5.Length + i + 1, ID_PLATAFORMA = 6 });
+
+                string[] _nombresClasificaciones7 = new string[] { "DRUGS 420CHAN", "LIFESTYLE 420CHAN", "ACADEMIA 420CHAN", "MEDIA 420CHAN", "MISCELLANEA 420CHAN", "ADULT 420CHAN" };
+                for (int i = 0; i < _nombresClasificaciones7.Length; i++)
+                    _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = _nombresClasificaciones7[i], ID = _nombresClasificaciones.Length + _nombresClasificaciones2.Length + _nombresClasificaciones3.Length + _nombresClasificaciones4.Length + _nombresClasificaciones5.Length + _nombresClasificaciones6.Length + i + 1, ID_PLATAFORMA = 7 });
+
                 #endregion
 
                 #region sub clasificaciones
@@ -479,6 +485,173 @@ namespace FLAMINIS
                     });
 
                 #endregion
+                #region 420CHAN
+                string[] _nombresSubClasificaciones28 = new string[] { "CANNABIS DISCUSSION 420CHAN", "ALCOHOL DISCUSSION 420CHAN", "ECSTASY DISCUSSION 420CHAN", "PSYCHEDELIC DISCUSSION 420CHAN", "STIMULANT DISCUSSION 420CHAN", "DISSOCIATIVE DISCUSSION 420CHAN", "OPIATE DISCUSSION 420CHAN", "VAPING DISCUSSION 420CHAN", "TOBACCO DISCUSSION 420CHAN", "BENZO DISCUSSION 420CHAN", "DELIRIANT DISCUSSION 420CHAN", "OTHER DRUGS 420CHAN", "JENKEM DISCUSSION 420CHAN", "DETOX 420CHAN" };
+                for (int i = 0; i < _nombresSubClasificaciones28.Length; i++)
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
+                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
+                             _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
+                             _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
+                             _nombresSubClasificaciones9.Length + _nombresSubClasificaciones10.Length +
+                             _nombresSubClasificaciones11.Length + _nombresSubClasificaciones12.Length +
+                             _nombresSubClasificaciones13.Length + _nombresSubClasificaciones14.Length +
+                             _nombresSubClasificaciones15.Length + _nombresSubClasificaciones16.Length +
+                             _nombresSubClasificaciones17.Length + +_nombresSubClasificaciones18.Length +
+                             _nombresSubClasificaciones19.Length + _nombresSubClasificaciones20.Length +
+                             _nombresSubClasificaciones21.Length + _nombresSubClasificaciones22.Length +
+                             _nombresSubClasificaciones23.Length + _nombresSubClasificaciones24.Length +
+                             _nombresSubClasificaciones25.Length + _nombresSubClasificaciones26.Length +
+                             _nombresSubClasificaciones27.Length + 1 + i,
+                        DESCR = _nombresSubClasificaciones28[i],
+                        ID_CLASIFICACION = 28
+                    });
+
+                string[] _nombresSubClasificaciones29 = new string[] { "PERSONAL ISSUES 420CHAN", "DREAMS 420CHAN", "FITNESS 420CHAN", "FOOD & MUNCHIES 420CHAN", "TRANSPORTATION & TRAVEL 420CHAN", "STYLE & FASHION 420CHAN", "WEAPONS 420CHAN", "SEXUALITY DISCUSSION 420CHAN", "TRANSGENDER DISCUSSION 420CHAN" };
+                for (int i = 0; i < _nombresSubClasificaciones29.Length; i++)
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
+                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
+                             _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
+                             _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
+                             _nombresSubClasificaciones9.Length + _nombresSubClasificaciones10.Length +
+                             _nombresSubClasificaciones11.Length + _nombresSubClasificaciones12.Length +
+                             _nombresSubClasificaciones13.Length + _nombresSubClasificaciones14.Length +
+                             _nombresSubClasificaciones15.Length + _nombresSubClasificaciones16.Length +
+                             _nombresSubClasificaciones17.Length + +_nombresSubClasificaciones18.Length +
+                             _nombresSubClasificaciones19.Length + _nombresSubClasificaciones20.Length +
+                             _nombresSubClasificaciones21.Length + _nombresSubClasificaciones22.Length +
+                             _nombresSubClasificaciones23.Length + _nombresSubClasificaciones24.Length +
+                             _nombresSubClasificaciones25.Length + _nombresSubClasificaciones26.Length +
+                             _nombresSubClasificaciones27.Length + _nombresSubClasificaciones28.Length + 1 + i,
+                        DESCR = _nombresSubClasificaciones29[i],
+                        ID_CLASIFICACION = 29
+                    });
+
+                string[] _nombresSubClasificaciones30 = new string[] { "PERSONAL ISSUES 420CHAN", "DREAMS 420CHAN", "FITNESS 420CHAN", "FOOD & MUNCHIES 420CHAN", "TRANSPORTATION & TRAVEL 420CHAN", "STYLE & FASHION 420CHAN", "WEAPONS 420CHAN", "SEXUALITY DISCUSSION 420CHAN", "TRANSGENDER DISCUSSION 420CHAN" };
+                for (int i = 0; i < _nombresSubClasificaciones30.Length; i++)
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
+                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
+                             _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
+                             _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
+                             _nombresSubClasificaciones9.Length + _nombresSubClasificaciones10.Length +
+                             _nombresSubClasificaciones11.Length + _nombresSubClasificaciones12.Length +
+                             _nombresSubClasificaciones13.Length + _nombresSubClasificaciones14.Length +
+                             _nombresSubClasificaciones15.Length + _nombresSubClasificaciones16.Length +
+                             _nombresSubClasificaciones17.Length + +_nombresSubClasificaciones18.Length +
+                             _nombresSubClasificaciones19.Length + _nombresSubClasificaciones20.Length +
+                             _nombresSubClasificaciones21.Length + _nombresSubClasificaciones22.Length +
+                             _nombresSubClasificaciones23.Length + _nombresSubClasificaciones24.Length +
+                             _nombresSubClasificaciones25.Length + _nombresSubClasificaciones26.Length +
+                             _nombresSubClasificaciones27.Length + _nombresSubClasificaciones28.Length +
+                             _nombresSubClasificaciones29.Length + 1 + i,
+                        DESCR = _nombresSubClasificaciones30[i],
+                        ID_CLASIFICACION = 30
+                    });
+
+                string[] _nombresSubClasificaciones31 = new string[] { "ART & OEKAKI 420CHAN", "SPACE & ASTRONOMY 420CHAN", "MATHEMATICS 420CHAN", "ENGINEERING 420CHAN", "WORLD LANGUAGES 420CHAN", "SCIENCE & CHEMISTRY 420CHAN", "HISTORY 420CHAN", "GROWING & BOTANY 420CHAN", "GUIDES & TUTORIALS 420CHAN", "LAW DISCUSSION 420CHAN", "BOOKS & LITERATURE 420CHAN", "MEDICINE & HEALTH 420CHAN", "SOCIAL SCIENCES 420CHAN", "COMPUTERS & TECHNOLOGY 420CHAN", "PROGRAMMING 420CHAN" };
+                for (int i = 0; i < _nombresSubClasificaciones31.Length; i++)
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
+                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
+                             _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
+                             _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
+                             _nombresSubClasificaciones9.Length + _nombresSubClasificaciones10.Length +
+                             _nombresSubClasificaciones11.Length + _nombresSubClasificaciones12.Length +
+                             _nombresSubClasificaciones13.Length + _nombresSubClasificaciones14.Length +
+                             _nombresSubClasificaciones15.Length + _nombresSubClasificaciones16.Length +
+                             _nombresSubClasificaciones17.Length + +_nombresSubClasificaciones18.Length +
+                             _nombresSubClasificaciones19.Length + _nombresSubClasificaciones20.Length +
+                             _nombresSubClasificaciones21.Length + _nombresSubClasificaciones22.Length +
+                             _nombresSubClasificaciones23.Length + _nombresSubClasificaciones24.Length +
+                             _nombresSubClasificaciones25.Length + _nombresSubClasificaciones26.Length +
+                             _nombresSubClasificaciones27.Length + _nombresSubClasificaciones28.Length +
+                             _nombresSubClasificaciones29.Length + _nombresSubClasificaciones30.Length +
+                             1 + i,
+                        DESCR = _nombresSubClasificaciones31[i],
+                        ID_CLASIFICACION = 31
+                    });
+
+                string[] _nombresSubClasificaciones32 = new string[] { "STAR TREK 420CHAN", "SPORTS 420CHAN", "MOVIES & TELEVISION 420CHAN", "FLASH 420CHAN", "MUSIC & PRODUCTION 420CHAN", "MIXED MARTIAL ARTS 420CHAN", "COMICS 420CHAN", "PRO WRESTLING 420CHAN", "WORLD NEWS 420CHAN", "VIDEO GAMES 420CHAN", "POKÉMON 420CHAN", "TRADITIONAL GAMES 420CHAN" };
+                for (int i = 0; i < _nombresSubClasificaciones32.Length; i++)
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
+                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
+                             _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
+                             _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
+                             _nombresSubClasificaciones9.Length + _nombresSubClasificaciones10.Length +
+                             _nombresSubClasificaciones11.Length + _nombresSubClasificaciones12.Length +
+                             _nombresSubClasificaciones13.Length + _nombresSubClasificaciones14.Length +
+                             _nombresSubClasificaciones15.Length + _nombresSubClasificaciones16.Length +
+                             _nombresSubClasificaciones17.Length + +_nombresSubClasificaciones18.Length +
+                             _nombresSubClasificaciones19.Length + _nombresSubClasificaciones20.Length +
+                             _nombresSubClasificaciones21.Length + _nombresSubClasificaciones22.Length +
+                             _nombresSubClasificaciones23.Length + _nombresSubClasificaciones24.Length +
+                             _nombresSubClasificaciones25.Length + _nombresSubClasificaciones26.Length +
+                             _nombresSubClasificaciones27.Length + _nombresSubClasificaciones28.Length +
+                             _nombresSubClasificaciones29.Length + _nombresSubClasificaciones30.Length +
+                             _nombresSubClasificaciones31.Length + 1 + i,
+                        DESCR = _nombresSubClasificaciones32[i],
+                        ID_CLASIFICACION = 32
+                    });
+
+                string[] _nombresSubClasificaciones33 = new string[] { "420CHAN DISCUSSION", "RANDOM & HIGH STUFF 420CHAN", "PARANORMAL 420CHAN", "DINOSAURS 420CHAN", "POST-APOCALYPTIC 420CHAN", "ANIMALS 420CHAN", "NETJESTER AI 420CHAN", "NET CHARACTERS 420CHAN", "*WILDCARD (FUTURISM)* 420CHAN", "CONSPIRACY THEORIES 420CHAN", "DESKTOP WALLPAPERS 420CHAN" };
+                for (int i = 0; i < _nombresSubClasificaciones33.Length; i++)
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
+                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
+                             _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
+                             _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
+                             _nombresSubClasificaciones9.Length + _nombresSubClasificaciones10.Length +
+                             _nombresSubClasificaciones11.Length + _nombresSubClasificaciones12.Length +
+                             _nombresSubClasificaciones13.Length + _nombresSubClasificaciones14.Length +
+                             _nombresSubClasificaciones15.Length + _nombresSubClasificaciones16.Length +
+                             _nombresSubClasificaciones17.Length + +_nombresSubClasificaciones18.Length +
+                             _nombresSubClasificaciones19.Length + _nombresSubClasificaciones20.Length +
+                             _nombresSubClasificaciones21.Length + _nombresSubClasificaciones22.Length +
+                             _nombresSubClasificaciones23.Length + _nombresSubClasificaciones24.Length +
+                             _nombresSubClasificaciones25.Length + _nombresSubClasificaciones26.Length +
+                             _nombresSubClasificaciones27.Length + _nombresSubClasificaciones28.Length +
+                             _nombresSubClasificaciones29.Length + _nombresSubClasificaciones30.Length +
+                             _nombresSubClasificaciones31.Length + _nombresSubClasificaciones32.Length +
+                             1 + i,
+                        DESCR = _nombresSubClasificaciones33[i],
+                        ID_CLASIFICACION = 33
+                    });
+
+                string[] _nombresSubClasificaciones34 = new string[] { "ADULT (GAY) 420CHAN", "ADULT (STRAIGHT) 420CHAN", "HENTAI 420CHAN" };
+                for (int i = 0; i < _nombresSubClasificaciones34.Length; i++)
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
+                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
+                             _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
+                             _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
+                             _nombresSubClasificaciones9.Length + _nombresSubClasificaciones10.Length +
+                             _nombresSubClasificaciones11.Length + _nombresSubClasificaciones12.Length +
+                             _nombresSubClasificaciones13.Length + _nombresSubClasificaciones14.Length +
+                             _nombresSubClasificaciones15.Length + _nombresSubClasificaciones16.Length +
+                             _nombresSubClasificaciones17.Length + +_nombresSubClasificaciones18.Length +
+                             _nombresSubClasificaciones19.Length + _nombresSubClasificaciones20.Length +
+                             _nombresSubClasificaciones21.Length + _nombresSubClasificaciones22.Length +
+                             _nombresSubClasificaciones23.Length + _nombresSubClasificaciones24.Length +
+                             _nombresSubClasificaciones25.Length + _nombresSubClasificaciones26.Length +
+                             _nombresSubClasificaciones27.Length + _nombresSubClasificaciones28.Length +
+                             _nombresSubClasificaciones29.Length + _nombresSubClasificaciones30.Length +
+                             _nombresSubClasificaciones31.Length + _nombresSubClasificaciones32.Length +
+                             _nombresSubClasificaciones33.Length + 1 + i,
+                        DESCR = _nombresSubClasificaciones34[i],
+                        ID_CLASIFICACION = 34
+                    });
+
+                #endregion
                 #endregion
             }
             catch (System.Exception exc)
@@ -689,7 +862,7 @@ namespace FLAMINIS
             try
             {
                 var _cliente = new HttpClient();
-                var _respuesta = await _cliente.GetByteArrayAsync("http://finalchan.net/t/index.html");
+                var _respuesta = await _cliente.GetByteArrayAsync("http://boards.420chan.org/art/");
                 System.String source = System.Text.Encoding.GetEncoding("utf-8").GetString(_respuesta, 0, _respuesta.Length - 1);
                 source = WebUtility.HtmlDecode(source);
                 var _doc = new HtmlAgilityPack.HtmlDocument();
