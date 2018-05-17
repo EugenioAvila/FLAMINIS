@@ -766,29 +766,29 @@ namespace FLAMINIS
                 _diccionario.Add("SUGGESTIONS / META", "https://uboachan.net/sugg/catalog.html");
                 #endregion
                 #region tohno chan
-                _diccionario.Add("-ANIME", "http://tohno-chan.com/an/");
-                _diccionario.Add("-MANGA", "http://tohno-chan.com/ma/");
-                _diccionario.Add("-VIDEO GAMES", "http://tohno-chan.com/vg/");
-                _diccionario.Add("-TOUHOU", "http://tohno-chan.com/foe/");
-                _diccionario.Add("-MUSIC", "http://tohno-chan.com/mp3/");
-                _diccionario.Add("-VISUAL NOVEL", "http://tohno-chan.com/vn/");
+                _diccionario.Add("-ANIME", "http://tohno-chan.com/an/catalog.html");
+                _diccionario.Add("-MANGA", "http://tohno-chan.com/ma/catalog.html");
+                _diccionario.Add("-VIDEO GAMES", "http://tohno-chan.com/vg/catalog.html");
+                _diccionario.Add("-TOUHOU", "http://tohno-chan.com/foe/catalog.html");
+                _diccionario.Add("-MUSIC", "http://tohno-chan.com/mp3/catalog.html");
+                _diccionario.Add("-VISUAL NOVEL", "http://tohno-chan.com/vn/catalog.html");
 
-                _diccionario.Add("-COLLECTIBLES", "http://tohno-chan.com/fig/");
-                _diccionario.Add("-SCIENCE", "http://tohno-chan.com/navi/");
-                _diccionario.Add("-CREATIVITY", "http://tohno-chan.com/cr/");
+                _diccionario.Add("-COLLECTIBLES", "http://tohno-chan.com/fig/catalog.html");
+                _diccionario.Add("-SCIENCE", "http://tohno-chan.com/navi/catalog.html");
+                _diccionario.Add("-CREATIVITY", "http://tohno-chan.com/cr/catalog.html");
 
-                _diccionario.Add("-RONERY", "http://tohno-chan.com/so/");
-                _diccionario.Add("-WAIFU", "http://tohno-chan.com/mai/");
-                _diccionario.Add("-OTAKU TANGENTS", "http://tohno-chan.com/ot/");
+                _diccionario.Add("-RONERY", "http://tohno-chan.com/so/catalog.html");
+                _diccionario.Add("-WAIFU", "http://tohno-chan.com/mai/catalog.html");
+                _diccionario.Add("-OTAKU TANGENTS", "http://tohno-chan.com/ot/catalog.html");
 
-                _diccionario.Add("-IRC", "http://tohno-chan.com/irc/");
-                _diccionario.Add("-DATA", "http://tohno-chan.com/ddl/");
-                _diccionario.Add("-ARCHIVE", "http://tohno-chan.com/arc/");
-                _diccionario.Add("-HENTAI", "http://tohno-chan.com/ns/");
-                _diccionario.Add("-KEMONO FRIENDS", "http://tohno-chan.com/kf");
-                _diccionario.Add("-DUMPS", "http://tohno-chan.com/pic");
-                _diccionario.Add("-FUNPOSTING", "http://tohno-chan.com/lol/");
-                _diccionario.Add("-DEBATES", "http://tohno-chan.com/tat/");
+                _diccionario.Add("-IRC", "http://tohno-chan.com/irc/catalog.html");
+                _diccionario.Add("-DATA", "http://tohno-chan.com/ddl/catalog.html");
+                _diccionario.Add("-ARCHIVE", "http://tohno-chan.com/arc/catalog.html");
+                _diccionario.Add("-HENTAI", "http://tohno-chan.com/ns/catalog.html");
+                _diccionario.Add("-KEMONO FRIENDS", "http://tohno-chan.com/kf/catalog.html");
+                _diccionario.Add("-DUMPS", "http://tohno-chan.com/pic/catalog.html");
+                _diccionario.Add("-FUNPOSTING", "http://tohno-chan.com/lol/catalog.html");
+                _diccionario.Add("-DEBATES", "http://tohno-chan.com/tat/catalog.html");
                 #endregion
                 #region final chan
                 _diccionario.Add("ANIME & MANGA FINAL CHAN", "http://finalchan.net/an/index.html");
@@ -1003,29 +1003,16 @@ namespace FLAMINIS
                                                 #endregion
                                                 #region tohno chan
                                                 case 5:
-                                                    _doc.DocumentNode.Descendants("a").Select(e => e.Attributes["href"]).ToList().ForEach(z =>
+                                                    _doc.DocumentNode.SelectNodes("//a[@href]").Where(x => x.OuterHtml.Contains("/res/")).ToList().ForEach(z =>
                                                     {
-                                                        if (z != null)
-                                                            if (z.Value != null)
-                                                                if (!string.IsNullOrEmpty(z.Value))
-                                                                {
-                                                                    var _validacion = z.Value.Split('.');
-                                                                    if (_validacion != null)
-                                                                        if (_validacion.Any())
-                                                                        {
-                                                                            var _ex = _validacion.LastOrDefault();
-                                                                            if (_ex == "png" || _ex == "jpg")
-                                                                            {
-                                                                                if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z.Value)))
-                                                                                {
-                                                                                    _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal()
-                                                                                    {
-                                                                                        _url = z.Value
-                                                                                    });
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                }
+                                                        var _att = z.Attributes;
+                                                        if (_att != null && _att.Any())
+                                                            _att.ToList().ForEach(a =>
+                                                            {
+                                                                if (a.Value.Contains("/res/"))
+                                                                    if (!_urls.Any(c => c.Contains(a.Value)))
+                                                                        _urls.Add(a.Value);
+                                                            });
                                                     });
                                                     break;
                                                 #endregion
@@ -1118,6 +1105,10 @@ namespace FLAMINIS
                                             case 4:
                                                 if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
                                                     _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal() { _url = "https://uboachan.net" + z });
+                                                break;
+                                            case 5:
+                                                if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
+                                                    _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal() { _url = z });
                                                 break;
 
                                             default:
