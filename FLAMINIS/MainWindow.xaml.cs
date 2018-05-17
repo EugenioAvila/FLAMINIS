@@ -748,22 +748,22 @@ namespace FLAMINIS
                 _diccionario.Add("PORN XCHAN", "https://xchan.pw/catalog/porn/");
                 #endregion
                 #region uboachan
-                _diccionario.Add("YUME NIKKI GENERAL", "https://uboachan.net/yn/");
-                _diccionario.Add("YUME NIKKI - DREAM DIARY", "https://uboachan.net/yndd/");
-                _diccionario.Add("FANGAMES", "https://uboachan.net/fg/");
-                _diccionario.Add("DREAMS", "https://uboachan.net/yume/");
+                _diccionario.Add("YUME NIKKI GENERAL", "https://uboachan.net/yn/catalog.html");
+                _diccionario.Add("YUME NIKKI - DREAM DIARY", "https://uboachan.net/yndd/catalog.html");
+                _diccionario.Add("FANGAMES", "https://uboachan.net/fg/catalog.html");
+                _diccionario.Add("DREAMS", "https://uboachan.net/yume/catalog.html");
 
-                _diccionario.Add("ART / OEKAKI", "https://uboachan.net/o/");
-                _diccionario.Add("LITERATURE / FANFIC / POETRY", "https://uboachan.net/lit/");
-                _diccionario.Add("MUSIC / UPLOADS", "https://uboachan.net/media/");
-                _diccionario.Add("OTHER GAMES", "https://uboachan.net/og/");
-                _diccionario.Add("RPGMAKER / GAMEDEV", "https://uboachan.net/ig/");
+                _diccionario.Add("ART / OEKAKI", "https://uboachan.net/o/catalog.html");
+                _diccionario.Add("LITERATURE / FANFIC / POETRY", "https://uboachan.net/lit/catalog.html");
+                _diccionario.Add("MUSIC / UPLOADS", "https://uboachan.net/media/catalog.html");
+                _diccionario.Add("OTHER GAMES", "https://uboachan.net/og/catalog.html");
+                _diccionario.Add("RPGMAKER / GAMEDEV", "https://uboachan.net/ig/catalog.html");
 
-                _diccionario.Add("OFF-TOPIC", "https://uboachan.net/ot/");
-                _diccionario.Add("NEET / ADVICE", "https://uboachan.net/hikki/");
-                _diccionario.Add("CREEPY-CUTE", "https://uboachan.net/cc/");
-                _diccionario.Add("PARANORMAL / OCCULT", "https://uboachan.net/x/");
-                _diccionario.Add("SUGGESTIONS / META", "https://uboachan.net/sugg/");
+                _diccionario.Add("OFF-TOPIC", "https://uboachan.net/ot/catalog.html");
+                _diccionario.Add("NEET / ADVICE", "https://uboachan.net/hikki/catalog.html");
+                _diccionario.Add("CREEPY-CUTE", "https://uboachan.net/cc/catalog.html");
+                _diccionario.Add("PARANORMAL / OCCULT", "https://uboachan.net/x/catalog.html");
+                _diccionario.Add("SUGGESTIONS / META", "https://uboachan.net/sugg/catalog.html");
                 #endregion
                 #region tohno chan
                 _diccionario.Add("-ANIME", "http://tohno-chan.com/an/");
@@ -987,26 +987,18 @@ namespace FLAMINIS
                                                 #endregion
                                                 #region uboachan
                                                 case 4:
-                                                    _doc.DocumentNode.Descendants("img").Select(e => e.GetAttributeValue("src", null)).Where(s => !System.String.IsNullOrEmpty(s)).ToList().ForEach(z =>
+                                                    _doc.DocumentNode.SelectNodes("//a[@href]").Where(x => x.OuterHtml.Contains("/res/")).ToList().ForEach(z =>
                                                     {
-                                                        var _validacion = z.Split('.');
-                                                        if (_validacion != null)
-                                                            if (_validacion.Any())
+                                                        var _att = z.Attributes;
+                                                        if (_att != null && _att.Any())
+                                                            _att.ToList().ForEach(a =>
                                                             {
-                                                                var _ex = _validacion.LastOrDefault();
-                                                                if (_ex != "php" && _ex != "js")
-                                                                {
-                                                                    if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
-                                                                    {
-                                                                        _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal()
-                                                                        {
-                                                                            _url = "https://uboachan.net" + z
-                                                                        });
-                                                                    }
-                                                                }
-                                                            }
+                                                                if (!a.Value.StartsWith("http") && !a.Value.StartsWith("https"))
+                                                                    if (a.Value.Contains("/res/"))
+                                                                        if (!_urls.Any(c => c.Contains("https://uboachan.net" + a.Value)))
+                                                                            _urls.Add("https://uboachan.net" + a.Value);
+                                                            });
                                                     });
-
                                                     break;
                                                 #endregion
                                                 #region tohno chan
@@ -1123,6 +1115,11 @@ namespace FLAMINIS
                                                 if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
                                                     _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal() { _url = "https://xchan.pw" + z });
                                                 break;
+                                            case 4:
+                                                if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
+                                                    _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal() { _url = "https://uboachan.net" + z });
+                                                break;
+
                                             default:
                                                 break;
                                         }
