@@ -2,13 +2,11 @@
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-
 namespace FLAMINIS
 {
     public partial class MainWindow : MahApps.Metro.Controls.MetroWindow
     {
         WebClient webClient;
-        System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
         private System.Collections.Generic.List<Herramientas.Utilerias.cComboBoxClasificacion> _clasificaciones = new System.Collections.Generic.List<Herramientas.Utilerias.cComboBoxClasificacion>();
         private System.Collections.Generic.List<Herramientas.Utilerias.cComboBoxSubClasificacion> _subClasificaciones = new System.Collections.Generic.List<Herramientas.Utilerias.cComboBoxSubClasificacion>();
         public System.Collections.Generic.Dictionary<string, string> _diccionario = new System.Collections.Generic.Dictionary<string, string>();
@@ -1207,7 +1205,6 @@ namespace FLAMINIS
                             };
 
                             System.Uri URL = new System.Uri(item);
-                            sw.Start();
                             try
                             {
                                 progress2.Visibility = System.Windows.Visibility.Visible;
