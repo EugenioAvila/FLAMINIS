@@ -21,5 +21,10 @@
             public int ID { get; set; }
             public int ID_CLASIFICACION { get; set; }
         }
+
+        public enum ePlataformas
+        {
+            LAINCHAN = 2
+        };
     }
 }
