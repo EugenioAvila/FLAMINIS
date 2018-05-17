@@ -1183,19 +1183,40 @@ namespace FLAMINIS
 
         private void Button_Click_1(object sender, System.Windows.RoutedEventArgs e)
         {
+            lbl1.Content = "DESCARGANDO IMAGENES";
             if (lstMenuPrincipal.Items != null)
                 if (lstMenuPrincipal.Items.Count > 0)
                 {
+                    if (!Directory.Exists(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + "/" + "flaminis"))
+                        Directory.CreateDirectory(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + "/" + "flaminis");
+
                     var _elementos = lstMenuPrincipal.Items.Cast<Herramientas.ClasesCustomizadas.cPrincipal>().Select(item => item._url).ToList();
                     foreach (var item in _elementos)
                     {
                         using (webClient = new WebClient())
                         {
+                            webClient.DownloadProgressChanged += (s, x) =>
+                            {
+                                progress2.Value = x.ProgressPercentage;
+                                txtProg.Content = x.ProgressPercentage + "%";
+                            };
+                            webClient.DownloadFileCompleted += (s, x) =>
+                            {
+                                progress2.Value = 0;
+                                txtProg.Content = "0%";
+                            };
+
                             System.Uri URL = new System.Uri(item);
                             sw.Start();
                             try
                             {
-                                webClient.DownloadFile(URL, System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + "/" + new System.Random().Next(1, 5000) + "." + Path.GetExtension(item));
+                                progress2.Visibility = System.Windows.Visibility.Visible;
+                                string _ext = Path.GetExtension(item);
+                                webClient.DownloadFileAsync(URL, System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + "/" + "flaminis" + "/" + System.DateTime.Now.ToString("ss.ffffff") + (string.IsNullOrEmpty(_ext) ? ".png" : !_ext.StartsWith(".") ? "." + _ext : _ext));
+                            }
+                            catch (WebException)
+                            {
+                                continue;
                             }
                             catch (System.Exception ex)
                             {
@@ -1209,6 +1230,14 @@ namespace FLAMINIS
                     System.Windows.MessageBox.Show("No hay resultados para descargar");
                     return;
                 }
+
+
+            lbl1.Content = "IMAGENES DESCARGADAS";
+        }
+
+        private void WebClient_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
