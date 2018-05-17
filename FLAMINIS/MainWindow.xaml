@@ -50,6 +50,17 @@
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
                 <Button Grid.Column="0" Grid.Row="0" Content="Descargar Imágenes" Background="LightBlue" HorizontalAlignment="Center" Width="130" Click="Button_Click_1"></Button>
+                <Grid Grid.Column="1" Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70*"></ColumnDefinition>
+                        <ColumnDefinition Width="30*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Controls:MetroProgressBar  Name="progress2" MinHeight="30" MaxHeight="31" Grid.Column="0" Grid.Row="0"></Controls:MetroProgressBar>
+                    <Label Grid.Column="1" Grid.Row="0" Name="txtProg"></Label>
+                </Grid>
                 <DockPanel Grid.Column="2" Grid.Row="0">
                     <Controls:ProgressRing MinHeight="30" Visibility="Hidden" Name="progress1" MinWidth="30" HorizontalAlignment="Center" VerticalAlignment="Center" MaxHeight="31" MaxWidth="31"  />
                     <Label Name="lbl1" FontWeight="Bold" FontSize="20"></Label>
