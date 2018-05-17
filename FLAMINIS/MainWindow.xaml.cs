@@ -529,8 +529,8 @@ namespace FLAMINIS
                         DESCR = _nombresSubClasificaciones29[i],
                         ID_CLASIFICACION = 29
                     });
-
-                string[] _nombresSubClasificaciones30 = new string[] { "PERSONAL ISSUES 420CHAN", "DREAMS 420CHAN", "FITNESS 420CHAN", "FOOD & MUNCHIES 420CHAN", "TRANSPORTATION & TRAVEL 420CHAN", "STYLE & FASHION 420CHAN", "WEAPONS 420CHAN", "SEXUALITY DISCUSSION 420CHAN", "TRANSGENDER DISCUSSION 420CHAN" };
+                
+                string[] _nombresSubClasificaciones30 = new string[] { "ART & OEKAKI 420CHAN", "SPACE & ASTRONOMY 420CHAN", "MATHEMATICS 420CHAN", "ENGINEERING 420CHAN", "WORLD LANGUAGES 420CHAN", "SCIENCE & CHEMISTRY 420CHAN", "HISTORY 420CHAN", "GROWING & BOTANY 420CHAN", "GUIDES & TUTORIALS 420CHAN", "LAW DISCUSSION 420CHAN", "BOOKS & LITERATURE 420CHAN", "MEDICINE & HEALTH 420CHAN", "SOCIAL SCIENCES 420CHAN", "COMPUTERS & TECHNOLOGY 420CHAN", "PROGRAMMING 420CHAN" };
                 for (int i = 0; i < _nombresSubClasificaciones30.Length; i++)
                     _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
                     {
@@ -548,12 +548,12 @@ namespace FLAMINIS
                              _nombresSubClasificaciones23.Length + _nombresSubClasificaciones24.Length +
                              _nombresSubClasificaciones25.Length + _nombresSubClasificaciones26.Length +
                              _nombresSubClasificaciones27.Length + _nombresSubClasificaciones28.Length +
-                             _nombresSubClasificaciones29.Length + 1 + i,
+                             _nombresSubClasificaciones29.Length +  1 + i,
                         DESCR = _nombresSubClasificaciones30[i],
                         ID_CLASIFICACION = 30
                     });
 
-                string[] _nombresSubClasificaciones31 = new string[] { "ART & OEKAKI 420CHAN", "SPACE & ASTRONOMY 420CHAN", "MATHEMATICS 420CHAN", "ENGINEERING 420CHAN", "WORLD LANGUAGES 420CHAN", "SCIENCE & CHEMISTRY 420CHAN", "HISTORY 420CHAN", "GROWING & BOTANY 420CHAN", "GUIDES & TUTORIALS 420CHAN", "LAW DISCUSSION 420CHAN", "BOOKS & LITERATURE 420CHAN", "MEDICINE & HEALTH 420CHAN", "SOCIAL SCIENCES 420CHAN", "COMPUTERS & TECHNOLOGY 420CHAN", "PROGRAMMING 420CHAN" };
+                string[] _nombresSubClasificaciones31 = new string[] { "STAR TREK 420CHAN", "SPORTS 420CHAN", "MOVIES & TELEVISION 420CHAN", "FLASH 420CHAN", "MUSIC & PRODUCTION 420CHAN", "MIXED MARTIAL ARTS 420CHAN", "COMICS 420CHAN", "PRO WRESTLING 420CHAN", "WORLD NEWS 420CHAN", "VIDEO GAMES 420CHAN", "POKÉMON 420CHAN", "TRADITIONAL GAMES 420CHAN" };
                 for (int i = 0; i < _nombresSubClasificaciones31.Length; i++)
                     _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
                     {
@@ -572,12 +572,12 @@ namespace FLAMINIS
                              _nombresSubClasificaciones25.Length + _nombresSubClasificaciones26.Length +
                              _nombresSubClasificaciones27.Length + _nombresSubClasificaciones28.Length +
                              _nombresSubClasificaciones29.Length + _nombresSubClasificaciones30.Length +
-                             1 + i,
+                              1 + i,
                         DESCR = _nombresSubClasificaciones31[i],
                         ID_CLASIFICACION = 31
                     });
 
-                string[] _nombresSubClasificaciones32 = new string[] { "STAR TREK 420CHAN", "SPORTS 420CHAN", "MOVIES & TELEVISION 420CHAN", "FLASH 420CHAN", "MUSIC & PRODUCTION 420CHAN", "MIXED MARTIAL ARTS 420CHAN", "COMICS 420CHAN", "PRO WRESTLING 420CHAN", "WORLD NEWS 420CHAN", "VIDEO GAMES 420CHAN", "POKÉMON 420CHAN", "TRADITIONAL GAMES 420CHAN" };
+                string[] _nombresSubClasificaciones32 = new string[] { "420CHAN DISCUSSION", "RANDOM & HIGH STUFF 420CHAN", "PARANORMAL 420CHAN", "DINOSAURS 420CHAN", "POST-APOCALYPTIC 420CHAN", "ANIMALS 420CHAN", "NETJESTER AI 420CHAN", "NET CHARACTERS 420CHAN", "*WILDCARD (FUTURISM)* 420CHAN", "CONSPIRACY THEORIES 420CHAN", "DESKTOP WALLPAPERS 420CHAN" };
                 for (int i = 0; i < _nombresSubClasificaciones32.Length; i++)
                     _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
                     {
@@ -601,7 +601,7 @@ namespace FLAMINIS
                         ID_CLASIFICACION = 32
                     });
 
-                string[] _nombresSubClasificaciones33 = new string[] { "420CHAN DISCUSSION", "RANDOM & HIGH STUFF 420CHAN", "PARANORMAL 420CHAN", "DINOSAURS 420CHAN", "POST-APOCALYPTIC 420CHAN", "ANIMALS 420CHAN", "NETJESTER AI 420CHAN", "NET CHARACTERS 420CHAN", "*WILDCARD (FUTURISM)* 420CHAN", "CONSPIRACY THEORIES 420CHAN", "DESKTOP WALLPAPERS 420CHAN" };
+                string[] _nombresSubClasificaciones33 = new string[] { "ADULT (GAY) 420CHAN", "ADULT (STRAIGHT) 420CHAN", "HENTAI 420CHAN" };
                 for (int i = 0; i < _nombresSubClasificaciones33.Length; i++)
                     _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
                     {
@@ -621,34 +621,9 @@ namespace FLAMINIS
                              _nombresSubClasificaciones27.Length + _nombresSubClasificaciones28.Length +
                              _nombresSubClasificaciones29.Length + _nombresSubClasificaciones30.Length +
                              _nombresSubClasificaciones31.Length + _nombresSubClasificaciones32.Length +
-                             1 + i,
+                              1 + i,
                         DESCR = _nombresSubClasificaciones33[i],
                         ID_CLASIFICACION = 33
-                    });
-
-                string[] _nombresSubClasificaciones34 = new string[] { "ADULT (GAY) 420CHAN", "ADULT (STRAIGHT) 420CHAN", "HENTAI 420CHAN" };
-                for (int i = 0; i < _nombresSubClasificaciones34.Length; i++)
-                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
-                    {
-                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
-                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
-                             _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
-                             _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
-                             _nombresSubClasificaciones9.Length + _nombresSubClasificaciones10.Length +
-                             _nombresSubClasificaciones11.Length + _nombresSubClasificaciones12.Length +
-                             _nombresSubClasificaciones13.Length + _nombresSubClasificaciones14.Length +
-                             _nombresSubClasificaciones15.Length + _nombresSubClasificaciones16.Length +
-                             _nombresSubClasificaciones17.Length + +_nombresSubClasificaciones18.Length +
-                             _nombresSubClasificaciones19.Length + _nombresSubClasificaciones20.Length +
-                             _nombresSubClasificaciones21.Length + _nombresSubClasificaciones22.Length +
-                             _nombresSubClasificaciones23.Length + _nombresSubClasificaciones24.Length +
-                             _nombresSubClasificaciones25.Length + _nombresSubClasificaciones26.Length +
-                             _nombresSubClasificaciones27.Length + _nombresSubClasificaciones28.Length +
-                             _nombresSubClasificaciones29.Length + _nombresSubClasificaciones30.Length +
-                             _nombresSubClasificaciones31.Length + _nombresSubClasificaciones32.Length +
-                             _nombresSubClasificaciones33.Length + 1 + i,
-                        DESCR = _nombresSubClasificaciones34[i],
-                        ID_CLASIFICACION = 34
                     });
 
                 #endregion
@@ -830,6 +805,77 @@ namespace FLAMINIS
 
                 _diccionario.Add("ALL", "http://finalchan.net/1984/");
                 _diccionario.Add("RECENT", "http://finalchan.net/recent.html");
+                #endregion
+                #region 420chan
+                _diccionario.Add("CANNABIS DISCUSSION 420CHAN", "http://boards.420chan.org/weed");
+                _diccionario.Add("ALCOHOL DISCUSSION 420CHAN", "http://boards.420chan.org/drank");
+                _diccionario.Add("ECSTASY DISCUSSION 420CHAN", "http://boards.420chan.org/mdma");
+                _diccionario.Add("PSYCHEDELIC DISCUSSION 420CHAN", "http://boards.420chan.org/psy");
+                _diccionario.Add("STIMULANT DISCUSSION 420CHAN", "http://boards.420chan.org/stim");
+                _diccionario.Add("DISSOCIATIVE DISCUSSION 420CHAN", "http://boards.420chan.org/dis");
+                _diccionario.Add("OPIATE DISCUSSION 420CHAN", "http://boards.420chan.org/opi");
+                _diccionario.Add("VAPING DISCUSSION 420CHAN", "http://boards.420chan.org/vape");
+                _diccionario.Add("TOBACCO DISCUSSION 420CHAN", "http://boards.420chan.org/tobacco");
+                _diccionario.Add("BENZO DISCUSSION 420CHAN", "http://boards.420chan.org/benz");
+                _diccionario.Add("DELIRIANT DISCUSSION 420CHAN", "http://boards.420chan.org/deli");
+                _diccionario.Add("OTHER DRUGS 420CHAN", "http://boards.420chan.org/other");
+                _diccionario.Add("JENKEM DISCUSSION 420CHAN", "http://boards.420chan.org/jenk");
+                _diccionario.Add("DETOX 420CHAN", "http://boards.420chan.org/detox");
+
+                _diccionario.Add("PERSONAL ISSUES 420CHAN", "http://boards.420chan.org/qq");
+                _diccionario.Add("DREAMS 420CHAN", "http://boards.420chan.org/dr");
+                _diccionario.Add("FITNESS 420CHAN", "http://boards.420chan.org/ana");
+                _diccionario.Add("FOOD & MUNCHIES 420CHAN", "http://boards.420chan.org/nom");
+                _diccionario.Add("TRANSPORTATION & TRAVEL 420CHAN", "http://boards.420chan.org/vroom");
+                _diccionario.Add("STYLE & FASHION 420CHAN", "http://boards.420chan.org/st");
+                _diccionario.Add("WEAPONS 420CHAN", "http://boards.420chan.org/nra");
+                _diccionario.Add("SEXUALITY DISCUSSION 420CHAN", "http://boards.420chan.org/sd");
+                _diccionario.Add("TRANSGENDER DISCUSSION 420CHAN", "http://boards.420chan.org/cd");
+
+                _diccionario.Add("ART & OEKAKI 420CHAN", "http://boards.420chan.org/art");
+                _diccionario.Add("SPACE & ASTRONOMY 420CHAN", "http://boards.420chan.org/sagan");
+                _diccionario.Add("MATHEMATICS 420CHAN", "http://boards.420chan.org/math");
+                _diccionario.Add("ENGINEERING 420CHAN", "http://boards.420chan.org/tesla");
+                _diccionario.Add("WORLD LANGUAGES 420CHAN", "http://boards.420chan.org/lang");
+                _diccionario.Add("SCIENCE & CHEMISTRY 420CHAN", "http://boards.420chan.org/chem");
+                _diccionario.Add("HISTORY 420CHAN", "http://boards.420chan.org/his");
+                _diccionario.Add("GROWING & BOTANY 420CHAN", "http://boards.420chan.org/crops");
+                _diccionario.Add("GUIDES & TUTORIALS 420CHAN", "http://boards.420chan.org/howto");
+                _diccionario.Add("LAW DISCUSSION 420CHAN", "http://boards.420chan.org/law");
+                _diccionario.Add("BOOKS & LITERATURE 420CHAN", "http://boards.420chan.org/lit");
+                _diccionario.Add("MEDICINE & HEALTH 420CHAN", "http://boards.420chan.org/med");
+                _diccionario.Add("SOCIAL SCIENCES 420CHAN", "http://boards.420chan.org/pss");
+                _diccionario.Add("COMPUTERS & TECHNOLOGY 420CHAN", "http://boards.420chan.org/tech");
+                _diccionario.Add("PROGRAMMING 420CHAN", "http://boards.420chan.org/prog");
+
+                _diccionario.Add("STAR TREK 420CHAN", "http://boards.420chan.org/1701");
+                _diccionario.Add("SPORTS 420CHAN", "http://boards.420chan.org/sport");
+                _diccionario.Add("MOVIES & TELEVISION 420CHAN", "http://boards.420chan.org/mtv");
+                _diccionario.Add("FLASH 420CHAN", "http://boards.420chan.org/f");
+                _diccionario.Add("MUSIC & PRODUCTION 420CHAN", "http://boards.420chan.org/m");
+                _diccionario.Add("MIXED MARTIAL ARTS 420CHAN", "http://boards.420chan.org/mma");
+                _diccionario.Add("COMICS 420CHAN", "http://boards.420chan.org/616");
+                _diccionario.Add("PRO WRESTLING 420CHAN", "http://boards.420chan.org/wooo");
+                _diccionario.Add("WORLD NEWS 420CHAN", "http://boards.420chan.org/n");
+                _diccionario.Add("VIDEO GAMES 420CHAN", "http://boards.420chan.org/vg");
+                _diccionario.Add("POKÉMON 420CHAN", "http://boards.420chan.org/po");
+                _diccionario.Add("TRADITIONAL GAMES 420CHAN", "http://boards.420chan.org/tg");
+
+                _diccionario.Add("420CHAN DISCUSSION", "http://boards.420chan.org/420");
+                _diccionario.Add("RANDOM & HIGH STUFF 420CHAN", "http://boards.420chan.org/b");
+                _diccionario.Add("PARANORMAL 420CHAN", "http://boards.420chan.org/spooky");
+                _diccionario.Add("DINOSAURS 420CHAN", "http://boards.420chan.org/dino");
+                _diccionario.Add("POST-APOCALYPTIC 420CHAN", "http://boards.420chan.org/fo");
+                _diccionario.Add("ANIMALS 420CHAN", "http://boards.420chan.org/ani");
+                _diccionario.Add("NETJESTER AI 420CHAN", "http://boards.420chan.org/nj");
+                _diccionario.Add("NET CHARACTERS 420CHAN", "http://boards.420chan.org/nc");
+                _diccionario.Add("*WILDCARD (FUTURISM)* 420CHAN", "http://boards.420chan.org/wc");
+                _diccionario.Add("CONSPIRACY THEORIES 420CHAN", "http://boards.420chan.org/tinfoil");
+                _diccionario.Add("DESKTOP WALLPAPERS 420CHAN", "http://boards.420chan.org/w");
+
+                _diccionario.Add("ADULT (GAY) 420CHAN", "http://boards.420chan.org/ga");
+                _diccionario.Add("ADULT (STRAIGHT) 420CHAN", "http://boards.420chan.org/sa");
+                _diccionario.Add("HENTAI 420CHAN", "http://boards.420chan.org/h");
                 #endregion
             }
             catch (System.Exception exc)
@@ -1024,6 +1070,30 @@ namespace FLAMINIS
                                                             }
                                                     });
                                                     break;
+                                                #endregion
+                                                #region 420chan
+                                                case 7:
+                                                    _doc.DocumentNode.Descendants("img").Select(e => e.GetAttributeValue("src", null)).Where(s => !System.String.IsNullOrEmpty(s)).ToList().ForEach(z =>
+                                                    {
+                                                        var _validacion = z.Split('.');
+                                                        if (_validacion != null)
+                                                            if (_validacion.Any())
+                                                            {
+                                                                var _ex = _validacion.LastOrDefault();
+                                                                if (_ex != "php" && _ex != "js")
+                                                                {
+                                                                    if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
+                                                                    {
+                                                                        _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal()
+                                                                        {
+                                                                            _url = "http://boards.420chan.org/" + z
+                                                                        });
+                                                                    }
+                                                                }
+                                                            }
+                                                    });
+                                                    break;
+
                                                 #endregion
                                                 default:
                                                     break;
