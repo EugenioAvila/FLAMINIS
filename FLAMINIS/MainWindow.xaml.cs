@@ -733,19 +733,19 @@ namespace FLAMINIS
                 _diccionario.Add("RND LAINCHAN", "https://lainchan.org/random/catalog.html");
                 #endregion
                 #region xchan
-                _diccionario.Add("ALEATORIO", "https://xchan.pw/board/b/");
-                _diccionario.Add("C-C-C-CANCER", "https://xchan.pw/board/c/");
-                _diccionario.Add("HUEHUE", "https://xchan.pw/board/int/");
-                _diccionario.Add("ENTRETENIMIENTO", "https://xchan.pw/board/e/");
-                _diccionario.Add("JOGOS CONSOLAS", "https://xchan.pw/board/jo/");
-                _diccionario.Add("MUSIC XCHAN", "https://xchan.pw/board/mu/");
-                _diccionario.Add("XCHAN", "https://xchan.pw/board/x/");
-                _diccionario.Add("DESENVOLVIMENTO", "https://xchan.pw/board/dev/");
-                _diccionario.Add("GNU/LINUX", "https://xchan.pw/board/gnu/");
-                _diccionario.Add("PROGRAMACAO", "https://xchan.pw/board/prog");
-                _diccionario.Add("TEC & GADG", "https://xchan.pw/board/tech/");
-                _diccionario.Add("HENTAI XCHAN", "https://xchan.pw/board/h/");
-                _diccionario.Add("PORN XCHAN", "https://xchan.pw/board/porn/");
+                _diccionario.Add("ALEATORIO", "https://xchan.pw/catalog/b/");
+                _diccionario.Add("C-C-C-CANCER", "https://xchan.pw/catalog/c/");
+                _diccionario.Add("HUEHUE", "https://xchan.pw/catalog/int/");
+                _diccionario.Add("ENTRETENIMIENTO", "https://xchan.pw/catalog/e/");
+                _diccionario.Add("JOGOS CONSOLAS", "https://xchan.pw/catalog/jo/");
+                _diccionario.Add("MUSIC XCHAN", "https://xchan.pw/catalog/mu/");
+                _diccionario.Add("XCHAN", "https://xchan.pw/catalog/x/");
+                _diccionario.Add("DESENVOLVIMENTO", "https://xchan.pw/catalog/dev/");
+                _diccionario.Add("GNU/LINUX", "https://xchan.pw/catalog/gnu/");
+                _diccionario.Add("PROGRAMACAO", "https://xchan.pw/catalog/prog");
+                _diccionario.Add("TEC & GADG", "https://xchan.pw/catalog/tech/");
+                _diccionario.Add("HENTAI XCHAN", "https://xchan.pw/catalog/h/");
+                _diccionario.Add("PORN XCHAN", "https://xchan.pw/catalog/porn/");
                 #endregion
                 #region uboachan
                 _diccionario.Add("YUME NIKKI GENERAL", "https://uboachan.net/yn/");
@@ -971,24 +971,17 @@ namespace FLAMINIS
                                                 #endregion
                                                 #region xchan
                                                 case 3:
-                                                    _doc.DocumentNode.Descendants("img").Select(e => e.GetAttributeValue("src", null)).Where(s => !System.String.IsNullOrEmpty(s)).ToList().ForEach(z =>
+                                                    _doc.DocumentNode.SelectNodes("//a[@href]").Where(x => x.OuterHtml.Contains("/thread/")).ToList().ForEach(z =>
                                                     {
-                                                        var _validacion = z.Split('.');
-                                                        if (_validacion != null)
-                                                            if (_validacion.Any())
+                                                        var _att = z.Attributes;
+                                                        if (_att != null && _att.Any())
+                                                            _att.ToList().ForEach(a =>
                                                             {
-                                                                var _ex = _validacion.LastOrDefault();
-                                                                if (_ex != "php" && _ex != "js")
-                                                                {
-                                                                    if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
-                                                                    {
-                                                                        _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal()
-                                                                        {
-                                                                            _url = "https://xchan.pw" + z
-                                                                        });
-                                                                    }
-                                                                }
-                                                            }
+                                                                if (!a.Value.StartsWith("http") && !a.Value.StartsWith("https"))
+                                                                    if (a.Value.Contains("/thread/"))
+                                                                        if (!_urls.Any(c => c.Contains("https://xchan.pw" + a.Value)))
+                                                                            _urls.Add("https://xchan.pw" + a.Value);
+                                                            });
                                                     });
                                                     break;
                                                 #endregion
@@ -1118,8 +1111,22 @@ namespace FLAMINIS
                                 {
                                     var _ex = _validacion.LastOrDefault();
                                     if (_ex != "php" && _ex != "js")
-                                        if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
-                                            _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal() { _url = "https://lainchan.org" + z });
+                                    {
+                                        switch (_plataformaSeleccionada.ID)
+                                        {
+                                            case 2:
+                                                if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
+                                                    _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal() { _url = "https://lainchan.org" + z });
+                                                break;
+
+                                            case 3:
+                                                if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
+                                                    _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal() { _url = "https://xchan.pw" + z });
+                                                break;
+                                            default:
+                                                break;
+                                        }
+                                    }
                                 }
                         });
                     }
