@@ -2,13 +2,11 @@
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-
 namespace FLAMINIS
 {
     public partial class MainWindow : MahApps.Metro.Controls.MetroWindow
     {
         WebClient webClient;
-        System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
         private System.Collections.Generic.List<Herramientas.Utilerias.cComboBoxClasificacion> _clasificaciones = new System.Collections.Generic.List<Herramientas.Utilerias.cComboBoxClasificacion>();
         private System.Collections.Generic.List<Herramientas.Utilerias.cComboBoxSubClasificacion> _subClasificaciones = new System.Collections.Generic.List<Herramientas.Utilerias.cComboBoxSubClasificacion>();
         public System.Collections.Generic.Dictionary<string, string> _diccionario = new System.Collections.Generic.Dictionary<string, string>();
@@ -953,7 +951,7 @@ namespace FLAMINIS
                                             switch (_plataformaSeleccionada.ID)
                                             {
                                                 #region lainchan
-                                                case 2:
+                                                case (short)Herramientas.Utilerias.ePlataformas.LAINCHAN:
                                                     _doc.DocumentNode.SelectNodes("//a[@href]").Where(x => x.OuterHtml.Contains("/res/")).ToList().ForEach(z =>
                                                     {
                                                         var _att = z.Attributes;
@@ -969,7 +967,7 @@ namespace FLAMINIS
                                                     break;
                                                 #endregion
                                                 #region xchan
-                                                case 3:
+                                                case (short)Herramientas.Utilerias.ePlataformas.XCHAN:
                                                     _doc.DocumentNode.SelectNodes("//a[@href]").Where(x => x.OuterHtml.Contains("/thread/")).ToList().ForEach(z =>
                                                     {
                                                         var _att = z.Attributes;
@@ -985,7 +983,7 @@ namespace FLAMINIS
                                                     break;
                                                 #endregion
                                                 #region uboachan
-                                                case 4:
+                                                case (short)Herramientas.Utilerias.ePlataformas.UBOACHAN:
                                                     _doc.DocumentNode.SelectNodes("//a[@href]").Where(x => x.OuterHtml.Contains("/res/")).ToList().ForEach(z =>
                                                     {
                                                         var _att = z.Attributes;
@@ -1001,7 +999,7 @@ namespace FLAMINIS
                                                     break;
                                                 #endregion
                                                 #region tohno chan
-                                                case 5:
+                                                case (short)Herramientas.Utilerias.ePlataformas.TOHNO_CHAN:
                                                     _doc.DocumentNode.SelectNodes("//a[@href]").Where(x => x.OuterHtml.Contains("/res/")).ToList().ForEach(z =>
                                                     {
                                                         var _att = z.Attributes;
@@ -1016,7 +1014,7 @@ namespace FLAMINIS
                                                     break;
                                                 #endregion
                                                 #region final chan
-                                                case 6:
+                                                case (short)Herramientas.Utilerias.ePlataformas.FINAL_CHAN:
                                                     _doc.DocumentNode.SelectNodes("//a[@href]").Where(x => x.OuterHtml.Contains("/res/")).ToList().ForEach(z =>
                                                     {
                                                         var _att = z.Attributes;
@@ -1031,7 +1029,7 @@ namespace FLAMINIS
                                                     break;
                                                 #endregion
                                                 #region 420chan
-                                                case 7:
+                                                case (short)Herramientas.Utilerias.ePlataformas.CHAN420:
                                                     _doc.DocumentNode.Descendants("img").Select(e => e.GetAttributeValue("src", null)).Where(s => !System.String.IsNullOrEmpty(s)).ToList().ForEach(z =>
                                                     {
                                                         var _validacion = z.Split('.');
@@ -1084,24 +1082,24 @@ namespace FLAMINIS
                                     {
                                         switch (_plataformaSeleccionada.ID)
                                         {
-                                            case 2:
+                                            case (short)Herramientas.Utilerias.ePlataformas.LAINCHAN:
                                                 if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
                                                     _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal() { _url = "https://lainchan.org" + z });
                                                 break;
 
-                                            case 3:
+                                            case (short)Herramientas.Utilerias.ePlataformas.XCHAN:
                                                 if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
                                                     _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal() { _url = "https://xchan.pw" + z });
                                                 break;
-                                            case 4:
+                                            case (short)Herramientas.Utilerias.ePlataformas.UBOACHAN:
                                                 if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
                                                     _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal() { _url = "https://uboachan.net" + z });
                                                 break;
-                                            case 5:
+                                            case (short)Herramientas.Utilerias.ePlataformas.TOHNO_CHAN:
                                                 if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
                                                     _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal() { _url = z });
                                                 break;
-                                            case 6:
+                                            case (short)Herramientas.Utilerias.ePlataformas.FINAL_CHAN:
                                                 if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
                                                     _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal() { _url = "http://finalchan.net" + z });
                                                 break;
@@ -1207,7 +1205,6 @@ namespace FLAMINIS
                             };
 
                             System.Uri URL = new System.Uri(item);
-                            sw.Start();
                             try
                             {
                                 progress2.Visibility = System.Windows.Visibility.Visible;

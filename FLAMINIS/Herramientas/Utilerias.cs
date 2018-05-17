@@ -24,7 +24,12 @@
 
         public enum ePlataformas
         {
-            LAINCHAN = 2
+            LAINCHAN = 2,
+            XCHAN = 3,
+            UBOACHAN = 4,
+            TOHNO_CHAN = 5,
+            FINAL_CHAN = 6,
+            CHAN420 = 7
         };
     }
 }
