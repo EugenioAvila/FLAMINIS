@@ -458,7 +458,7 @@ namespace FLAMINIS
                              _nombresSubClasificaciones19.Length + _nombresSubClasificaciones20.Length +
                              _nombresSubClasificaciones21.Length + _nombresSubClasificaciones22.Length +
                              _nombresSubClasificaciones23.Length + _nombresSubClasificaciones24.Length +
-                             _nombresSubClasificaciones25.Length +  1 + i,
+                             _nombresSubClasificaciones25.Length + 1 + i,
                         DESCR = _nombresSubClasificaciones26[i],
                         ID_CLASIFICACION = 26
                     });
@@ -529,7 +529,7 @@ namespace FLAMINIS
                         DESCR = _nombresSubClasificaciones29[i],
                         ID_CLASIFICACION = 29
                     });
-                
+
                 string[] _nombresSubClasificaciones30 = new string[] { "ART & OEKAKI 420CHAN", "SPACE & ASTRONOMY 420CHAN", "MATHEMATICS 420CHAN", "ENGINEERING 420CHAN", "WORLD LANGUAGES 420CHAN", "SCIENCE & CHEMISTRY 420CHAN", "HISTORY 420CHAN", "GROWING & BOTANY 420CHAN", "GUIDES & TUTORIALS 420CHAN", "LAW DISCUSSION 420CHAN", "BOOKS & LITERATURE 420CHAN", "MEDICINE & HEALTH 420CHAN", "SOCIAL SCIENCES 420CHAN", "COMPUTERS & TECHNOLOGY 420CHAN", "PROGRAMMING 420CHAN" };
                 for (int i = 0; i < _nombresSubClasificaciones30.Length; i++)
                     _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
@@ -548,7 +548,7 @@ namespace FLAMINIS
                              _nombresSubClasificaciones23.Length + _nombresSubClasificaciones24.Length +
                              _nombresSubClasificaciones25.Length + _nombresSubClasificaciones26.Length +
                              _nombresSubClasificaciones27.Length + _nombresSubClasificaciones28.Length +
-                             _nombresSubClasificaciones29.Length +  1 + i,
+                             _nombresSubClasificaciones29.Length + 1 + i,
                         DESCR = _nombresSubClasificaciones30[i],
                         ID_CLASIFICACION = 30
                     });
@@ -713,24 +713,24 @@ namespace FLAMINIS
                 _diccionario.Add("ADULT REQUESTS", "http://boards.4chan.org/r/");
                 #endregion
                 #region lainchan
-                _diccionario.Add("PROGRAMMING LAINCHAN", "https://lainchan.org/\u03BB/index.html");
-                _diccionario.Add("DO IT YOURSELF LAINCHAN", "https://lainchan.org/Δ/index.html");
-                _diccionario.Add("SEC LAINCHAN", "https://lainchan.org/sec/index.html");
-                _diccionario.Add("TECH LAINCHAN", "https://lainchan.org/Ω/index.html");
-                _diccionario.Add("INTER LAINCHAN", "https://lainchan.org/inter/index.html");
-                _diccionario.Add("LIT LAINCHAN", "https://lainchan.org/lit/index.html");
-                _diccionario.Add("MUSIC LAINCHAN", "https://lainchan.org/music/index.html");
-                _diccionario.Add("VIS LAINCHAN", "https://lainchan.org/vis/index.html");
-                _diccionario.Add("HUM LAINCHAN", "https://lainchan.org/hum/index.html");
-                _diccionario.Add("DRG LAINCHAN", "https://lainchan.org/drug/index.html");
-                _diccionario.Add("ZZZ LAINCHAN", "https://lainchan.org/zzz/index.html");
-                _diccionario.Add("LAYER LAINCHAN", "https://lainchan.org/layer/index.html");
-                _diccionario.Add("Q LAINCHAN", "https://lainchan.org/q/index.html");
-                _diccionario.Add("R LAINCHAN", "https://lainchan.org/r/index.html");
-                _diccionario.Add("CULT LAINCHAN", "https://lainchan.org/culture/index.html");
-                _diccionario.Add("PSY LAINCHAN", "https://lainchan.org/psy/index.html");
-                _diccionario.Add("MEGA LAINCHAN", "https://lainchan.org/mega/index.html");
-                _diccionario.Add("RND LAINCHAN", "https://lainchan.org/random/index.html");
+                _diccionario.Add("PROGRAMMING LAINCHAN", "https://lainchan.org/\u03BB/catalog.html");
+                _diccionario.Add("DO IT YOURSELF LAINCHAN", "https://lainchan.org/Δ/catalog.html");
+                _diccionario.Add("SEC LAINCHAN", "https://lainchan.org/sec/catalog.html");
+                _diccionario.Add("TECH LAINCHAN", "https://lainchan.org/Ω/catalog.html");
+                _diccionario.Add("INTER LAINCHAN", "https://lainchan.org/inter/catalog.html");
+                _diccionario.Add("LIT LAINCHAN", "https://lainchan.org/lit/catalog.html");
+                _diccionario.Add("MUSIC LAINCHAN", "https://lainchan.org/music/catalog.html");
+                _diccionario.Add("VIS LAINCHAN", "https://lainchan.org/vis/catalog.html");
+                _diccionario.Add("HUM LAINCHAN", "https://lainchan.org/hum/catalog.html");
+                _diccionario.Add("DRG LAINCHAN", "https://lainchan.org/drug/catalog.html");
+                _diccionario.Add("ZZZ LAINCHAN", "https://lainchan.org/zzz/catalog.html");
+                _diccionario.Add("LAYER LAINCHAN", "https://lainchan.org/layer/catalog.html");
+                _diccionario.Add("Q LAINCHAN", "https://lainchan.org/q/catalog.html");
+                _diccionario.Add("R LAINCHAN", "https://lainchan.org/r/catalog.html");
+                _diccionario.Add("CULT LAINCHAN", "https://lainchan.org/culture/catalog.html");
+                _diccionario.Add("PSY LAINCHAN", "https://lainchan.org/psy/catalog.html");
+                _diccionario.Add("MEGA LAINCHAN", "https://lainchan.org/mega/catalog.html");
+                _diccionario.Add("RND LAINCHAN", "https://lainchan.org/random/catalog.html");
                 #endregion
                 #region xchan
                 _diccionario.Add("ALEATORIO", "https://xchan.pw/board/b/");
@@ -925,6 +925,7 @@ namespace FLAMINIS
         {
             try
             {
+                //_url = "https://lainchan.org/lit/res/942.html";
                 System.Collections.Generic.List<Herramientas.ClasesCustomizadas.cPrincipal> _menu = new System.Collections.Generic.List<Herramientas.ClasesCustomizadas.cPrincipal>();
                 var _plataformaSeleccionada = ComboPlataforma.SelectedItem as Herramientas.Utilerias.cComboBox;
                 var _cliente = new HttpClient();
@@ -1109,6 +1110,26 @@ namespace FLAMINIS
             catch (System.Exception exc)
             {
                 throw;
+            }
+        }
+
+        private System.Collections.Generic.List<HtmlAgilityPack.HtmlDocument> BuscarProfundo(string _url, short _plataforma)
+        {
+            try
+            {
+                System.Collections.Generic.List<HtmlAgilityPack.HtmlDocument> _catalogos = new System.Collections.Generic.List<HtmlAgilityPack.HtmlDocument>();
+                switch (_plataforma)
+                {
+                    default:
+                        break;
+                }
+
+                
+                return _catalogos;
+            }
+            catch (System.Exception exc)
+            {
+                throw exc;
             }
         }
 
