@@ -925,7 +925,8 @@ namespace FLAMINIS
         {
             try
             {
-                //_url = "https://lainchan.org/lit/res/942.html";
+                progress1.Visibility = System.Windows.Visibility.Visible;
+                lbl1.Content = "OBTENIENDO ENLACES";
                 System.Collections.Generic.List<Herramientas.ClasesCustomizadas.cPrincipal> _menu = new System.Collections.Generic.List<Herramientas.ClasesCustomizadas.cPrincipal>();
                 var _plataformaSeleccionada = ComboPlataforma.SelectedItem as Herramientas.Utilerias.cComboBox;
                 var _cliente = new HttpClient();
@@ -934,6 +935,7 @@ namespace FLAMINIS
                 source = WebUtility.HtmlDecode(source);
                 var _doc = new HtmlAgilityPack.HtmlDocument();
                 _doc.LoadHtml(source);
+                System.Collections.Generic.List<string> _urls = new System.Collections.Generic.List<string>();
                 foreach (HtmlAgilityPack.HtmlNode _data in _doc.DocumentNode.ChildNodes)
                 {
                     var _nodos = _data.ChildNodes;
@@ -953,24 +955,17 @@ namespace FLAMINIS
                                             {
                                                 #region lainchan
                                                 case 2:
-                                                    _doc.DocumentNode.Descendants("img").Select(e => e.GetAttributeValue("src", null)).Where(s => !System.String.IsNullOrEmpty(s)).ToList().ForEach(z =>
+                                                    _doc.DocumentNode.SelectNodes("//a[@href]").Where(x => x.OuterHtml.Contains("/res/")).ToList().ForEach(z =>
                                                     {
-                                                        var _validacion = z.Split('.');
-                                                        if (_validacion != null)
-                                                            if (_validacion.Any())
+                                                        var _att = z.Attributes;
+                                                        if (_att != null && _att.Any())
+                                                            _att.ToList().ForEach(a =>
                                                             {
-                                                                var _ex = _validacion.LastOrDefault();
-                                                                if (_ex != "php" && _ex != "js")
-                                                                {
-                                                                    if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
-                                                                    {
-                                                                        _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal()
-                                                                        {
-                                                                            _url = "https://lainchan.org" + z
-                                                                        });
-                                                                    }
-                                                                }
-                                                            }
+                                                                if (!a.Value.StartsWith("http") && !a.Value.StartsWith("https"))
+                                                                    if (a.Value.Contains("/res/"))
+                                                                        if (!_urls.Any(c => c.Contains("https://lainchan.org" + a.Value)))
+                                                                            _urls.Add("https://lainchan.org" + a.Value);
+                                                            });
                                                     });
                                                     break;
                                                 #endregion
@@ -1105,31 +1100,37 @@ namespace FLAMINIS
                 }
 
 
+                lbl1.Content = "CONSUMIENDO IMAGENES";
+                if (_urls.Any())
+                    foreach (var item in _urls)
+                    {
+                        var _c = new HttpClient();
+                        var _r = await _c.GetByteArrayAsync(item);
+                        System.String _s = System.Text.Encoding.GetEncoding("utf-8").GetString(_r, 0, _r.Length - 1);
+                        _s = WebUtility.HtmlDecode(_s);
+                        var _d = new HtmlAgilityPack.HtmlDocument();
+                        _d.LoadHtml(_s);
+                        _d.DocumentNode.Descendants("img").Select(e => e.GetAttributeValue("src", null)).Where(s => !System.String.IsNullOrEmpty(s)).ToList().ForEach(z =>
+                        {
+                            var _validacion = z.Split('.');
+                            if (_validacion != null)
+                                if (_validacion.Any())
+                                {
+                                    var _ex = _validacion.LastOrDefault();
+                                    if (_ex != "php" && _ex != "js")
+                                        if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
+                                            _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal() { _url = "https://lainchan.org" + z });
+                                }
+                        });
+                    }
+
+                lbl1.Content = "TERMINADO";
+                progress1.Visibility = System.Windows.Visibility.Hidden;
                 lstMenuPrincipal.ItemsSource = _menu;
             }
             catch (System.Exception exc)
             {
-                throw;
-            }
-        }
-
-        private System.Collections.Generic.List<HtmlAgilityPack.HtmlDocument> BuscarProfundo(string _url, short _plataforma)
-        {
-            try
-            {
-                System.Collections.Generic.List<HtmlAgilityPack.HtmlDocument> _catalogos = new System.Collections.Generic.List<HtmlAgilityPack.HtmlDocument>();
-                switch (_plataforma)
-                {
-                    default:
-                        break;
-                }
-
-                
-                return _catalogos;
-            }
-            catch (System.Exception exc)
-            {
-                throw exc;
+                lbl1.Content = exc.Message;
             }
         }
 
