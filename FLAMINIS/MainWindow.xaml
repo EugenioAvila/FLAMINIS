@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        WindowState="Maximized"
+        WindowState="Maximized" Icon="favicon.ico"
         Title="Página Principal">
     <Grid>
         <Grid.ColumnDefinitions>
