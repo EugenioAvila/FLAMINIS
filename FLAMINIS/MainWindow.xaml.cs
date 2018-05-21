@@ -33,7 +33,8 @@ namespace FLAMINIS
                     new Herramientas.Utilerias.cComboBox() { ID = 4, DESCR = "UBOACHAN" },
                     new Herramientas.Utilerias.cComboBox() { ID = 5, DESCR = "TOHNO-CHAN" },
                     new Herramientas.Utilerias.cComboBox() { ID = 6, DESCR = "FINAL CHAN" },
-                    new Herramientas.Utilerias.cComboBox() { ID = 7, DESCR = "420CHAN" }
+                    new Herramientas.Utilerias.cComboBox() { ID = 7, DESCR = "420CHAN" },
+                new Herramientas.Utilerias.cComboBox() { ID = 8, DESCR = "TGCHAN" }
                 };
 
                 ComboPlataforma.DisplayMemberPath = "DESCR";
@@ -69,8 +70,11 @@ namespace FLAMINIS
                 for (int i = 0; i < _nombresClasificaciones7.Length; i++)
                     _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = _nombresClasificaciones7[i], ID = _nombresClasificaciones.Length + _nombresClasificaciones2.Length + _nombresClasificaciones3.Length + _nombresClasificaciones4.Length + _nombresClasificaciones5.Length + _nombresClasificaciones6.Length + i + 1, ID_PLATAFORMA = 7 });
 
-                #endregion
+                string[] _nombresClasificaciones8 = new string[] { "OEKAKI AND DRAWING TGCHAN", "GENERAL DISCUSSION TGCHAN", "QUESTS TGCHAN", "QUEST-DISCUSSIONS TGCHAN", "TRADITIONAL GAMES TGCHAN", "ICONS TGCHAN" };
+                for (int i = 0; i < _nombresClasificaciones8.Length; i++)
+                    _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = _nombresClasificaciones8[i], ID = _nombresClasificaciones.Length + _nombresClasificaciones2.Length + _nombresClasificaciones3.Length + _nombresClasificaciones4.Length + _nombresClasificaciones5.Length + _nombresClasificaciones6.Length + _nombresClasificaciones7.Length + i + 1, ID_PLATAFORMA = 8 });
 
+                #endregion
                 #region sub clasificaciones
                 #region 4chan
                 string[] _nombresSubClasificaciones = new string[] { "ANIME & MANGA", "ANIME/CUTE", "ANIME/WALLPAPERS", "MECHA", "COSPLAY & EGL", "CUTE/MALE", "FLASH", "TRANSPORTATION", "OTAKU CULTURE" };
@@ -625,6 +629,166 @@ namespace FLAMINIS
                     });
 
                 #endregion
+                #region tgchan
+                string[] _nombresSubClasificaciones34 = new string[] { "OEKAKI AND DRAWING TGCHAN" };
+                for (int i = 0; i < _nombresSubClasificaciones34.Length; i++)
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
+                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
+                             _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
+                             _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
+                             _nombresSubClasificaciones9.Length + _nombresSubClasificaciones10.Length +
+                             _nombresSubClasificaciones11.Length + _nombresSubClasificaciones12.Length +
+                             _nombresSubClasificaciones13.Length + _nombresSubClasificaciones14.Length +
+                             _nombresSubClasificaciones15.Length + _nombresSubClasificaciones16.Length +
+                             _nombresSubClasificaciones17.Length + +_nombresSubClasificaciones18.Length +
+                             _nombresSubClasificaciones19.Length + _nombresSubClasificaciones20.Length +
+                             _nombresSubClasificaciones21.Length + _nombresSubClasificaciones22.Length +
+                             _nombresSubClasificaciones23.Length + _nombresSubClasificaciones24.Length +
+                             _nombresSubClasificaciones25.Length + _nombresSubClasificaciones26.Length +
+                             _nombresSubClasificaciones27.Length + _nombresSubClasificaciones28.Length +
+                             _nombresSubClasificaciones29.Length + _nombresSubClasificaciones30.Length +
+                             _nombresSubClasificaciones31.Length + _nombresSubClasificaciones32.Length +
+                             _nombresSubClasificaciones33.Length + 1 + i,
+                        DESCR = _nombresSubClasificaciones34[i],
+                        ID_CLASIFICACION = 34
+                    });
+
+                string[] _nombresSubClasificaciones35 = new string[] { "GENERAL DISCUSSION TGCHAN" };
+                for (int i = 0; i < _nombresSubClasificaciones35.Length; i++)
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
+                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
+                             _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
+                             _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
+                             _nombresSubClasificaciones9.Length + _nombresSubClasificaciones10.Length +
+                             _nombresSubClasificaciones11.Length + _nombresSubClasificaciones12.Length +
+                             _nombresSubClasificaciones13.Length + _nombresSubClasificaciones14.Length +
+                             _nombresSubClasificaciones15.Length + _nombresSubClasificaciones16.Length +
+                             _nombresSubClasificaciones17.Length + +_nombresSubClasificaciones18.Length +
+                             _nombresSubClasificaciones19.Length + _nombresSubClasificaciones20.Length +
+                             _nombresSubClasificaciones21.Length + _nombresSubClasificaciones22.Length +
+                             _nombresSubClasificaciones23.Length + _nombresSubClasificaciones24.Length +
+                             _nombresSubClasificaciones25.Length + _nombresSubClasificaciones26.Length +
+                             _nombresSubClasificaciones27.Length + _nombresSubClasificaciones28.Length +
+                             _nombresSubClasificaciones29.Length + _nombresSubClasificaciones30.Length +
+                             _nombresSubClasificaciones31.Length + _nombresSubClasificaciones32.Length +
+                             _nombresSubClasificaciones33.Length + _nombresSubClasificaciones34.Length +
+                             1 + i,
+                        DESCR = _nombresSubClasificaciones35[i],
+                        ID_CLASIFICACION = 35
+                    });
+
+                string[] _nombresSubClasificaciones36 = new string[] { "QUESTS TGCHAN" };
+                for (int i = 0; i < _nombresSubClasificaciones36.Length; i++)
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
+                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
+                             _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
+                             _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
+                             _nombresSubClasificaciones9.Length + _nombresSubClasificaciones10.Length +
+                             _nombresSubClasificaciones11.Length + _nombresSubClasificaciones12.Length +
+                             _nombresSubClasificaciones13.Length + _nombresSubClasificaciones14.Length +
+                             _nombresSubClasificaciones15.Length + _nombresSubClasificaciones16.Length +
+                             _nombresSubClasificaciones17.Length + +_nombresSubClasificaciones18.Length +
+                             _nombresSubClasificaciones19.Length + _nombresSubClasificaciones20.Length +
+                             _nombresSubClasificaciones21.Length + _nombresSubClasificaciones22.Length +
+                             _nombresSubClasificaciones23.Length + _nombresSubClasificaciones24.Length +
+                             _nombresSubClasificaciones25.Length + _nombresSubClasificaciones26.Length +
+                             _nombresSubClasificaciones27.Length + _nombresSubClasificaciones28.Length +
+                             _nombresSubClasificaciones29.Length + _nombresSubClasificaciones30.Length +
+                             _nombresSubClasificaciones31.Length + _nombresSubClasificaciones32.Length +
+                             _nombresSubClasificaciones33.Length + _nombresSubClasificaciones34.Length +
+                             _nombresSubClasificaciones35.Length + i,
+                        DESCR = _nombresSubClasificaciones36[i],
+                        ID_CLASIFICACION = 36
+                    });
+
+                string[] _nombresSubClasificaciones37 = new string[] { "QUEST-DISCUSSIONS TGCHAN" };
+                for (int i = 0; i < _nombresSubClasificaciones37.Length; i++)
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
+                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
+                             _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
+                             _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
+                             _nombresSubClasificaciones9.Length + _nombresSubClasificaciones10.Length +
+                             _nombresSubClasificaciones11.Length + _nombresSubClasificaciones12.Length +
+                             _nombresSubClasificaciones13.Length + _nombresSubClasificaciones14.Length +
+                             _nombresSubClasificaciones15.Length + _nombresSubClasificaciones16.Length +
+                             _nombresSubClasificaciones17.Length + +_nombresSubClasificaciones18.Length +
+                             _nombresSubClasificaciones19.Length + _nombresSubClasificaciones20.Length +
+                             _nombresSubClasificaciones21.Length + _nombresSubClasificaciones22.Length +
+                             _nombresSubClasificaciones23.Length + _nombresSubClasificaciones24.Length +
+                             _nombresSubClasificaciones25.Length + _nombresSubClasificaciones26.Length +
+                             _nombresSubClasificaciones27.Length + _nombresSubClasificaciones28.Length +
+                             _nombresSubClasificaciones29.Length + _nombresSubClasificaciones30.Length +
+                              _nombresSubClasificaciones31.Length + _nombresSubClasificaciones32.Length +
+                             _nombresSubClasificaciones33.Length + _nombresSubClasificaciones34.Length +
+                             _nombresSubClasificaciones35.Length + _nombresSubClasificaciones36.Length +
+                              1 + i,
+                        DESCR = _nombresSubClasificaciones37[i],
+                        ID_CLASIFICACION = 37
+                    });
+
+                string[] _nombresSubClasificaciones38 = new string[] { "TRADITIONAL GAMES TGCHAN" };
+                for (int i = 0; i < _nombresSubClasificaciones38.Length; i++)
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
+                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
+                             _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
+                             _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
+                             _nombresSubClasificaciones9.Length + _nombresSubClasificaciones10.Length +
+                             _nombresSubClasificaciones11.Length + _nombresSubClasificaciones12.Length +
+                             _nombresSubClasificaciones13.Length + _nombresSubClasificaciones14.Length +
+                             _nombresSubClasificaciones15.Length + _nombresSubClasificaciones16.Length +
+                             _nombresSubClasificaciones17.Length + +_nombresSubClasificaciones18.Length +
+                             _nombresSubClasificaciones19.Length + _nombresSubClasificaciones20.Length +
+                             _nombresSubClasificaciones21.Length + _nombresSubClasificaciones22.Length +
+                             _nombresSubClasificaciones23.Length + _nombresSubClasificaciones24.Length +
+                             _nombresSubClasificaciones25.Length + _nombresSubClasificaciones26.Length +
+                             _nombresSubClasificaciones27.Length + _nombresSubClasificaciones28.Length +
+                             _nombresSubClasificaciones29.Length + _nombresSubClasificaciones30.Length +
+                             _nombresSubClasificaciones31.Length + _nombresSubClasificaciones32.Length +
+                             _nombresSubClasificaciones33.Length + _nombresSubClasificaciones34.Length +
+                             _nombresSubClasificaciones35.Length + _nombresSubClasificaciones36.Length +
+                             _nombresSubClasificaciones37.Length + 1 + i,
+                        DESCR = _nombresSubClasificaciones38[i],
+                        ID_CLASIFICACION = 38
+                    });
+
+                string[] _nombresSubClasificaciones39 = new string[] { "ICONS TGCHAN" };
+                for (int i = 0; i < _nombresSubClasificaciones39.Length; i++)
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
+                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
+                             _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
+                             _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
+                             _nombresSubClasificaciones9.Length + _nombresSubClasificaciones10.Length +
+                             _nombresSubClasificaciones11.Length + _nombresSubClasificaciones12.Length +
+                             _nombresSubClasificaciones13.Length + _nombresSubClasificaciones14.Length +
+                             _nombresSubClasificaciones15.Length + _nombresSubClasificaciones16.Length +
+                             _nombresSubClasificaciones17.Length + +_nombresSubClasificaciones18.Length +
+                             _nombresSubClasificaciones19.Length + _nombresSubClasificaciones20.Length +
+                             _nombresSubClasificaciones21.Length + _nombresSubClasificaciones22.Length +
+                             _nombresSubClasificaciones23.Length + _nombresSubClasificaciones24.Length +
+                             _nombresSubClasificaciones25.Length + _nombresSubClasificaciones26.Length +
+                             _nombresSubClasificaciones27.Length + _nombresSubClasificaciones28.Length +
+                             _nombresSubClasificaciones29.Length + _nombresSubClasificaciones30.Length +
+                             _nombresSubClasificaciones31.Length + _nombresSubClasificaciones32.Length +
+                             _nombresSubClasificaciones33.Length + _nombresSubClasificaciones34.Length +
+                             _nombresSubClasificaciones35.Length + _nombresSubClasificaciones36.Length +
+                             _nombresSubClasificaciones37.Length + _nombresSubClasificaciones38.Length +
+                              1 + i,
+                        DESCR = _nombresSubClasificaciones39[i],
+                        ID_CLASIFICACION = 39
+                    });
+                #endregion
                 #endregion
             }
             catch (System.Exception exc)
@@ -874,6 +1038,14 @@ namespace FLAMINIS
                 _diccionario.Add("ADULT (STRAIGHT) 420CHAN", "http://boards.420chan.org/sa");
                 _diccionario.Add("HENTAI 420CHAN", "http://boards.420chan.org/h");
                 #endregion
+                #region tgchan
+                _diccionario.Add("OEKAKI AND DRAWING TGCHAN", "https://tgchan.org/kusaba/draw/catalog.html");
+                _diccionario.Add("GENERAL DISCUSSION TGCHAN", "https://tgchan.org/kusaba/meep/catalog.html");
+                _diccionario.Add("QUESTS TGCHAN", "https://tgchan.org/kusaba/quest/catalog.html");
+                _diccionario.Add("QUEST-DISCUSSIONS TGCHAN", "https://tgchan.org/kusaba/questdis/catalog.html");
+                _diccionario.Add("TRADITIONAL GAMES TGCHAN", "https://tgchan.org/kusaba/tg/catalog.html");
+                _diccionario.Add("ICONS TGCHAN", "https://tgchan.org/kusaba/icons");
+                #endregion
             }
             catch (System.Exception exc)
             {
@@ -905,7 +1077,7 @@ namespace FLAMINIS
             try
             {
                 var _cliente = new HttpClient();
-                var _respuesta = await _cliente.GetByteArrayAsync("http://boards.420chan.org/art/");
+                var _respuesta = await _cliente.GetByteArrayAsync("https://tgchan.org/kusaba/draw/catalog.html");
                 System.String source = System.Text.Encoding.GetEncoding("utf-8").GetString(_respuesta, 0, _respuesta.Length - 1);
                 source = WebUtility.HtmlDecode(source);
                 var _doc = new HtmlAgilityPack.HtmlDocument();
@@ -924,6 +1096,7 @@ namespace FLAMINIS
             {
                 progress1.Visibility = System.Windows.Visibility.Visible;
                 lbl1.Content = "OBTENIENDO ENLACES";
+                lstMenuPrincipal.ItemsSource = new System.Collections.Generic.List<Herramientas.ClasesCustomizadas.cPrincipal>();
                 System.Collections.Generic.List<Herramientas.ClasesCustomizadas.cPrincipal> _menu = new System.Collections.Generic.List<Herramientas.ClasesCustomizadas.cPrincipal>();
                 var _plataformaSeleccionada = ComboPlataforma.SelectedItem as Herramientas.Utilerias.cComboBox;
                 var _cliente = new HttpClient();
@@ -1052,6 +1225,22 @@ namespace FLAMINIS
                                                     break;
 
                                                 #endregion
+                                                #region tgchan
+                                                case (short)Herramientas.Utilerias.ePlataformas.TGCHAN:
+                                                    _doc.DocumentNode.SelectNodes("//a[@href]").Where(x => x.OuterHtml.Contains("/res/")).ToList().ForEach(z =>
+                                                    {
+                                                        var _att = z.Attributes;
+                                                        if (_att != null && _att.Any())
+                                                            _att.ToList().ForEach(a =>
+                                                            {
+                                                                if (a.Value.Contains("/res/"))
+                                                                    if (!_urls.Any(c => c.Contains(a.Value)))
+                                                                        _urls.Add("https://tgchan.org/" + a.Value);
+                                                            });
+                                                    });
+                                                    break;
+
+                                                #endregion
                                                 default:
                                                     break;
                                             }
@@ -1084,26 +1273,46 @@ namespace FLAMINIS
                                         {
                                             case (short)Herramientas.Utilerias.ePlataformas.LAINCHAN:
                                                 if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
+                                                {
+                                                    lbl1.Content = string.Format("ENCONTRADAS: {0}", _menu.Any() ? _menu.Count.ToString() : "0");
                                                     _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal() { _url = "https://lainchan.org" + z });
+                                                }
                                                 break;
-
                                             case (short)Herramientas.Utilerias.ePlataformas.XCHAN:
                                                 if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
+                                                {
+                                                    lbl1.Content = string.Format("ENCONTRADAS: {0}", _menu.Any() ? _menu.Count.ToString() : "0");
                                                     _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal() { _url = "https://xchan.pw" + z });
+                                                }
                                                 break;
                                             case (short)Herramientas.Utilerias.ePlataformas.UBOACHAN:
                                                 if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
+                                                {
+                                                    lbl1.Content = string.Format("ENCONTRADAS: {0}", _menu.Any() ? _menu.Count.ToString() : "0");
                                                     _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal() { _url = "https://uboachan.net" + z });
+                                                }
                                                 break;
                                             case (short)Herramientas.Utilerias.ePlataformas.TOHNO_CHAN:
                                                 if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
+                                                {
+                                                    lbl1.Content = string.Format("ENCONTRADAS: {0}", _menu.Any() ? _menu.Count.ToString() : "0");
                                                     _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal() { _url = z });
+                                                }
                                                 break;
                                             case (short)Herramientas.Utilerias.ePlataformas.FINAL_CHAN:
                                                 if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
+                                                {
+                                                    lbl1.Content = string.Format("ENCONTRADAS: {0}", _menu.Any() ? _menu.Count.ToString() : "0");
                                                     _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal() { _url = "http://finalchan.net" + z });
+                                                }
                                                 break;
-
+                                            case (short)Herramientas.Utilerias.ePlataformas.TGCHAN:
+                                                if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
+                                                {
+                                                    lbl1.Content = string.Format("ENCONTRADAS: {0}", _menu.Any() ? _menu.Count.ToString() : "0");
+                                                    _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal() { _url = "https://tgchan.org" + z });
+                                                }
+                                                break;
                                             default:
                                                 break;
                                         }
@@ -1112,7 +1321,7 @@ namespace FLAMINIS
                         });
                     }
 
-                lbl1.Content = "TERMINADO";
+                lbl1.Content = "TERMINADO, SE HAN HALLADO " + (_menu.Any() ? _menu.Count : 0).ToString();
                 progress1.Visibility = System.Windows.Visibility.Hidden;
                 lstMenuPrincipal.ItemsSource = _menu;
             }
@@ -1181,55 +1390,91 @@ namespace FLAMINIS
 
         private void Button_Click_1(object sender, System.Windows.RoutedEventArgs e)
         {
-            lbl1.Content = "DESCARGANDO IMAGENES";
-            if (lstMenuPrincipal.Items != null)
-                if (lstMenuPrincipal.Items.Count > 0)
-                {
-                    if (!Directory.Exists(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + "/" + "flaminis"))
-                        Directory.CreateDirectory(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + "/" + "flaminis");
-
-                    var _elementos = lstMenuPrincipal.Items.Cast<Herramientas.ClasesCustomizadas.cPrincipal>().Select(item => item._url).ToList();
-                    foreach (var item in _elementos)
+            try
+            {
+                lbl1.Content = "DESCARGANDO IMAGENES";
+                if (lstMenuPrincipal.Items != null)
+                    if (lstMenuPrincipal.Items.Count > 0)
                     {
-                        using (webClient = new WebClient())
-                        {
-                            webClient.DownloadProgressChanged += (s, x) =>
-                            {
-                                progress2.Value = x.ProgressPercentage;
-                                txtProg.Content = x.ProgressPercentage + "%";
-                            };
-                            webClient.DownloadFileCompleted += (s, x) =>
-                            {
-                                progress2.Value = 0;
-                                txtProg.Content = "0%";
-                            };
+                        if (!Directory.Exists(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + "/" + "flaminis"))
+                            Directory.CreateDirectory(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + "/" + "flaminis");
 
-                            System.Uri URL = new System.Uri(item);
-                            try
+                        var _elementos = lstMenuPrincipal.Items.Cast<Herramientas.ClasesCustomizadas.cPrincipal>().Select(item => item._url).ToList();
+                        if (_elementos != null)
+                            if (_elementos.Any())
                             {
-                                progress2.Visibility = System.Windows.Visibility.Visible;
-                                string _ext = Path.GetExtension(item);
-                                webClient.DownloadFileAsync(URL, System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + "/" + "flaminis" + "/" + System.DateTime.Now.ToString("ss.ffffff") + (string.IsNullOrEmpty(_ext) ? ".png" : !_ext.StartsWith(".") ? "." + _ext : _ext));
+                                //SplitList
+                                var _maximoElementos = SplitList(_elementos);
+                                if (_maximoElementos != null)
+                                    if (_maximoElementos.Any())
+                                    {
+                                        foreach (var item in _maximoElementos)
+                                        {
+                                            foreach (var item2 in item)
+                                            {
+                                                using (webClient = new WebClient())
+                                                {
+                                                    webClient.DownloadProgressChanged += (s, x) =>
+                                                    {
+                                                        progress2.Value = x.ProgressPercentage;
+                                                        txtProg.Content = x.ProgressPercentage + "%";
+                                                    };
+
+                                                    webClient.DownloadFileCompleted += (s, x) =>
+                                                    {
+                                                        progress2.Value = 0;
+                                                        txtProg.Content = "0%";
+                                                    };
+
+                                                    System.Uri URL = new System.Uri(item2);
+                                                    try
+                                                    {
+                                                        progress2.Visibility = System.Windows.Visibility.Visible;
+                                                        string _ext = Path.GetExtension(item2);
+                                                        webClient.DownloadFile(URL, System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + "/" + "flaminis" + "/" + System.DateTime.Now.ToString("ss.ffffff") + (string.IsNullOrEmpty(_ext) ? ".png" : !_ext.StartsWith(".") ? "." + _ext : _ext));
+                                                    }
+                                                    catch (WebException exx)
+                                                    {
+                                                        if (exx.Status == WebExceptionStatus.Timeout)
+                                                        {
+                                                            System.Windows.MessageBox.Show("Timeout del servidor, inutil continuar");
+                                                            return;
+                                                        }
+
+                                                        System.Windows.MessageBox.Show(exx.Message);
+                                                        continue;
+                                                    }
+                                                    catch (System.Exception ex)
+                                                    {
+                                                        System.Windows.MessageBox.Show(ex.Message);
+                                                    }
+                                                }
+                                            }
+
+                                        }
+                                    }
                             }
-                            catch (WebException)
-                            {
-                                continue;
-                            }
-                            catch (System.Exception ex)
-                            {
-                                System.Windows.MessageBox.Show(ex.Message);
-                            }
-                        }
                     }
-                }
-                else
-                {
-                    System.Windows.MessageBox.Show("No hay resultados para descargar");
-                    return;
-                }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("No hay resultados para descargar");
+                        return;
+                    }
 
+                lbl1.Content = "IMAGENES DESCARGADAS";
+            }
+            catch (System.Exception exc)
+            {
+                throw exc;
+            }
+        }
 
-            lbl1.Content = "IMAGENES DESCARGADAS";
+        public static System.Collections.Generic.IEnumerable<System.Collections.Generic.List<T>> SplitList<T>(System.Collections.Generic.List<T> _datos, int tamanio = 100)
+        {
+            for (int i = 0; i < _datos.Count; i += tamanio)
+            {
+                yield return _datos.GetRange(i, System.Math.Min(tamanio, _datos.Count - i));
+            }
         }
 
         private void WebClient_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)

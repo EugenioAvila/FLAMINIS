@@ -29,7 +29,8 @@
             UBOACHAN = 4,
             TOHNO_CHAN = 5,
             FINAL_CHAN = 6,
-            CHAN420 = 7
+            CHAN420 = 7,
+            TGCHAN = 8
         };
     }
 }
