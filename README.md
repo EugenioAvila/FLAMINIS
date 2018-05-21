@@ -2,7 +2,7 @@
 Gestor de descargas de imagenes de diferentes chan
 
 Navega entre las siguientes opciones disponibles:
-    -4 CHAN ***en desarrollo***, LAINCHAN, XCHAN, UBOACHAN, TOHNO-CHAN, FINAL CHAN, 420CHAN y mas en proceso
+    -4 CHAN ***en desarrollo***, LAINCHAN, XCHAN, UBOACHAN, TOHNO-CHAN, FINAL CHAN, 420CHAN, TGCHAN y mas en proceso
 
                                               CONSIDERACIONES
 *Esta aplicacion consume indiscriminadamente las imagenes en cada chan, las imagenes son responsabilidad de los usuarios que las publican.
