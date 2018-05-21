@@ -34,7 +34,8 @@ namespace FLAMINIS
                     new Herramientas.Utilerias.cComboBox() { ID = 5, DESCR = "TOHNO-CHAN" },
                     new Herramientas.Utilerias.cComboBox() { ID = 6, DESCR = "FINAL CHAN" },
                     new Herramientas.Utilerias.cComboBox() { ID = 7, DESCR = "420CHAN" },
-                new Herramientas.Utilerias.cComboBox() { ID = 8, DESCR = "TGCHAN" }
+                    new Herramientas.Utilerias.cComboBox() { ID = 8, DESCR = "TGCHAN" },
+                    new Herramientas.Utilerias.cComboBox() { ID = 9, DESCR = "7CHAN" }
                 };
 
                 ComboPlataforma.DisplayMemberPath = "DESCR";
@@ -73,6 +74,10 @@ namespace FLAMINIS
                 string[] _nombresClasificaciones8 = new string[] { "OEKAKI AND DRAWING TGCHAN", "GENERAL DISCUSSION TGCHAN", "QUESTS TGCHAN", "QUEST-DISCUSSIONS TGCHAN", "TRADITIONAL GAMES TGCHAN", "ICONS TGCHAN" };
                 for (int i = 0; i < _nombresClasificaciones8.Length; i++)
                     _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = _nombresClasificaciones8[i], ID = _nombresClasificaciones.Length + _nombresClasificaciones2.Length + _nombresClasificaciones3.Length + _nombresClasificaciones4.Length + _nombresClasificaciones5.Length + _nombresClasificaciones6.Length + _nombresClasificaciones7.Length + i + 1, ID_PLATAFORMA = 8 });
+
+                string[] _nombresClasificaciones9 = new string[] { "VIP 7CHAN", "PREMIUM CONTENT 7CHAN", "SFW 7CHAN", "GENERAL 7CHAN", "PORN 7CHAN" };
+                for (int i = 0; i < _nombresClasificaciones9.Length; i++)
+                    _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = _nombresClasificaciones9[i], ID = _nombresClasificaciones.Length + _nombresClasificaciones2.Length + _nombresClasificaciones3.Length + _nombresClasificaciones4.Length + _nombresClasificaciones5.Length + _nombresClasificaciones6.Length + _nombresClasificaciones7.Length + _nombresClasificaciones8.Length + i + 1, ID_PLATAFORMA = 9 });
 
                 #endregion
                 #region sub clasificaciones
@@ -789,6 +794,153 @@ namespace FLAMINIS
                         ID_CLASIFICACION = 39
                     });
                 #endregion
+                #region 7chan
+                string[] _nombresSubClasificaciones40 = new string[] { "CRYPTO 7CHAN", "VERY IMPORTANT POSTERS 7CHAN", "CIVICS 7CHAN" };
+                for (int i = 0; i < _nombresSubClasificaciones40.Length; i++)
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
+                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
+                             _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
+                             _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
+                             _nombresSubClasificaciones9.Length + _nombresSubClasificaciones10.Length +
+                             _nombresSubClasificaciones11.Length + _nombresSubClasificaciones12.Length +
+                             _nombresSubClasificaciones13.Length + _nombresSubClasificaciones14.Length +
+                             _nombresSubClasificaciones15.Length + _nombresSubClasificaciones16.Length +
+                             _nombresSubClasificaciones17.Length + +_nombresSubClasificaciones18.Length +
+                             _nombresSubClasificaciones19.Length + _nombresSubClasificaciones20.Length +
+                             _nombresSubClasificaciones21.Length + _nombresSubClasificaciones22.Length +
+                             _nombresSubClasificaciones23.Length + _nombresSubClasificaciones24.Length +
+                             _nombresSubClasificaciones25.Length + _nombresSubClasificaciones26.Length +
+                             _nombresSubClasificaciones27.Length + _nombresSubClasificaciones28.Length +
+                             _nombresSubClasificaciones29.Length + _nombresSubClasificaciones30.Length +
+                             _nombresSubClasificaciones31.Length + _nombresSubClasificaciones32.Length +
+                             _nombresSubClasificaciones33.Length + _nombresSubClasificaciones34.Length +
+                             _nombresSubClasificaciones35.Length + _nombresSubClasificaciones36.Length +
+                             _nombresSubClasificaciones37.Length + _nombresSubClasificaciones38.Length +
+                              _nombresSubClasificaciones39.Length + 1 + i,
+                        DESCR = _nombresSubClasificaciones40[i],
+                        ID_CLASIFICACION = 40
+                    });
+
+                string[] _nombresSubClasificaciones41 = new string[] { "RANDOM 7CHAN", "BANNERS 7CHAN", "FLASH 7CHAN", "GRAPHICS MANIPULATION 7CHAN", "FAILURE 7CHAN" };
+                for (int i = 0; i < _nombresSubClasificaciones41.Length; i++)
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
+                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
+                             _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
+                             _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
+                             _nombresSubClasificaciones9.Length + _nombresSubClasificaciones10.Length +
+                             _nombresSubClasificaciones11.Length + _nombresSubClasificaciones12.Length +
+                             _nombresSubClasificaciones13.Length + _nombresSubClasificaciones14.Length +
+                             _nombresSubClasificaciones15.Length + _nombresSubClasificaciones16.Length +
+                             _nombresSubClasificaciones17.Length + +_nombresSubClasificaciones18.Length +
+                             _nombresSubClasificaciones19.Length + _nombresSubClasificaciones20.Length +
+                             _nombresSubClasificaciones21.Length + _nombresSubClasificaciones22.Length +
+                             _nombresSubClasificaciones23.Length + _nombresSubClasificaciones24.Length +
+                             _nombresSubClasificaciones25.Length + _nombresSubClasificaciones26.Length +
+                             _nombresSubClasificaciones27.Length + _nombresSubClasificaciones28.Length +
+                             _nombresSubClasificaciones29.Length + _nombresSubClasificaciones30.Length +
+                             _nombresSubClasificaciones31.Length + _nombresSubClasificaciones32.Length +
+                             _nombresSubClasificaciones33.Length + _nombresSubClasificaciones34.Length +
+                             _nombresSubClasificaciones35.Length + _nombresSubClasificaciones36.Length +
+                             _nombresSubClasificaciones37.Length + _nombresSubClasificaciones38.Length +
+                             _nombresSubClasificaciones39.Length + _nombresSubClasificaciones40.Length +
+                             1 + i,
+                        DESCR = _nombresSubClasificaciones41[i],
+                        ID_CLASIFICACION = 41
+                    });
+
+                string[] _nombresSubClasificaciones42 = new string[] { "THE FINER THINGS 7CHAN", "COMICS AND CARTOONS 7CHAN", "PARTICULARLY UNINTERESTING CONVERSATION 7CHAN", "FITNESS & HEALTH 7CHAN", "TECHNICAL SUPPORT 7CHAN", "THRIFTY LIVING 7CHAN", "LITERATURE 7CHAN", "PHILOSOPHY 7CHAN", "PROGRAMMING 7CHAN", "RAGE AND BAWW 7CHAN", "SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS 7CHAN", "TABLETOP GAMES 7CHAN", "WEAPONS 7CHAN", "ZOMBIES 7CHAN" };
+                for (int i = 0; i < _nombresSubClasificaciones42.Length; i++)
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
+                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
+                             _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
+                             _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
+                             _nombresSubClasificaciones9.Length + _nombresSubClasificaciones10.Length +
+                             _nombresSubClasificaciones11.Length + _nombresSubClasificaciones12.Length +
+                             _nombresSubClasificaciones13.Length + _nombresSubClasificaciones14.Length +
+                             _nombresSubClasificaciones15.Length + _nombresSubClasificaciones16.Length +
+                             _nombresSubClasificaciones17.Length + +_nombresSubClasificaciones18.Length +
+                             _nombresSubClasificaciones19.Length + _nombresSubClasificaciones20.Length +
+                             _nombresSubClasificaciones21.Length + _nombresSubClasificaciones22.Length +
+                             _nombresSubClasificaciones23.Length + _nombresSubClasificaciones24.Length +
+                             _nombresSubClasificaciones25.Length + _nombresSubClasificaciones26.Length +
+                             _nombresSubClasificaciones27.Length + _nombresSubClasificaciones28.Length +
+                             _nombresSubClasificaciones29.Length + _nombresSubClasificaciones30.Length +
+                             _nombresSubClasificaciones31.Length + _nombresSubClasificaciones32.Length +
+                             _nombresSubClasificaciones33.Length + _nombresSubClasificaciones34.Length +
+                             _nombresSubClasificaciones35.Length + _nombresSubClasificaciones36.Length +
+                             _nombresSubClasificaciones37.Length + _nombresSubClasificaciones38.Length +
+                             _nombresSubClasificaciones39.Length + _nombresSubClasificaciones40.Length +
+                             _nombresSubClasificaciones41.Length + 1 + i,
+                        DESCR = _nombresSubClasificaciones42[i],
+                        ID_CLASIFICACION = 42
+                    });
+
+                string[] _nombresSubClasificaciones43 = new string[] { "GENERAL 7CHAN", "ANIME & MANGA 7CHAN", "COLD, GRIM & MISERABLE 7CHAN", "HISTORY AND CULTURE 7CHAN", "FILM, MUSIC & TELEVISION 7CHAN", "DRUGS 7CHAN", "VIDEO GAMES 7CHAN", "WALLPAPERS 7CHAN", "PARANORMAL & CONSPIRACY 7CHAN" };
+                for (int i = 0; i < _nombresSubClasificaciones43.Length; i++)
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
+                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
+                             _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
+                             _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
+                             _nombresSubClasificaciones9.Length + _nombresSubClasificaciones10.Length +
+                             _nombresSubClasificaciones11.Length + _nombresSubClasificaciones12.Length +
+                             _nombresSubClasificaciones13.Length + _nombresSubClasificaciones14.Length +
+                             _nombresSubClasificaciones15.Length + _nombresSubClasificaciones16.Length +
+                             _nombresSubClasificaciones17.Length + +_nombresSubClasificaciones18.Length +
+                             _nombresSubClasificaciones19.Length + _nombresSubClasificaciones20.Length +
+                             _nombresSubClasificaciones21.Length + _nombresSubClasificaciones22.Length +
+                             _nombresSubClasificaciones23.Length + _nombresSubClasificaciones24.Length +
+                             _nombresSubClasificaciones25.Length + _nombresSubClasificaciones26.Length +
+                             _nombresSubClasificaciones27.Length + _nombresSubClasificaciones28.Length +
+                             _nombresSubClasificaciones29.Length + _nombresSubClasificaciones30.Length +
+                              _nombresSubClasificaciones31.Length + _nombresSubClasificaciones32.Length +
+                             _nombresSubClasificaciones33.Length + _nombresSubClasificaciones34.Length +
+                             _nombresSubClasificaciones35.Length + _nombresSubClasificaciones36.Length +
+                             _nombresSubClasificaciones37.Length + _nombresSubClasificaciones38.Length +
+                             _nombresSubClasificaciones39.Length + _nombresSubClasificaciones40.Length +
+                             _nombresSubClasificaciones41.Length + _nombresSubClasificaciones42.Length +
+                              1 + i,
+                        DESCR = _nombresSubClasificaciones43[i],
+                        ID_CLASIFICACION = 43
+                    });
+
+                string[] _nombresSubClasificaciones44 = new string[] { "DELICIOUS 7CHAN", "CROSSDRESSING 7CHAN", "ALTERNATIVE HENTAI 7CHAN", "SEXY BEAUTIFUL TRAPS 7CHAN", "EROTIC LITERATURE 7CHAN", "MEN DISCUSSION 7CHAN", "FURRY 7CHAN", "ANIMATED GIFS 7CHAN", "HENTAI 7CHAN", "SEXY BEAUTIFUL MEN 7CHAN", "PORN COMICS 7CHAN", "SEXY BEAUTIFUL WOMEN 7CHAN", "SHOTACON 7CHAN", "STRAIGHT SHOTACON 7CHAN", "UNIFORMS 7CHAN", "THE VINEYARD 7CHAN" };
+                for (int i = 0; i < _nombresSubClasificaciones44.Length; i++)
+                    _subClasificaciones.Add(new Herramientas.Utilerias.cComboBoxSubClasificacion()
+                    {
+                        ID = _nombresSubClasificaciones.Length + _nombresSubClasificaciones2.Length +
+                             _nombresSubClasificaciones3.Length + _nombresSubClasificaciones4.Length +
+                             _nombresSubClasificaciones5.Length + _nombresSubClasificaciones6.Length +
+                             _nombresSubClasificaciones7.Length + _nombresSubClasificaciones8.Length +
+                             _nombresSubClasificaciones9.Length + _nombresSubClasificaciones10.Length +
+                             _nombresSubClasificaciones11.Length + _nombresSubClasificaciones12.Length +
+                             _nombresSubClasificaciones13.Length + _nombresSubClasificaciones14.Length +
+                             _nombresSubClasificaciones15.Length + _nombresSubClasificaciones16.Length +
+                             _nombresSubClasificaciones17.Length + +_nombresSubClasificaciones18.Length +
+                             _nombresSubClasificaciones19.Length + _nombresSubClasificaciones20.Length +
+                             _nombresSubClasificaciones21.Length + _nombresSubClasificaciones22.Length +
+                             _nombresSubClasificaciones23.Length + _nombresSubClasificaciones24.Length +
+                             _nombresSubClasificaciones25.Length + _nombresSubClasificaciones26.Length +
+                             _nombresSubClasificaciones27.Length + _nombresSubClasificaciones28.Length +
+                             _nombresSubClasificaciones29.Length + _nombresSubClasificaciones30.Length +
+                             _nombresSubClasificaciones31.Length + _nombresSubClasificaciones32.Length +
+                             _nombresSubClasificaciones33.Length + _nombresSubClasificaciones34.Length +
+                             _nombresSubClasificaciones35.Length + _nombresSubClasificaciones36.Length +
+                             _nombresSubClasificaciones37.Length + _nombresSubClasificaciones38.Length +
+                             _nombresSubClasificaciones39.Length + _nombresSubClasificaciones40.Length +
+                             _nombresSubClasificaciones41.Length + _nombresSubClasificaciones42.Length +
+                             _nombresSubClasificaciones43.Length + 1 + i,
+                        DESCR = _nombresSubClasificaciones44[i],
+                        ID_CLASIFICACION = 44
+                    });
+                #endregion
                 #endregion
             }
             catch (System.Exception exc)
@@ -1046,6 +1198,58 @@ namespace FLAMINIS
                 _diccionario.Add("TRADITIONAL GAMES TGCHAN", "https://tgchan.org/kusaba/tg/catalog.html");
                 _diccionario.Add("ICONS TGCHAN", "https://tgchan.org/kusaba/icons");
                 #endregion
+                #region 7chan
+                _diccionario.Add("CRYPTO 7CHAN", "http://7chan.org/777/catalog.html");
+                _diccionario.Add("VERY IMPORTANT POSTERS 7CHAN", "http://7chan.org/VIP/catalog.html");
+                _diccionario.Add("CIVICS 7CHAN", "http://7chan.org/civ/catalog.html");
+
+                _diccionario.Add("RANDOM 7CHAN", "http://7chan.org/b/catalog.html");
+                _diccionario.Add("BANNERS 7CHAN", "http://7chan.org/banner/catalog.html");
+                _diccionario.Add("FLASH 7CHAN", "http://7chan.org/fl/catalog.html");
+                _diccionario.Add("GRAPHICS MANIPULATION 7CHAN", "http://7chan.org/gfx/draw/catalog.html");
+                _diccionario.Add("FAILURE 7CHAN", "http://7chan.org/fail/catalog.html");
+
+                _diccionario.Add("ANIME & MANGA 7CHAN", "http://7chan.org/a/catalog.html");
+                _diccionario.Add("COLD, GRIM & MISERABLE 7CHAN", "http://7chan.org/grim/catalog.html");
+                _diccionario.Add("HISTORY AND CULTURE 7CHAN", "http://7chan.org/hi/catalog.html");
+                _diccionario.Add("FILM, MUSIC & TELEVISION 7CHAN", "http://7chan.org/me/catalog.html");
+                _diccionario.Add("DRUGS 7CHAN", "http://7chan.org/rx/catalog.html");
+                _diccionario.Add("VIDEO GAMES 7CHAN", "http://7chan.org/vg/catalog.html");
+                _diccionario.Add("WALLPAPERS 7CHAN", "http://7chan.org/wp/catalog.html");
+                _diccionario.Add("PARANORMAL & CONSPIRACY 7CHAN", "http://7chan.org/x/catalog.html");
+
+                _diccionario.Add("THE FINER THINGS 7CHAN", "http://7chan.org/class/catalog.html");
+                _diccionario.Add("COMICS AND CARTOONS 7CHAN", "http://7chan.org/co/catalog.html");
+                _diccionario.Add("PARTICULARLY UNINTERESTING CONVERSATION 7CHAN", "http://7chan.org/eh/catalog.html");
+                _diccionario.Add("TECHNICAL SUPPORT 7CHAN", "http://7chan.org/halp/catalog.html");
+                _diccionario.Add("THRIFTY LIVING 7CHAN", "http://7chan.org/jew/catalog.html");
+                _diccionario.Add("LITERATURE 7CHAN", "http://7chan.org/lit/catalog.html");
+                _diccionario.Add("PHILOSOPHY 7CHAN", "http://7chan.org/phi/catalog.html");
+                _diccionario.Add("PROGRAMMING 7CHAN", "http://7chan.org/pr/catalog.html");
+                _diccionario.Add("RAGE AND BAWW 7CHAN", "http://7chan.org/rbn/catalog.html");
+                _diccionario.Add("SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS 7CHAN", "http://7chan.org/sci/catalog.html");
+                _diccionario.Add("TABLETOP GAMES 7CHAN", "http://7chan.org/tg/catalog.html");
+                _diccionario.Add("WEAPONS 7CHAN", "http://7chan.org/w/catalog.html");
+                _diccionario.Add("ZOMBIES 7CHAN", "http://7chan.org/zom/catalog.html");
+                _diccionario.Add("FITNESS & HEALTH 7CHAN", "http://7chan.org/fit/catalog.html");
+
+                _diccionario.Add("DELICIOUS 7CHAN", "http://7chan.org/cake/catalog.html");
+                _diccionario.Add("CROSSDRESSING 7CHAN", "http://7chan.org/cd/catalog.html");
+                _diccionario.Add("ALTERNATIVE HENTAI 7CHAN", "http://7chan.org/d/catalog.html");
+                _diccionario.Add("SEXY BEAUTIFUL TRAPS 7CHAN", "http://7chan.org/di/catalog.html");
+                _diccionario.Add("EROTIC LITERATURE 7CHAN", "http://7chan.org/elit/catalog.html");
+                _diccionario.Add("MEN DISCUSSION 7CHAN", "http://7chan.org/fag/catalog.html");
+                _diccionario.Add("FURRY 7CHAN", "http://7chan.org/fur/catalog.html");
+                _diccionario.Add("ANIMATED GIFS 7CHAN", "http://7chan.org/gif/catalog.html");
+                _diccionario.Add("HENTAI 7CHAN", "http://7chan.org/h/catalog.html");
+                _diccionario.Add("SEXY BEAUTIFUL MEN 7CHAN", "http://7chan.org/men/catalog.html");
+                _diccionario.Add("PORN COMICS 7CHAN", "http://7chan.org/pco/catalog.html");
+                _diccionario.Add("SEXY BEAUTIFUL WOMEN 7CHAN", "http://7chan.org/s/catalog.html");
+                _diccionario.Add("SHOTACON 7CHAN", "http://7chan.org/ss/catalog.html");
+                _diccionario.Add("STRAIGHT SHOTACON 7CHAN", "http://7chan.org/ss/catalog.html");
+                _diccionario.Add("UNIFORMS 7CHAN", "http://7chan.org/unf/catalog.html");
+                _diccionario.Add("THE VINEYARD 7CHAN", "http://7chan.org/v/catalog.html");
+                #endregion
             }
             catch (System.Exception exc)
             {
@@ -1077,7 +1281,7 @@ namespace FLAMINIS
             try
             {
                 var _cliente = new HttpClient();
-                var _respuesta = await _cliente.GetByteArrayAsync("https://tgchan.org/kusaba/draw/catalog.html");
+                var _respuesta = await _cliente.GetByteArrayAsync("http://7chan.org/hi/catalog.html");
                 System.String source = System.Text.Encoding.GetEncoding("utf-8").GetString(_respuesta, 0, _respuesta.Length - 1);
                 source = WebUtility.HtmlDecode(source);
                 var _doc = new HtmlAgilityPack.HtmlDocument();
@@ -1241,6 +1445,21 @@ namespace FLAMINIS
                                                     break;
 
                                                 #endregion
+                                                #region 7chan
+                                                case (short)Herramientas.Utilerias.ePlataformas.CHAN7:
+                                                    _doc.DocumentNode.SelectNodes("//a[@href]").Where(x => x.OuterHtml.Contains("/res/")).ToList().ForEach(z =>
+                                                    {
+                                                        var _att = z.Attributes;
+                                                        if (_att != null && _att.Any())
+                                                            _att.ToList().ForEach(a =>
+                                                            {
+                                                                if (a.Value.Contains("/res/"))
+                                                                    if (!_urls.Any(c => c.Contains(a.Value)))
+                                                                        _urls.Add("http://7chan.org/" + a.Value);
+                                                            });
+                                                    });
+                                                    break;
+                                                #endregion
                                                 default:
                                                     break;
                                             }
@@ -1311,6 +1530,13 @@ namespace FLAMINIS
                                                 {
                                                     lbl1.Content = string.Format("ENCONTRADAS: {0}", _menu.Any() ? _menu.Count.ToString() : "0");
                                                     _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal() { _url = "https://tgchan.org" + z });
+                                                }
+                                                break;
+                                            case (short)Herramientas.Utilerias.ePlataformas.CHAN7:
+                                                if (!_menu.Any(x => Path.GetFileName(x._url) == Path.GetFileName(z)))
+                                                {
+                                                    lbl1.Content = string.Format("ENCONTRADAS: {0}", _menu.Any() ? _menu.Count.ToString() : "0");
+                                                    _menu.Add(new Herramientas.ClasesCustomizadas.cPrincipal() { _url = z });
                                                 }
                                                 break;
                                             default:

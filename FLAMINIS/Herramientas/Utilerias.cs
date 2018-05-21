@@ -30,7 +30,8 @@
             TOHNO_CHAN = 5,
             FINAL_CHAN = 6,
             CHAN420 = 7,
-            TGCHAN = 8
+            TGCHAN = 8,
+            CHAN7 = 9
         };
     }
 }
