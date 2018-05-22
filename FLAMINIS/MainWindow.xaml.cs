@@ -43,41 +43,32 @@ namespace FLAMINIS
                 ComboPlataforma.SelectedIndex = 0;
                 #endregion
                 #region clasificaciones
-                string[] _nombresClasificaciones = new string[] { "JAPANESE CULTURE", "VIDEO GAMES", "INTERESTS", "CREATIVE", "OTHER", "MISC.", "ADULT" };
-                for (int i = 0; i < _nombresClasificaciones.Length; i++)
-                    _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = _nombresClasificaciones[i], ID = i + 1, ID_PLATAFORMA = 1 });
+                for (int i = 0; i < (new string[] { "JAPANESE CULTURE", "VIDEO GAMES", "INTERESTS", "CREATIVE", "OTHER", "MISC.", "ADULT" }).Length; i++)
+                    _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = (new string[] { "JAPANESE CULTURE", "VIDEO GAMES", "INTERESTS", "CREATIVE", "OTHER", "MISC.", "ADULT" })[i], ID = i + 1, ID_PLATAFORMA = 1 });
 
-                string[] _nombresClasificaciones2 = new string[] { "STEM", "PEOPLE", "MISC", "OVERBOARDS 1", "OVERBOARDS 2" };
-                for (int i = 0; i < _nombresClasificaciones2.Length; i++)
-                    _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = _nombresClasificaciones2[i], ID = _nombresClasificaciones.Length + i + 1, ID_PLATAFORMA = 2 });
+                for (int i = 0; i < (new string[] { "STEM", "PEOPLE", "MISC", "OVERBOARDS 1", "OVERBOARDS 2" }).Length; i++)
+                    _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = (new string[] { "STEM", "PEOPLE", "MISC", "OVERBOARDS 1", "OVERBOARDS 2" })[i], ID = (new string[] { "JAPANESE CULTURE", "VIDEO GAMES", "INTERESTS", "CREATIVE", "OTHER", "MISC.", "ADULT" }).Length + i + 1, ID_PLATAFORMA = 2 });
 
-                string[] _nombresClasificaciones3 = new string[] { "GRAL", "SERIOUS BUSINESS", "CONOC & CULT", "18+" };
-                for (int i = 0; i < _nombresClasificaciones3.Length; i++)
-                    _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = _nombresClasificaciones3[i], ID = _nombresClasificaciones.Length + _nombresClasificaciones2.Length + i + 1, ID_PLATAFORMA = 3 });
+                for (int i = 0; i < (new string[] { "GRAL", "SERIOUS BUSINESS", "CONOC & CULT", "18+" }).Length; i++)
+                    _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = (new string[] { "GRAL", "SERIOUS BUSINESS", "CONOC & CULT", "18+" })[i], ID = (new string[] { "JAPANESE CULTURE", "VIDEO GAMES", "INTERESTS", "CREATIVE", "OTHER", "MISC.", "ADULT" }).Length + (new string[] { "STEM", "PEOPLE", "MISC", "OVERBOARDS 1", "OVERBOARDS 2" }).Length + i + 1, ID_PLATAFORMA = 3 });
 
-                string[] _nombresClasificaciones4 = new string[] { "YUME NIKKI", "ARTS & ENT", "MISCELLANEOUS" };
-                for (int i = 0; i < _nombresClasificaciones4.Length; i++)
-                    _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = _nombresClasificaciones4[i], ID = _nombresClasificaciones.Length + _nombresClasificaciones2.Length + _nombresClasificaciones3.Length + i + 1, ID_PLATAFORMA = 4 });
+                for (int i = 0; i < (new string[] { "YUME NIKKI", "ARTS & ENT", "MISCELLANEOUS" }).Length; i++)
+                    _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = (new string[] { "YUME NIKKI", "ARTS & ENT", "MISCELLANEOUS" })[i], ID = (new string[] { "JAPANESE CULTURE", "VIDEO GAMES", "INTERESTS", "CREATIVE", "OTHER", "MISC.", "ADULT" }).Length + (new string[] { "STEM", "PEOPLE", "MISC", "OVERBOARDS 1", "OVERBOARDS 2" }).Length + (new string[] { "GRAL", "SERIOUS BUSINESS", "CONOC & CULT", "18+" }).Length + i + 1, ID_PLATAFORMA = 4 });
 
-                string[] _nombresClasificaciones5 = new string[] { "MEDIA/ENTERTAINMENT", "HOBBIES/INTERESTS", "GENERAL DISCUSSION", "OTHER TOHNO CHAN" };
-                for (int i = 0; i < _nombresClasificaciones5.Length; i++)
-                    _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = _nombresClasificaciones5[i], ID = _nombresClasificaciones.Length + _nombresClasificaciones2.Length + _nombresClasificaciones3.Length + _nombresClasificaciones4.Length + i + 1, ID_PLATAFORMA = 5 });
+                for (int i = 0; i < (new string[] { "MEDIA/ENTERTAINMENT", "HOBBIES/INTERESTS", "GENERAL DISCUSSION", "OTHER TOHNO CHAN" }).Length; i++)
+                    _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = (new string[] { "MEDIA/ENTERTAINMENT", "HOBBIES/INTERESTS", "GENERAL DISCUSSION", "OTHER TOHNO CHAN" })[i], ID = (new string[] { "JAPANESE CULTURE", "VIDEO GAMES", "INTERESTS", "CREATIVE", "OTHER", "MISC.", "ADULT" }).Length + (new string[] { "STEM", "PEOPLE", "MISC", "OVERBOARDS 1", "OVERBOARDS 2" }).Length + (new string[] { "GRAL", "SERIOUS BUSINESS", "CONOC & CULT", "18+" }).Length + (new string[] { "YUME NIKKI", "ARTS & ENT", "MISCELLANEOUS" }).Length + i + 1, ID_PLATAFORMA = 5 });
 
-                string[] _nombresClasificaciones6 = new string[] { "SECCION 1", "SECCION 2", "SECCION 3", "SECCION 4" };
-                for (int i = 0; i < _nombresClasificaciones6.Length; i++)
-                    _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = _nombresClasificaciones6[i], ID = _nombresClasificaciones.Length + _nombresClasificaciones2.Length + _nombresClasificaciones3.Length + _nombresClasificaciones4.Length + _nombresClasificaciones5.Length + i + 1, ID_PLATAFORMA = 6 });
+                for (int i = 0; i < (new string[] { "SECCION 1", "SECCION 2", "SECCION 3", "SECCION 4" }).Length; i++)
+                    _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = (new string[] { "SECCION 1", "SECCION 2", "SECCION 3", "SECCION 4" })[i], ID = (new string[] { "JAPANESE CULTURE", "VIDEO GAMES", "INTERESTS", "CREATIVE", "OTHER", "MISC.", "ADULT" }).Length + (new string[] { "STEM", "PEOPLE", "MISC", "OVERBOARDS 1", "OVERBOARDS 2" }).Length + (new string[] { "GRAL", "SERIOUS BUSINESS", "CONOC & CULT", "18+" }).Length + (new string[] { "YUME NIKKI", "ARTS & ENT", "MISCELLANEOUS" }).Length + (new string[] { "MEDIA/ENTERTAINMENT", "HOBBIES/INTERESTS", "GENERAL DISCUSSION", "OTHER TOHNO CHAN" }).Length + i + 1, ID_PLATAFORMA = 6 });
 
-                string[] _nombresClasificaciones7 = new string[] { "DRUGS 420CHAN", "LIFESTYLE 420CHAN", "ACADEMIA 420CHAN", "MEDIA 420CHAN", "MISCELLANEA 420CHAN", "ADULT 420CHAN" };
-                for (int i = 0; i < _nombresClasificaciones7.Length; i++)
-                    _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = _nombresClasificaciones7[i], ID = _nombresClasificaciones.Length + _nombresClasificaciones2.Length + _nombresClasificaciones3.Length + _nombresClasificaciones4.Length + _nombresClasificaciones5.Length + _nombresClasificaciones6.Length + i + 1, ID_PLATAFORMA = 7 });
+                for (int i = 0; i < (new string[] { "DRUGS 420CHAN", "LIFESTYLE 420CHAN", "ACADEMIA 420CHAN", "MEDIA 420CHAN", "MISCELLANEA 420CHAN", "ADULT 420CHAN" }).Length; i++)
+                    _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = (new string[] { "DRUGS 420CHAN", "LIFESTYLE 420CHAN", "ACADEMIA 420CHAN", "MEDIA 420CHAN", "MISCELLANEA 420CHAN", "ADULT 420CHAN" })[i], ID = (new string[] { "JAPANESE CULTURE", "VIDEO GAMES", "INTERESTS", "CREATIVE", "OTHER", "MISC.", "ADULT" }).Length + (new string[] { "STEM", "PEOPLE", "MISC", "OVERBOARDS 1", "OVERBOARDS 2" }).Length + (new string[] { "GRAL", "SERIOUS BUSINESS", "CONOC & CULT", "18+" }).Length + (new string[] { "YUME NIKKI", "ARTS & ENT", "MISCELLANEOUS" }).Length + (new string[] { "MEDIA/ENTERTAINMENT", "HOBBIES/INTERESTS", "GENERAL DISCUSSION", "OTHER TOHNO CHAN" }).Length + (new string[] { "SECCION 1", "SECCION 2", "SECCION 3", "SECCION 4" }).Length + i + 1, ID_PLATAFORMA = 7 });
 
-                string[] _nombresClasificaciones8 = new string[] { "OEKAKI AND DRAWING TGCHAN", "GENERAL DISCUSSION TGCHAN", "QUESTS TGCHAN", "QUEST-DISCUSSIONS TGCHAN", "TRADITIONAL GAMES TGCHAN", "ICONS TGCHAN" };
-                for (int i = 0; i < _nombresClasificaciones8.Length; i++)
-                    _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = _nombresClasificaciones8[i], ID = _nombresClasificaciones.Length + _nombresClasificaciones2.Length + _nombresClasificaciones3.Length + _nombresClasificaciones4.Length + _nombresClasificaciones5.Length + _nombresClasificaciones6.Length + _nombresClasificaciones7.Length + i + 1, ID_PLATAFORMA = 8 });
+                for (int i = 0; i < (new string[] { "OEKAKI AND DRAWING TGCHAN", "GENERAL DISCUSSION TGCHAN", "QUESTS TGCHAN", "QUEST-DISCUSSIONS TGCHAN", "TRADITIONAL GAMES TGCHAN", "ICONS TGCHAN" }).Length; i++)
+                    _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = (new string[] { "OEKAKI AND DRAWING TGCHAN", "GENERAL DISCUSSION TGCHAN", "QUESTS TGCHAN", "QUEST-DISCUSSIONS TGCHAN", "TRADITIONAL GAMES TGCHAN", "ICONS TGCHAN" })[i], ID = (new string[] { "JAPANESE CULTURE", "VIDEO GAMES", "INTERESTS", "CREATIVE", "OTHER", "MISC.", "ADULT" }).Length + (new string[] { "STEM", "PEOPLE", "MISC", "OVERBOARDS 1", "OVERBOARDS 2" }).Length + (new string[] { "GRAL", "SERIOUS BUSINESS", "CONOC & CULT", "18+" }).Length + (new string[] { "YUME NIKKI", "ARTS & ENT", "MISCELLANEOUS" }).Length + (new string[] { "MEDIA/ENTERTAINMENT", "HOBBIES/INTERESTS", "GENERAL DISCUSSION", "OTHER TOHNO CHAN" }).Length + (new string[] { "SECCION 1", "SECCION 2", "SECCION 3", "SECCION 4" }).Length + (new string[] { "DRUGS 420CHAN", "LIFESTYLE 420CHAN", "ACADEMIA 420CHAN", "MEDIA 420CHAN", "MISCELLANEA 420CHAN", "ADULT 420CHAN" }).Length + i + 1, ID_PLATAFORMA = 8 });
 
-                string[] _nombresClasificaciones9 = new string[] { "VIP 7CHAN", "PREMIUM CONTENT 7CHAN", "SFW 7CHAN", "GENERAL 7CHAN", "PORN 7CHAN" };
-                for (int i = 0; i < _nombresClasificaciones9.Length; i++)
-                    _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = _nombresClasificaciones9[i], ID = _nombresClasificaciones.Length + _nombresClasificaciones2.Length + _nombresClasificaciones3.Length + _nombresClasificaciones4.Length + _nombresClasificaciones5.Length + _nombresClasificaciones6.Length + _nombresClasificaciones7.Length + _nombresClasificaciones8.Length + i + 1, ID_PLATAFORMA = 9 });
+                for (int i = 0; i < (new string[] { "VIP 7CHAN", "PREMIUM CONTENT 7CHAN", "SFW 7CHAN", "GENERAL 7CHAN", "PORN 7CHAN" }).Length; i++)
+                    _clasificaciones.Add(new Herramientas.Utilerias.cComboBoxClasificacion() { DESCR = (new string[] { "VIP 7CHAN", "PREMIUM CONTENT 7CHAN", "SFW 7CHAN", "GENERAL 7CHAN", "PORN 7CHAN" })[i], ID = (new string[] { "JAPANESE CULTURE", "VIDEO GAMES", "INTERESTS", "CREATIVE", "OTHER", "MISC.", "ADULT" }).Length + (new string[] { "STEM", "PEOPLE", "MISC", "OVERBOARDS 1", "OVERBOARDS 2" }).Length + (new string[] { "GRAL", "SERIOUS BUSINESS", "CONOC & CULT", "18+" }).Length + (new string[] { "YUME NIKKI", "ARTS & ENT", "MISCELLANEOUS" }).Length + (new string[] { "MEDIA/ENTERTAINMENT", "HOBBIES/INTERESTS", "GENERAL DISCUSSION", "OTHER TOHNO CHAN" }).Length + (new string[] { "SECCION 1", "SECCION 2", "SECCION 3", "SECCION 4" }).Length + (new string[] { "DRUGS 420CHAN", "LIFESTYLE 420CHAN", "ACADEMIA 420CHAN", "MEDIA 420CHAN", "MISCELLANEA 420CHAN", "ADULT 420CHAN" }).Length + (new string[] { "OEKAKI AND DRAWING TGCHAN", "GENERAL DISCUSSION TGCHAN", "QUESTS TGCHAN", "QUEST-DISCUSSIONS TGCHAN", "TRADITIONAL GAMES TGCHAN", "ICONS TGCHAN" }).Length + i + 1, ID_PLATAFORMA = 9 });
 
                 #endregion
                 #region sub clasificaciones
@@ -1286,7 +1277,6 @@ namespace FLAMINIS
                 source = WebUtility.HtmlDecode(source);
                 var _doc = new HtmlAgilityPack.HtmlDocument();
                 _doc.LoadHtml(source);
-                var aaa = _doc.DocumentNode.ChildNodes;
             }
             catch (System.Exception exc)
             {
