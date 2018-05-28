@@ -1272,7 +1272,7 @@ namespace FLAMINIS
             try
             {
                 var _cliente = new HttpClient();
-                var _respuesta = await _cliente.GetByteArrayAsync("http://7chan.org/hi/catalog.html");
+                var _respuesta = await _cliente.GetByteArrayAsync("https://concen.org/torrents");
                 System.String source = System.Text.Encoding.GetEncoding("utf-8").GetString(_respuesta, 0, _respuesta.Length - 1);
                 source = WebUtility.HtmlDecode(source);
                 var _doc = new HtmlAgilityPack.HtmlDocument();
@@ -1463,20 +1463,18 @@ namespace FLAMINIS
                 if (_urls.Any())
                     foreach (var item in _urls)
                     {
-                        var _c = new HttpClient();
-                        var _r = await _c.GetByteArrayAsync(item);
+                        HttpClient _c = new HttpClient();
+                        byte[] _r = await _c.GetByteArrayAsync(item);
                         System.String _s = System.Text.Encoding.GetEncoding("utf-8").GetString(_r, 0, _r.Length - 1);
                         _s = WebUtility.HtmlDecode(_s);
                         var _d = new HtmlAgilityPack.HtmlDocument();
                         _d.LoadHtml(_s);
                         _d.DocumentNode.Descendants("img").Select(e => e.GetAttributeValue("src", null)).Where(s => !System.String.IsNullOrEmpty(s)).ToList().ForEach(z =>
                         {
-                            var _validacion = z.Split('.');
-                            if (_validacion != null)
-                                if (_validacion.Any())
+                            if (z.Split('.') != null)
+                                if (z.Split('.').Any())
                                 {
-                                    var _ex = _validacion.LastOrDefault();
-                                    if (_ex != "php" && _ex != "js")
+                                    if (z.Split('.').LastOrDefault() != "php" && z.Split('.').LastOrDefault() != "js")
                                     {
                                         switch (_plataformaSeleccionada.ID)
                                         {
@@ -1551,13 +1549,11 @@ namespace FLAMINIS
         {
             try
             {
-                var _seleccion = ((sender as System.Windows.Controls.ComboBox).SelectedItem as Herramientas.Utilerias.cComboBox);
-                if (_seleccion != null)
+                if (((sender as System.Windows.Controls.ComboBox).SelectedItem as Herramientas.Utilerias.cComboBox) != null)
                 {
-                    var _lista = from x in _clasificaciones where x.ID_PLATAFORMA == _seleccion.ID select x;
                     LimpiaCombos();
                     ComboClasificacion.DisplayMemberPath = "DESCR";
-                    ComboClasificacion.ItemsSource = _lista;
+                    ComboClasificacion.ItemsSource = (from x in _clasificaciones where x.ID_PLATAFORMA == ((sender as System.Windows.Controls.ComboBox).SelectedItem as Herramientas.Utilerias.cComboBox).ID select x);
                     ComboClasificacion.SelectedIndex = 0;
                 }
             }
@@ -1571,12 +1567,10 @@ namespace FLAMINIS
         {
             try
             {
-                var _seleccion = ((sender as System.Windows.Controls.ComboBox).SelectedItem as Herramientas.Utilerias.cComboBoxClasificacion);
-                if (_seleccion != null)
+                if (((sender as System.Windows.Controls.ComboBox).SelectedItem as Herramientas.Utilerias.cComboBoxClasificacion) != null)
                 {
-                    var _lista = from x in _subClasificaciones where x.ID_CLASIFICACION == _seleccion.ID select x;
                     ComboSubClasificacion.DisplayMemberPath = "DESCR";
-                    ComboSubClasificacion.ItemsSource = _lista;
+                    ComboSubClasificacion.ItemsSource = (from x in _subClasificaciones where x.ID_CLASIFICACION == ((sender as System.Windows.Controls.ComboBox).SelectedItem as Herramientas.Utilerias.cComboBoxClasificacion).ID select x);
                     ComboSubClasificacion.SelectedIndex = 0;
                 }
             }
@@ -1594,14 +1588,13 @@ namespace FLAMINIS
                 return;
             }
 
-            var _elegido = _diccionario.FirstOrDefault(x => x.Key == _seleccion.DESCR);
-            if (string.IsNullOrEmpty(_elegido.Value))
+            if (string.IsNullOrEmpty(_diccionario.FirstOrDefault(x => x.Key == _seleccion.DESCR).Value))
             {
                 System.Windows.MessageBox.Show("La selección elegida no cuenta con una URL asociada");
                 return;
             }
 
-            Buscar(_elegido.Value);
+            Buscar(_diccionario.FirstOrDefault(x => x.Key == _seleccion.DESCR).Value);
         }
 
         private void Button_Click_1(object sender, System.Windows.RoutedEventArgs e)
@@ -1615,16 +1608,14 @@ namespace FLAMINIS
                         if (!Directory.Exists(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + "/" + "flaminis"))
                             Directory.CreateDirectory(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + "/" + "flaminis");
 
-                        var _elementos = lstMenuPrincipal.Items.Cast<Herramientas.ClasesCustomizadas.cPrincipal>().Select(item => item._url).ToList();
-                        if (_elementos != null)
-                            if (_elementos.Any())
+                        if (lstMenuPrincipal.Items.Cast<Herramientas.ClasesCustomizadas.cPrincipal>().Select(item => item._url).ToList() != null)
+                            if (lstMenuPrincipal.Items.Cast<Herramientas.ClasesCustomizadas.cPrincipal>().Select(item => item._url).ToList().Any())
                             {
                                 //SplitList
-                                var _maximoElementos = SplitList(_elementos);
-                                if (_maximoElementos != null)
-                                    if (_maximoElementos.Any())
+                                if (SplitList(lstMenuPrincipal.Items.Cast<Herramientas.ClasesCustomizadas.cPrincipal>().Select(item => item._url).ToList()) != null)
+                                    if (SplitList(lstMenuPrincipal.Items.Cast<Herramientas.ClasesCustomizadas.cPrincipal>().Select(item => item._url).ToList()).Any())
                                     {
-                                        foreach (var item in _maximoElementos)
+                                        foreach (var item in SplitList(lstMenuPrincipal.Items.Cast<Herramientas.ClasesCustomizadas.cPrincipal>().Select(item => item._url).ToList()))
                                         {
                                             foreach (var item2 in item)
                                             {
@@ -1642,18 +1633,16 @@ namespace FLAMINIS
                                                         txtProg.Content = "0%";
                                                     };
 
-                                                    System.Uri URL = new System.Uri(item2);
                                                     try
                                                     {
                                                         progress2.Visibility = System.Windows.Visibility.Visible;
-                                                        string _ext = Path.GetExtension(item2);
-                                                        webClient.DownloadFile(URL, System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + "/" + "flaminis" + "/" + System.DateTime.Now.ToString("ss.ffffff") + (string.IsNullOrEmpty(_ext) ? ".png" : !_ext.StartsWith(".") ? "." + _ext : _ext));
+                                                        webClient.DownloadFile(new System.Uri(item2), System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + "/" + "flaminis" + "/" + System.DateTime.Now.ToString("ss.ffffff") + (string.IsNullOrEmpty(Path.GetExtension(item2)) ? ".png" : !Path.GetExtension(item2).StartsWith(".") ? "." + Path.GetExtension(item2) : Path.GetExtension(item2)));
                                                     }
                                                     catch (WebException exx)
                                                     {
                                                         if (exx.Status == WebExceptionStatus.Timeout)
                                                         {
-                                                            System.Windows.MessageBox.Show("Timeout del servidor, inutil continuar");
+                                                            System.Windows.MessageBox.Show("TIMEOUT DEL SERVIDOR, INUTIL CONTINUAR");
                                                             return;
                                                         }
 
@@ -1666,7 +1655,6 @@ namespace FLAMINIS
                                                     }
                                                 }
                                             }
-
                                         }
                                     }
                             }
@@ -1691,11 +1679,6 @@ namespace FLAMINIS
             {
                 yield return _datos.GetRange(i, System.Math.Min(tamanio, _datos.Count - i));
             }
-        }
-
-        private void WebClient_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
-        {
-            throw new System.NotImplementedException();
         }
     }
 }
