@@ -1020,8 +1020,8 @@ namespace FLAMINIS
                 #region lainchan
                 _diccionario.Add("PROGRAMMING LAINCHAN", "https://lainchan.org/\u03BB/catalog.html");
                 _diccionario.Add("DO IT YOURSELF LAINCHAN", "https://lainchan.org/Δ/catalog.html");
-                _diccionario.Add("SEC LAINCHAN", "https://lainchan.org/sec/catalog.html");
-                _diccionario.Add("TECH LAINCHAN", "https://lainchan.org/Ω/catalog.html");
+                _diccionario.Add("SECURITY LAINCHAN", "https://lainchan.org/sec/catalog.html");
+                _diccionario.Add("TECHNOLOGY LAINCHAN", "https://lainchan.org/Ω/catalog.html");
                 _diccionario.Add("INTER LAINCHAN", "https://lainchan.org/inter/catalog.html");
                 _diccionario.Add("LIT LAINCHAN", "https://lainchan.org/lit/catalog.html");
                 _diccionario.Add("MUSIC LAINCHAN", "https://lainchan.org/music/catalog.html");
